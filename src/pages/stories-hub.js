@@ -46,7 +46,7 @@ const IndexPage = () => {
         <span style={headingBoldStyles}>Human.</span>
       </h1>
       < Logo />
-      <Link to="/stories-hub">< SkipButton /></Link>
+      < SkipButton />
     </main>
   )
 }
