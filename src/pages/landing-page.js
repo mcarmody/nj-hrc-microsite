@@ -34,7 +34,7 @@ const headingBoldStyles = {
 
 
 // markup
-const IndexPage = () => {
+const LandingPage = () => {
 
   return (
     <main style={pageStyles}>
@@ -51,4 +51,4 @@ const IndexPage = () => {
   )
 }
 
-export default IndexPage
+export default LandingPage

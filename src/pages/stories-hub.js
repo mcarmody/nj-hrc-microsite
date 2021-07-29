@@ -4,11 +4,11 @@ import landingVid from "../videos/rain-test.mp4"
 import WebFont from 'webfontloader';
 import Logo from "../components/njhrc-logo";
 import SkipButton from "../components/skip-button";
-import BackgroundMovie from "../components/background-movie";
+import NavMovie from "../components/nav-movie";
 
 WebFont.load({
   google: {
-    families: ['Lora:ital,wght@0,400;0,700;1,400;1,700', 'sans-serif']
+    families: ['Roboto:wght@0,400;0,700;1,400;1,700', 'sans-serif']
   }
 });
 
@@ -16,39 +16,40 @@ WebFont.load({
 const pageStyles = {
   padding: 0,
 }
-const headingStyles = {
-	fontFamily: "Lora",
+const navHeadingStyles = {
+	fontFamily: "Roboto",
 	paddingLeft: "70px",
-	fontSize: "82pt",
+	fontSize: "48pt",
 	position: "relative",
-	fontWeight: 300,
+	fontWeight: 700,
 	color: "white",
-	top: "20vh",
+	top: "70px",
+  maxWidth: "16vw",
 	display: "block",
 	lineHeight: 1,
+  textTransform: "uppercase",
 }
 
 const headingBoldStyles = {
 	fontWeight: 700,
 }
 
+document.body.style.margin = "0px"; //remove any margins
+
 
 // markup
-const IndexPage = () => {
+const StoriesHub = () => {
 
   return (
     <main style={pageStyles}>
-    	<title>NJ HRC Site</title>
-  		< BackgroundMovie video= {landingVid} />
-      <h1 style={headingStyles}>
-        Essential. <br />
-        Effective. <br />
-        <span style={headingBoldStyles}>Human.</span>
+    	<title>Stories Hub</title>
+  		< NavMovie video= {landingVid} />
+      <h1 style={navHeadingStyles}>
+        How we got here
       </h1>
       < Logo />
-      < SkipButton />
     </main>
   )
 }
 
-export default IndexPage
+export default StoriesHub
