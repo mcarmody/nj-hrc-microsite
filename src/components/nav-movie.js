@@ -11,15 +11,6 @@ const vidStyles = {
 	zIndex: -1,
 }
 
-const vidContainerStyles = {
-	maxWidth: "32vw",
-	height: "100vh",
-	overflow: "hidden",
-	top: 0,
-	position: "fixed",
-	cursor: "pointer"
-}
-
 const testStyle = {
 	float: "left",
     zIndex: 100,
@@ -38,6 +29,14 @@ class NavMovie extends React.Component {
 	}
 
 	render() {
+		const vidContainerStyles = {
+			maxWidth: this.state.highlighted ? "32vw" : "16vw",
+			height: "100vh",
+			overflow: "hidden",
+			top: 0,
+			position: "fixed",
+			cursor: "pointer"
+		}
 		return (
 			<div className = "videoContainer" style = {vidContainerStyles} onClick={() => this.setState(prevState => ({highlighted: !prevState.highlighted}))}>
 				<video autoplay="autoplay" muted loop style={vidStyles} id="landingClip">
