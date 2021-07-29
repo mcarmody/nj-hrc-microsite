@@ -29,6 +29,8 @@ class NavMovie extends React.Component {
 	}
 
 	render() {
+
+
 		const vidContainerStyles = {
 			maxWidth: this.state.highlighted ? "32vw" : "16vw",
 			height: "100vh",
@@ -37,8 +39,13 @@ class NavMovie extends React.Component {
 			position: "fixed",
 			cursor: "pointer"
 		}
+
+		function toggle(self) {
+			self.setState(prevState => ({highlighted: !prevState.highlighted}));
+		}
+
 		return (
-			<div className = "videoContainer" style = {vidContainerStyles} onClick={() => this.setState(prevState => ({highlighted: !prevState.highlighted}))}>
+			<div className = "videoContainer" style = {vidContainerStyles} onClick={() => toggle(this)}>
 				<video autoplay="autoplay" muted loop style={vidStyles} id="landingClip">
 		      		<source src = {this.props.video} type="video/mp4" />
 		  		</video>
