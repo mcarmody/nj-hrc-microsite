@@ -1,5 +1,7 @@
 import * as React from "react"
-import { Link } from "gatsby"
+import { Link } from "gatsby";
+import landingVid from "../videos/rain-test.mp4"
+import BackgroundMovie from "../components/background-movie";
 
 // styles
 const pageStyles = {
