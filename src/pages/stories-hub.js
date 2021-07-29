@@ -43,7 +43,7 @@ const StoriesHub = () => {
   return (
     <main style={pageStyles}>
     	<title>Stories Hub</title>
-  		< NavMovie video= {landingVid} />
+  		< NavMovie video= {landingVid}/>
       <h1 style={navHeadingStyles}>
         How we got here
       </h1>
