@@ -30,18 +30,28 @@ class NavMovie extends React.Component {
 
 	render() {
 
-
 		const vidContainerStyles = {
 			maxWidth: this.state.highlighted ? "32vw" : "16vw",
 			height: "100vh",
 			overflow: "hidden",
 			top: 0,
-			position: "fixed",
+			position: "relative",
+			display: "inline-block",
 			cursor: "pointer"
+		}
+
+		var allNavVideos = [];
+
+		function getNavVideos(self) {
+			allNavVideos = Array.prototype.slice.call(document.getElementsByClassName("videoContainer"));
+			console.log(allNavVideos);
 		}
 
 		function toggle(self) {
 			self.setState(prevState => ({highlighted: !prevState.highlighted}));
+			getNavVideos(self);
+
+			
 		}
 
 		return (
