@@ -24,7 +24,7 @@ class NavMovie extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			highlighted: true
+			highlighted: false
 		};
 	}
 
@@ -45,19 +45,21 @@ class NavMovie extends React.Component {
 		function getNavVideos(self) {
 			allNavVideos = Array.prototype.slice.call(document.getElementsByClassName("videoContainer"));
 			console.log(allNavVideos);
+			for (var i = allNavVideos.length - 1; i >= 0; i--) {
+				allNavVideos[i].firstChild.pause();
+			}
 		}
 
 		function toggle(self) {
-			self.setState(prevState => ({highlighted: !prevState.highlighted}));
 			getNavVideos(self);
-
-			
+			self.setState(prevState => ({highlighted: !prevState.highlighted}));
+			self.state.highlighted ? document.getElementById(self.props.videoName).pause() : document.getElementById(self.props.videoName).play();
 		}
 
 		return (
 			<div className = "videoContainer" style = {vidContainerStyles} onClick={() => toggle(this)}>
-				<video autoplay="autoplay" muted loop style={vidStyles} id="landingClip">
-		      		<source src = {this.props.video} type="video/mp4" />
+				<video muted loop style={vidStyles} id={this.props.videoName}>
+		      		<source src = {this.props.source} type="video/mp4" />
 		  		</video>
 		  		<span style = {testStyle} >{this.state.highlighted ? "true" : "false"}</span>
 	  		</div>

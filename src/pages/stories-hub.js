@@ -43,8 +43,11 @@ const StoriesHub = () => {
   return (
     <main style={pageStyles}>
     	<title>Stories Hub</title>
-  		< NavMovie video= {landingVid}/>
-      < NavMovie video= {landingVid}/>
+  		< NavMovie source= {landingVid} videoName = "first"/>
+      < NavMovie source= {landingVid} videoName = "second"/>
+      < NavMovie source= {landingVid} videoName = "third"/>
+      < NavMovie source= {landingVid} videoName = "fourth"/>
+      < NavMovie source= {landingVid} videoName = "fifth"/>
       <h1 style={navHeadingStyles}>
         How we got here
       </h1>
