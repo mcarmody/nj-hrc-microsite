@@ -1,0 +1,18 @@
+.video-overlay-copy {
+	margin: 0 auto;
+	font-family: "Lora";
+	padding-left: 70px;
+	font-size: 82pt;
+	position: relative;
+	font-weight: 300;
+	color: white;
+	top: 20vh;
+	display: block;
+	width: 60%;
+	line-height: 1;
+	transition: all 1s;
+}
+
+.hidden {
+	opacity: 0 !important;
+}

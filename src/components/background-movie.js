@@ -14,7 +14,6 @@ const vidStyles = {
 
 class BackgroundMovie extends React.Component {
 
-
 	render() {
 		return (
 			<video autoplay="autoplay" muted loop style={vidStyles} id="landingClip">
