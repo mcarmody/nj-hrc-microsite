@@ -7,7 +7,9 @@ import WebFont from 'webfontloader';
 import Logo from "../components/njhrc-logo";
 import SkipButton from "../components/skip-button";
 import BackgroundMovie from "../components/background-movie";
+import QuestionOverlay from "../components/question-overlay";
 import "../styles/video-page-styles.css";
+import "../styles/clear.css";
 
 WebFont.load({
   google: {
@@ -24,19 +26,8 @@ const headingBoldStyles = {
 	fontWeight: 700,
 }
 
-var timerCount = 0; //duration of current video in milliseconds
-var firstVideoDuration = 4000; //length of first video in milliseconds
-var secondVideoDuration; //length of second video in milliseconds
-var thirdVideoDuration; //length of third video in milliseconds
-
 class overlayText extends React.Component {
 
-	componentDidMount() {
-		setTimeout(function() {
-			document.getElementsByClassName("video-overlay-copy")[0].classList.remove("hidden");
-		}, firstVideoDuration);
-		
-	}
 
 
 	render() {
@@ -44,11 +35,7 @@ class overlayText extends React.Component {
 	    <main style={pageStyles}>
 	    	<title>NJ HRC Site</title>
 	  		< BackgroundMovie video= {mountainsVid} />
-	      <h1 className = "video-overlay-copy hidden">
-	        <span style={headingBoldStyles}>Here in New Jersey,</span><br />
-	        when it comes to<br />
-	        opioids and overdoses
-	      </h1>
+	      	< QuestionOverlay />
 	      < Logo />
 	      <Link to="/stories-hub">< SkipButton /></Link>
 	    </main>
