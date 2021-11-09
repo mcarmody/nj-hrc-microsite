@@ -21,10 +21,10 @@ const vidStyles = {
 }
 
 var timerCount = 0; //duration of current video in milliseconds
-var firstVideoDuration = 6000; //length of first video in milliseconds
+var firstVideoDuration = 2000; //length of first video in milliseconds
 var secondVideoDuration; //length of second video in milliseconds
 var thirdVideoDuration; //length of third video in milliseconds
-var betweenCopyDelay = 6000;
+var betweenCopyDelay = 2000;
 
 const secondTextUpdate = "Do you think what we</br> are doing is working?";
 
@@ -33,7 +33,8 @@ class QuestionOverlay extends React.Component {
 		super(props);
 		this.state = {
 			stage: 1,
-			video: mountainsVid
+			video: mountainsVid,
+			copy: "<span style={headingBoldStyles}>Here in New Jersey,</span><br />when it comes to<br />opioids and overdoses..."
 		};
 	}
 
@@ -41,24 +42,31 @@ class QuestionOverlay extends React.Component {
 		this.setState({stage: stateNumber})
 	}
 
-	loadNewVideo = () => {
+	updateCopy = () => {
+		console.log("updating copy: "+this.state.copy);
+		document.getElementsByClassName("video-overlay-copy")[0].innerHTML = this.state.copy;
+	}
+
+	stateSwitch = () => {
 		switch(this.state.stage) {
-			case 1:
+			case 1: //this is the landing page
 				this.setState({video: mountainsVid})
 				console.log(this.state.video)
 				break;
-			case 2:
-				this.setState({video: godraysVid})
+			case 2: //this is the second video
+				this.setState({video: rainVid, copy: "Wrong! New video!"})
 				console.log(this.state.video)
 				break;
-			case 3:
-				this.setState({video: rainVid})
+			case 3: //this is the second question page
+				this.setState({video: godraysVid, copy: "Good answer. New question!"})
 				console.log(this.state.video)
 				break
 		}
+		
 	}
 
 	componentDidMount() {
+		this.updateCopy();
 		setTimeout(function() {
 			document.getElementsByClassName("video-overlay-copy")[0].classList.remove("hidden");
 			document.getElementsByClassName("overlay-background")[0].classList.remove("hidden");
@@ -72,9 +80,10 @@ class QuestionOverlay extends React.Component {
 	}
 
 	componentDidUpdate(prevProps, prevState) {
-		if(this.state.stage !== prevState.stage) {
-			console.log("New video! "+prevState.stage+", "+this.state.stage)
-			this.loadNewVideo();
+		if(this.state.stage !== prevState.stage || this.state.video !== prevState.video || this.state.copy !== prevState.copy) {
+			console.log("New stage! "+prevState.stage+", "+this.state.stage)
+			this.stateSwitch();
+			this.updateCopy();
 		}
 	}
 
@@ -86,9 +95,6 @@ class QuestionOverlay extends React.Component {
 				< BackgroundMovie video= {this.state.video} />
 				<div className = "overlay-content-container">
 					<h1 className = "video-overlay-copy hidden">
-				        <span style={headingBoldStyles}>Here in New Jersey,</span><br />
-				        when it comes to<br />
-				        opioids and overdoses...
 					</h1>
 					<div className = "overlay-buttons-container hidden">
 						<div className = "yes-button" onClick={() => this.nextQuestion(2)}>Yes</div>
