@@ -21,10 +21,23 @@ const vidStyles = {
 }
 
 var timerCount = 0; //duration of current video in milliseconds
-var firstVideoDuration = 2000; //length of first video in milliseconds
+var firstVideoDuration = 6000; //length of first video in milliseconds
 var secondVideoDuration; //length of second video in milliseconds
 var thirdVideoDuration; //length of third video in milliseconds
 var betweenCopyDelay = 2000;
+var videoOverlay;
+var overlayBG;
+var bgVideo;
+var buttonsContainer;
+
+const copyUpdates = [
+	"<span style={headingBoldStyles}>Here in New Jersey,</span><br />when it comes to<br />opioids and overdoses...",
+	"Do you think what we</br> are doing is working?",
+	"What about now...",
+	"How do you feel?",
+	"This is ridiculous...",
+	"Are you convinced yet?"
+];
 
 const secondTextUpdate = "Do you think what we</br> are doing is working?";
 
@@ -34,10 +47,20 @@ class QuestionOverlay extends React.Component {
 		this.state = {
 			stage: 1,
 			video: mountainsVid,
-			copy: "<span style={headingBoldStyles}>Here in New Jersey,</span><br />when it comes to<br />opioids and overdoses...",
+			copy: copyUpdates[0],
 			yesVal: 2,
-			noVal: 3
+			noVal: 3,
+			videoReset: true
 		};
+	}
+	componentDidMount() {
+		//assign all the variables so we don't keep calling getElements
+		videoOverlay = document.getElementsByClassName("video-overlay-copy")[0];
+		overlayBG = document.getElementsByClassName("overlay-background")[0];
+		bgVideo = document.getElementById("landing-clip");
+		buttonsContainer = document.getElementsByClassName("overlay-buttons-container")[0];
+		this.updateCopy();
+		this.playNewVideo(firstVideoDuration, betweenCopyDelay, this.state.stage);
 	}
 
 	nextQuestion = (stateNumber) => {
@@ -46,58 +69,83 @@ class QuestionOverlay extends React.Component {
 
 	updateCopy = () => {
 		console.log("updating copy: "+this.state.copy);
-		document.getElementsByClassName("video-overlay-copy")[0].innerHTML = this.state.copy;
+		videoOverlay.innerHTML = this.state.copy;
+	}
+
+	playNewVideo = (firstTimer, secondTimer, stage) => {
+		
+		console.log("Stage: "+stage);
+
+		if((stage%2)==0 || stage==1) {
+			console.log("Video stage");
+
+			//first, hide the existing copy
+			videoOverlay.classList.add("hidden");
+			buttonsContainer.classList.add("hidden");
+
+			setTimeout(function() { //the first round of copy appearing
+				videoOverlay.innerHTML = copyUpdates[stage-1];
+				videoOverlay.classList.remove("hidden");
+				overlayBG.classList.remove("hidden");
+				bgVideo.classList.add("hidden");
+			}, firstTimer);
+
+			setTimeout(function() { //second part of the question
+				videoOverlay.innerHTML = copyUpdates[stage];
+				buttonsContainer.classList.remove("hidden");
+			}, firstTimer + secondTimer);
+
+		} else {
+			console.log("Straight to the question");
+
+			//the first round of copy appearing
+			videoOverlay.innerHTML = copyUpdates[stage-1];
+			videoOverlay.classList.remove("hidden");
+			overlayBG.classList.remove("hidden");
+			bgVideo.classList.add("hidden");
+
+			setTimeout(function() { //second part of the question
+				videoOverlay.innerHTML = copyUpdates[stage];
+				buttonsContainer.classList.remove("hidden");
+			}, secondTimer);
+		}
 	}
 
 	stateSwitch = () => {
 		switch(this.state.stage) {
 			case 1: //this is the landing page
-				this.setState({video: mountainsVid})
-				console.log(this.state.video)
+				this.setState({video: mountainsVid, videoReset: true})
 				break;
 			case 2: //this is the second video
-				this.setState({video: rainVid, copy: "Wrong! New video!", yesVal: 4, noVal: 5})
-				console.log(this.state.video)
+				this.setState({video: rainVid, copy: "Wrong! New video!", yesVal: 4, noVal: 5, videoReset: true})
 				break;
 			case 3: //this is the second question page
-				this.setState({video: godraysVid, copy: "Good answer. New question!", yesVal: 4, noVal: 5})
-				console.log(this.state.video)
+				this.setState({copy: "Good answer. New question!", yesVal: 4, noVal: 5})
 				break;
 			case 4: //this is the third video
-				this.setState({video: mountainsVid, copy: "Wrong! New video!", yesVal: 6, noVal: 6})
-				console.log(this.state.video)
+				this.setState({video: mountainsVid, copy: "Wrong! New video!", yesVal: 6, noVal: 6, videoReset: true})
 				break;
 			case 5: //this is the third question page
-				this.setState({video: rainVid, copy: "Good answer. New question!", yesVal: 6, noVal: 6})
-				console.log(this.state.video)
+				this.setState({copy: "Good answer. New question!", yesVal: 6, noVal: 6})
 				break;
 			case 6: //this is the last video
-				this.setState({video: godraysVid, copy: "You're done!"})
-				console.log(this.state.video)
+				this.setState({video: godraysVid, copy: "You're done!", videoReset: true})
 				break;
 		}
 		
-	}
+	};
 
-	componentDidMount() {
-		this.updateCopy();
-		setTimeout(function() { //the first round of copy appearing
-			document.getElementsByClassName("video-overlay-copy")[0].classList.remove("hidden");
-			document.getElementsByClassName("overlay-background")[0].classList.remove("hidden");
-			document.getElementById("landing-clip").classList.add("hidden");
-		}, firstVideoDuration);
-
-		setTimeout(function() { //second part of initial question
-			document.getElementsByClassName("video-overlay-copy")[0].innerHTML = secondTextUpdate;
-			document.getElementsByClassName("overlay-buttons-container")[0].classList.remove("hidden");
-		}, firstVideoDuration + betweenCopyDelay);
-	}
 
 	componentDidUpdate(prevProps, prevState) {
-		if(this.state.stage !== prevState.stage || this.state.video !== prevState.video || this.state.copy !== prevState.copy) {
+		if(this.state.stage !== prevState.stage) {
 			console.log("New stage! "+prevState.stage+", "+this.state.stage)
 			this.stateSwitch();
+		}
+		if(this.state.copy !== prevState.copy) {
 			this.updateCopy();
+		}
+		if(this.state.videoReset) {
+			this.playNewVideo(firstVideoDuration, betweenCopyDelay, this.state.stage);
 		}
 	}
 
