@@ -45,7 +45,7 @@ class QuestionOverlay extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			stage: 1,
+			stage: 0,
 			video: mountainsVid,
 			copy: copyUpdates[0],
 			yesVal: 2,
@@ -76,7 +76,7 @@ class QuestionOverlay extends React.Component {
 		
 		console.log("Stage: "+stage);
 
-		if((stage%2)==0 || stage==1) {
+		if((stage%2)==0) {
 			console.log("Video stage");
 
 			//first, hide the existing copy
@@ -84,28 +84,28 @@ class QuestionOverlay extends React.Component {
 			buttonsContainer.classList.add("hidden");
 
 			setTimeout(function() { //the first round of copy appearing
-				videoOverlay.innerHTML = copyUpdates[stage-1];
+				videoOverlay.innerHTML = copyUpdates[stage];
 				videoOverlay.classList.remove("hidden");
-				overlayBG.classList.remove("hidden");
 				bgVideo.classList.add("hidden");
+				console.log("hide the video");
 			}, firstTimer);
 
 			setTimeout(function() { //second part of the question
-				videoOverlay.innerHTML = copyUpdates[stage];
+				videoOverlay.innerHTML = copyUpdates[stage+1];
 				buttonsContainer.classList.remove("hidden");
 			}, firstTimer + secondTimer);
 
 		} else {
 			console.log("Straight to the question");
+			bgVideo.classList.add("hidden");
 
 			//the first round of copy appearing
-			videoOverlay.innerHTML = copyUpdates[stage-1];
+			videoOverlay.innerHTML = copyUpdates[stage];
 			videoOverlay.classList.remove("hidden");
-			overlayBG.classList.remove("hidden");
 			bgVideo.classList.add("hidden");
 
 			setTimeout(function() { //second part of the question
-				videoOverlay.innerHTML = copyUpdates[stage];
+				videoOverlay.innerHTML = copyUpdates[stage+1];
 				buttonsContainer.classList.remove("hidden");
 			}, secondTimer);
 		}
@@ -113,23 +113,26 @@ class QuestionOverlay extends React.Component {
 
 	stateSwitch = () => {
 		switch(this.state.stage) {
-			case 1: //this is the landing page
+			case 0: //this is the landing video
 				this.setState({video: mountainsVid, videoReset: true})
 				break;
-			case 2: //this is the second video
-				this.setState({video: rainVid, copy: "Wrong! New video!", yesVal: 4, noVal: 5, videoReset: true})
+			case 1: //this is the first questions
+				this.setState({yesVal: 2, noVal: 3})
 				break;
-			case 3: //this is the second question page
-				this.setState({copy: "Good answer. New question!", yesVal: 4, noVal: 5})
+			case 2: //this is the second video page
+				this.setState({video: rainVid, videoReset: true})
+				break;
+			case 3: //this is the second questions
+				this.setState({yesVal: 4, noVal: 5})
 				break;
 			case 4: //this is the third video
-				this.setState({video: mountainsVid, copy: "Wrong! New video!", yesVal: 6, noVal: 6, videoReset: true})
+				this.setState({video: mountainsVid, videoReset: true})
 				break;
-			case 5: //this is the third question page
-				this.setState({copy: "Good answer. New question!", yesVal: 6, noVal: 6})
+			case 5: //this is the third questions
+				this.setState({yesVal: 6, noVal: 6})
 				break;
 			case 6: //this is the last video
-				this.setState({video: godraysVid, copy: "You're done!", videoReset: true})
+				this.setState({video: godraysVid, videoReset: true})
 				break;
 		}
 		
