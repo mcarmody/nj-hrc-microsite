@@ -1,0 +1,14 @@
+.story-parent-container {
+	position: relative;
+	display: block;
+	height: 100vh;
+	width: 100vw;
+	overflow: hidden;
+}
+
+.selected-topic-container {
+	width: 75vw;
+	height: 100%;
+	background: #272727;
+	color: white;
+}

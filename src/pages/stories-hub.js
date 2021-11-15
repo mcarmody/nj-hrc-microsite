@@ -1,5 +1,4 @@
-import * as React from "react"
-import { Link } from "gatsby"
+import * as React from "react";
 import landingVid from "../videos/rain-test.mp4"
 import WebFont from 'webfontloader';
 import Logo from "../components/njhrc-logo";
@@ -46,19 +45,29 @@ document.body.style.margin = "0px"; //remove any margins
 
 
 // markup
-const StoriesHub = () => {
+class StoriesHub extends React.Component {
 
-  return (
-    <main style={pageStyles}>
-    	<title>Stories Hub</title>
-  		< NavMovie source= {landingVid} videoName = "first" title = {titlesList[0]}/>
-      < NavMovie source= {landingVid} videoName = "second" title = {titlesList[1]}/>
-      < NavMovie source= {landingVid} videoName = "third" title = {titlesList[2]}/>
-      < NavMovie source= {landingVid} videoName = "fourth" title = {titlesList[3]}/>
-      < NavMovie source= {landingVid} videoName = "fifth" title = {titlesList[4]}/>
-      < Logo />
-    </main>
-  )
+  constructor(props) {
+    super(props);
+    this.state = {
+    };
+  }
+
+
+  render() {
+    
+    return (
+      <main style={pageStyles}>
+      	<title>Stories Hub</title>
+    		< NavMovie source= {landingVid} videoName = "first" title = {titlesList[0]}/>
+        < NavMovie source= {landingVid} videoName = "second" title = {titlesList[1]}/>
+        < NavMovie source= {landingVid} videoName = "third" title = {titlesList[2]}/>
+        < NavMovie source= {landingVid} videoName = "fourth" title = {titlesList[3]}/>
+        < NavMovie source= {landingVid} videoName = "fifth" title = {titlesList[4]}/>
+        < Logo />
+      </main>
+    )
+  }
 }
 
 export default StoriesHub

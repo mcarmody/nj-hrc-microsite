@@ -1,9 +1,11 @@
 import * as React from "react"
+import { BrowserRouter as Router, Route, Link, Redirect } from "gatsby";
 import ReactDOM from "react-dom";
 import {useState} from "react"
 import wordmark from "../images/njhrc-wordmark.png"
 import WebFont from 'webfontloader';
-import BackgroundMovie from './background-movie'
+import BackgroundMovie from './background-movie';
+import IndividualStory from '../pages/story-page'
 import "../styles/hub-page-styles.css";
 
 const vidStyles = {
@@ -26,7 +28,10 @@ class NavMovie extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			highlighted: false
+			highlighted: false,
+			data: {
+				title: "Title goes here"
+			},
 		};
 	}
 
@@ -38,7 +43,6 @@ class NavMovie extends React.Component {
 
 	render() {
 
-
 		const vidContainerStyles = {
 			maxWidth: "16vw",
 			height: "100vh",
@@ -48,6 +52,8 @@ class NavMovie extends React.Component {
 			display: "inline-block",
 			cursor: "pointer"
 		}
+
+		const passThroughData  = this.state.data;
 
 		var allNavVideos = [];
 
@@ -66,11 +72,9 @@ class NavMovie extends React.Component {
 			if(!ReactDOM.findDOMNode(self).classList.contains("column-highlighted")) {
 				ReactDOM.findDOMNode(self).classList.add("column-highlighted");
 				document.getElementById(self.props.videoName).play();
-				console.log(ReactDOM.findDOMNode(self))
 			} else {
 				ReactDOM.findDOMNode(self).classList.remove("column-highlighted");
 				document.getElementById(self.props.videoName).pause();
-				console.log(self.state.highlighted+": removing highlighting")
 			}
 		}
 
@@ -80,6 +84,7 @@ class NavMovie extends React.Component {
 		      		<source src = {this.props.source} type="video/mp4" />
 		  		</video>
 		  		<div className = "video-title">{this.props.title}</div>
+		  		<Link className = "story-link" to="/story-page" state = {passThroughData}>Click here to explore</Link>
 	  		</div>
 		)
 	}

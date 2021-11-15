@@ -12,6 +12,7 @@ body {
 	display: inline-block;
 	cursor: pointer;
 	margin: 0 0.5vw;
+	color:  white;
 	/*border-left: 1px solid black;
 	border-right: 1px solid black;*/
 }
@@ -25,7 +26,6 @@ body {
 	width: 150px;
 	display: block;
 	position: absolute;
-	color:  white;
 	top: 40px;
 	font-weight: bold;
 	font-size: 23px;
@@ -41,4 +41,16 @@ body {
 
 .logoBlurb {
 	display: none;
+}
+
+.story-link {
+	display: none;
+	position: absolute;
+	top:  50vh;
+	z-index: 100;
+}
+
+.column-highlighted .story-link {
+	display: block;
+	left:  70px;
 }
