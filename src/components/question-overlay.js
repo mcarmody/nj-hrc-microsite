@@ -97,7 +97,6 @@ class QuestionOverlay extends React.Component {
 
 		} else {
 			console.log("Straight to the question");
-			bgVideo.classList.add("hidden");
 
 			//the first round of copy appearing
 			videoOverlay.innerHTML = copyUpdates[stage];
