@@ -51,20 +51,22 @@ class NavMovie extends React.Component {
 
 		var allNavVideos = [];
 
-		function getNavVideos() {
+		function getNavVideos(self) {
 			allNavVideos = Array.prototype.slice.call(document.getElementsByClassName("videoContainer"));
 			for (var i = allNavVideos.length - 1; i >= 0; i--) {
-				allNavVideos[i].classList.remove("column-highlighted");
-				allNavVideos[i].firstChild.pause();
+				if(allNavVideos[i] !== self) {
+					allNavVideos[i].classList.remove("column-highlighted");
+					allNavVideos[i].firstChild.pause();
+				}
 			}
 		}
 
 		function toggle(self) {
-			getNavVideos();
-			if(!ReactDOM.findDOMNode(self).classList.contains("highlighted")) {
+			getNavVideos(ReactDOM.findDOMNode(self));
+			if(!ReactDOM.findDOMNode(self).classList.contains("column-highlighted")) {
 				ReactDOM.findDOMNode(self).classList.add("column-highlighted");
 				document.getElementById(self.props.videoName).play();
-				console.log(self.state.highlighted+": highlighting")
+				console.log(ReactDOM.findDOMNode(self))
 			} else {
 				ReactDOM.findDOMNode(self).classList.remove("column-highlighted");
 				document.getElementById(self.props.videoName).pause();
@@ -73,10 +75,11 @@ class NavMovie extends React.Component {
 		}
 
 		return (
-			<div className = "videoContainer column-unhighlighted" style = {vidContainerStyles} onClick={() => toggle(this)}>
+			<div className = "videoContainer" style = {vidContainerStyles} onClick={() => toggle(this)}>
 				<video muted loop style={vidStyles} id={this.props.videoName}>
 		      		<source src = {this.props.source} type="video/mp4" />
 		  		</video>
+
 	  		</div>
 		)
 	}

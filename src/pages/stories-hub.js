@@ -16,6 +16,14 @@ WebFont.load({
 const pageStyles = {
   padding: 0,
 }
+
+const titlesList = [
+  "How We Got Here",
+  "Harm Reduction 101",
+  "Viral Hepatitis & HIV",
+  "Overdose and Prevention",
+  "Connect To Services"
+]
 const navHeadingStyles = {
 	fontFamily: "Roboto",
 	paddingLeft: "70px",
@@ -43,11 +51,11 @@ const StoriesHub = () => {
   return (
     <main style={pageStyles}>
     	<title>Stories Hub</title>
-  		< NavMovie source= {landingVid} videoName = "first"/>
-      < NavMovie source= {landingVid} videoName = "second"/>
-      < NavMovie source= {landingVid} videoName = "third"/>
-      < NavMovie source= {landingVid} videoName = "fourth"/>
-      < NavMovie source= {landingVid} videoName = "fifth"/>
+  		< NavMovie source= {landingVid} videoName = "first" title = {titlesList[0]}/>
+      < NavMovie source= {landingVid} videoName = "second" title = {titlesList[1]}/>
+      < NavMovie source= {landingVid} videoName = "third" title = {titlesList[2]}/>
+      < NavMovie source= {landingVid} videoName = "fourth" title = {titlesList[3]}/>
+      < NavMovie source= {landingVid} videoName = "fifth" title = {titlesList[4]}/>
       <h1 style={navHeadingStyles}>
         How we got here
       </h1>
