@@ -79,7 +79,7 @@ class NavMovie extends React.Component {
 				<video muted loop style={vidStyles} id={this.props.videoName}>
 		      		<source src = {this.props.source} type="video/mp4" />
 		  		</video>
-
+		  		<div className = "video-title">{this.props.title}</div>
 	  		</div>
 		)
 	}

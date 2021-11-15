@@ -1,3 +1,27 @@
+body {
+  height: 100vh;
+  overflow: hidden;
+}
+
 .column-highlighted {
   max-width: 32vw !important;
+}
+
+.video-title {
+  left: 12px;
+  width: 150px;
+  display: block;
+  position: absolute;
+  color: white;
+  top: 40px;
+  font-weight: bold;
+  font-size: 23px;
+  line-height: 30px;
+}
+
+.column-highlighted .video-title {
+  left: 70px;
+  width: 230px;
+  font-size: 48px;
+  line-height: 60px;
 }
