@@ -30,7 +30,14 @@ class NavMovie extends React.Component {
 		};
 	}
 
+	componentDidMount() {
+		if(this.props.videoName == "first") {
+			ReactDOM.findDOMNode(this).click();
+		}
+	}
+
 	render() {
+
 
 		const vidContainerStyles = {
 			maxWidth: "16vw",
@@ -48,22 +55,20 @@ class NavMovie extends React.Component {
 			allNavVideos = Array.prototype.slice.call(document.getElementsByClassName("videoContainer"));
 			for (var i = allNavVideos.length - 1; i >= 0; i--) {
 				allNavVideos[i].classList.remove("column-highlighted");
-				allNavVideos[i].classList.add("column-unhighlighted");
 				allNavVideos[i].firstChild.pause();
 			}
 		}
 
 		function toggle(self) {
 			getNavVideos();
-			self.setState(prevState => ({highlighted: !prevState.highlighted}));
-			if(!self.state.highlighted) {
-				ReactDOM.findDOMNode(self).classList.remove("column-unhighlighted");
+			if(!ReactDOM.findDOMNode(self).classList.contains("highlighted")) {
 				ReactDOM.findDOMNode(self).classList.add("column-highlighted");
 				document.getElementById(self.props.videoName).play();
+				console.log(self.state.highlighted+": highlighting")
 			} else {
 				ReactDOM.findDOMNode(self).classList.remove("column-highlighted");
-				ReactDOM.findDOMNode(self).classList.add("column-unhighlighted");
 				document.getElementById(self.props.videoName).pause();
+				console.log(self.state.highlighted+": removing highlighting")
 			}
 		}
 
