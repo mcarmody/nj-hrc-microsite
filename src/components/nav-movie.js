@@ -52,7 +52,7 @@ class NavMovie extends React.Component {
 		var allNavVideos = [];
 
 		function getNavVideos(self) {
-			allNavVideos = Array.prototype.slice.call(document.getElementsByClassName("videoContainer"));
+			allNavVideos = Array.prototype.slice.call(document.getElementsByClassName("video-container"));
 			for (var i = allNavVideos.length - 1; i >= 0; i--) {
 				if(allNavVideos[i] !== self) {
 					allNavVideos[i].classList.remove("column-highlighted");
@@ -75,7 +75,7 @@ class NavMovie extends React.Component {
 		}
 
 		return (
-			<div className = "videoContainer" style = {vidContainerStyles} onClick={() => toggle(this)}>
+			<div className = "video-container" onClick={() => toggle(this)}>
 				<video muted loop style={vidStyles} id={this.props.videoName}>
 		      		<source src = {this.props.source} type="video/mp4" />
 		  		</video>

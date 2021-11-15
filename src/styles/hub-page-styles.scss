@@ -3,6 +3,17 @@ body {
 	overflow:  hidden;
 }
 
+.video-container {
+	max-width: 15vw;
+	height: 100vh;
+	overflow: hidden;
+	top: 0;
+	position: relative;
+	display: inline-block;
+	cursor: pointer;
+	margin: 0 0.5vw;
+}
+
 .column-highlighted {
 	max-width: 32vw !important;
 }
@@ -24,4 +35,8 @@ body {
 	width: 230px;
 	font-size: 48px;
 	line-height: 60px;
+}
+
+.logoBlurb {
+	display: none;
 }
