@@ -12,3 +12,39 @@
 	background: #272727;
 	color: white;
 }
+
+.story-title {
+	position: relative;
+	font-weight: bold;
+	font-size: 48px;
+	line-height: 60px;
+	top:  52px;
+	left: 64px;
+	text-transform: uppercase;
+	max-width: 270px;
+}
+
+.story-content {
+	position: absolute;
+	top: 270px;
+	left: 0px;
+	border: 1px solid white;
+	width: 75vw;
+	height: 485px;
+}
+
+.side-nav-container {
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.nav-item {
+	margin: 12px 0;
+	position: relative;
+	color: black;
+	display: block;
+	width: 24vw;
+	background: #E9E9E9;
+	min-height: 72px;
+}

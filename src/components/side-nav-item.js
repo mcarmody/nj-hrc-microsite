@@ -17,12 +17,12 @@ class SideNavItem extends React.Component {
 
 	render() {
 		function open(self) {
-			console.log(self)
+			console.log(self.props.data)
 		}
 
 		return (
-			<div className = "nav-item-container" onClick={() => open(this)}>
-				This is fake side nav content.
+			<div className = "nav-item"  onClick={this.props.onClick}>
+				{this.props.data}
 			</div>
 		)
 	}

@@ -25,19 +25,38 @@ class IndividualStory extends React.Component {
     super(props);
     this.state = {
       title: this.props.location.state.title,
+      contentItems: [
+        {type: "link", data: "http://www.mikecarmody.net", metadata: "a test link"},
+        {type: "image", data: "../images/harm_reduction_test.png", metadata: "harm reduction image test"},
+        {type: "image", data: "../images/harm_reduction_test.png", metadata: "harm reduction image test"},
+        {type: "video", data: "../videos/godrays-test.mp4", metadata: "godrays video test"}
+      ],
+      selectedItem: ""
     };
   }
 
+  selectItem = (self) => {
+    this.setState({selectedItem: self.props.location.state});
+    console.log(this.state.selectedItem)
+  }
+
   render() {
-    console.log(this.props.location)
+
+    var selectedItem = this.state.selectedItem;
 
     return (
       <div className = "story-parent-container">
         <div className = "selected-topic-container">
           <div className = "story-title">{this.state.title}</div>
-          This is where the selected stuff will show up.
+          <div className = "story-content">{this.state.selectedItem.data}</div>
         </div>
-        < SideNavItem />
+        <div className = "side-nav-container">
+          < SideNavItem type = {this.state.contentItems[0].type} data = {this.state.contentItems[0].data} onClick={() => this.selectItem(this)} />
+          < SideNavItem type = {this.state.contentItems[0].type} data = {this.state.contentItems[1].data} onClick={() => this.selectItem(this)} />
+          < SideNavItem type = {this.state.contentItems[0].type} data = {this.state.contentItems[2].data} onClick={() => this.selectItem(this)} />
+          < SideNavItem type = {this.state.contentItems[0].type} data = {this.state.contentItems[3].data} onClick={() => this.selectItem(this)} />
+        </div>
+        < Logo wordmark = {false} sideCopy = {true} size = {"small"}/>
       </div>
     )
   }

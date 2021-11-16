@@ -64,7 +64,7 @@ class StoriesHub extends React.Component {
         < NavMovie source= {landingVid} videoName = "third" title = {titlesList[2]}/>
         < NavMovie source= {landingVid} videoName = "fourth" title = {titlesList[3]}/>
         < NavMovie source= {landingVid} videoName = "fifth" title = {titlesList[4]}/>
-        < Logo />
+        < Logo wordmark = {true} sideCopy = {false}/>
       </main>
     )
   }

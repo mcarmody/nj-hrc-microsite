@@ -30,7 +30,7 @@ class NavMovie extends React.Component {
 		this.state = {
 			highlighted: false,
 			data: {
-				title: "Title goes here"
+				title: this.props.title
 			},
 		};
 	}
