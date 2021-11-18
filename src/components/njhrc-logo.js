@@ -1,13 +1,5 @@
 import * as React from "react"
 import wordmark from "../images/njhrc-wordmark.png"
-import WebFont from 'webfontloader';
-
-
-WebFont.load({
-  google: {
-    families: ['Roboto:wght@0,400;0,700;1,400;1,700', 'sans-serif']
-  }
-});
 
 const logoStyles = {
 	fontFamily: "Roboto",

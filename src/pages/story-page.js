@@ -1,22 +1,11 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import landingVid from "../videos/rain-test.mp4"
-import WebFont from 'webfontloader';
 import Logo from "../components/njhrc-logo";
 import SkipButton from "../components/skip-button";
 import NavMovie from "../components/nav-movie";
 import SideNavItem from "../components/side-nav-item.js"
 import "../styles/individual-page-styles.css";
-
-WebFont.load({
-  google: {
-    families: ['Roboto:wght@0,400;0,700;1,400;1,700', 'sans-serif']
-  }
-});
-
-// styles
-
-document.body.style.margin = "0px"; //remove any margins
 
 
 // markup
@@ -24,7 +13,8 @@ class IndividualStory extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: this.props.location.state.title,
+      title: "test",
+      //this.props.location.state.title
       contentItems: [
         {type: "link", data: "http://www.mikecarmody.net", metadata: "a test link"},
         {type: "image", data: "../images/harm_reduction_test.png", metadata: "harm reduction image test"},

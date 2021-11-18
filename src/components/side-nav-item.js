@@ -1,6 +1,5 @@
 import * as React from "react"
 import wordmark from "../images/njhrc-wordmark.png"
-import WebFont from 'webfontloader';
 
 
 class SideNavItem extends React.Component {

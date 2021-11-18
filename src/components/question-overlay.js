@@ -1,5 +1,4 @@
 import * as React from "react"
-import WebFont from 'webfontloader';
 import "../styles/video-page-styles.css";
 import BackgroundMovie from "./background-movie";
 import rainVid from "../videos/rain-test.mp4"
