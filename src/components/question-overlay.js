@@ -1,9 +1,9 @@
 import * as React from "react"
 import "../styles/video-page-styles.css";
 import BackgroundMovie from "./background-movie";
-import rainVid from "../videos/rain-test.mp4"
-import godraysVid from "../videos/godrays-test.mp4"
-import mountainsVid from "../videos/mountains-test.mp4"
+import rainVid from "../media/vid/rain-test.mp4"
+import godraysVid from "../media/vid/godrays-test.mp4"
+import mountainsVid from "../media/vid/mountains-test.mp4"
 
 const headingBoldStyles = {
 	fontWeight: 700,

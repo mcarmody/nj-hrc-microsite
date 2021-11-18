@@ -2,7 +2,7 @@ import * as React from "react"
 import { BrowserRouter as Router, Route, Link, Redirect } from "gatsby";
 import ReactDOM from "react-dom";
 import {useState} from "react"
-import wordmark from "../images/njhrc-wordmark.png"
+import wordmark from "../media/img/njhrc-wordmark.png"
 import BackgroundMovie from './background-movie';
 import IndividualStory from '../pages/story-page'
 import "../styles/hub-page-styles.css";

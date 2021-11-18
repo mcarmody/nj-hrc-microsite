@@ -1,5 +1,5 @@
 import * as React from "react"
-import wordmark from "../images/njhrc-wordmark.png"
+import wordmark from "../media/img/njhrc-wordmark.png"
 
 
 const skipStyles = {
