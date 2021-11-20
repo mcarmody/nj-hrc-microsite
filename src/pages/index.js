@@ -1,9 +1,10 @@
 import * as React from "react"
 import { Link } from "gatsby"
-import landingVid from "../media/vid/rain-test.mp4"
 import Logo from "../components/njhrc-logo";
 import SkipButton from "../components/skip-button";
 import BackgroundMovie from "../components/background-movie";
+
+const landingVid = "https://d2ycth98mhglth.cloudfront.net/media/vid/rain-test.mp4"
 
 
 // styles

@@ -1,5 +1,5 @@
-import * as React from "react"
-import wordmark from "../media/img/njhrc-wordmark.png"
+import * as React from "react";
+import wordmark from "../media/img/njhrc-wordmark.png";
 
 
 const vidStyles = {
@@ -9,7 +9,7 @@ const vidStyles = {
 	minWidth: "100vw",
 	minHeight: "100vh",
 	zIndex: -1,
-}
+};
 
 class BackgroundMovie extends React.Component {
 	constructor(props) {
