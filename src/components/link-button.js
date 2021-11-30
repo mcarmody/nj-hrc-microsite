@@ -1,10 +1,11 @@
 import * as React from "react"
 import wordmark from "../media/img/njhrc-wordmark.png"
+import "../styles/index-styles.css";
 
 
 const skipStyles = {
 	fontFamily: "Roboto",
-	position: "fixed",
+	position: "relative",
 	bottom: 0,
 	right: 0,
 	margin: "70px",
@@ -32,19 +33,22 @@ const arrowStyles = {
 const skipTextStyles = {
 }
 
-class SkipButton extends React.Component {
+class LinkButton extends React.Component {
+	constructor(props) {
+		super(props);
+	}
 
 
 	render() {
 		return (
-			<div className="skipBlock" style={skipStyles}>
+			<div className="skipBlock">
 				<div className="arrow" style={arrowStyles} />
 				<div className="skipText" style={skipTextStyles}>
-					Skip to main site
+					{this.props.title}
 				</div>
 			</div>
 		)
 	}
 }
 
-export default SkipButton;
+export default LinkButton;

@@ -1,11 +1,11 @@
 import * as React from "react";
 import Logo from "../components/njhrc-logo";
-import SkipButton from "../components/skip-button";
 import NavMovie from "../components/nav-movie";
 
 const videoList = [
   "https://d2ycth98mhglth.cloudfront.net/media/vid/rain-test.mp4",
-  "https://d2ycth98mhglth.cloudfront.net/media/vid/godrays-test.mp4"
+  "https://d2ycth98mhglth.cloudfront.net/media/vid/godrays-test.mp4",
+  "https://d2ycth98mhglth.cloudfront.net/media/vid/mountains-test.mp4",
   ]
 
 // styles

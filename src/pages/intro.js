@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import Logo from "../components/njhrc-logo";
-import SkipButton from "../components/skip-button";
+import LinkButton from "../components/link-button";
 import QuestionOverlay from "../components/question-overlay";
 import "../styles/video-page-styles.css";
 import "../styles/clear.css";
@@ -26,7 +26,7 @@ class overlayText extends React.Component {
 	    	<title>NJ HRC Site</title>
 	      	< QuestionOverlay />
 	      < Logo />
-	      <Link to="/stories-hub">< SkipButton /></Link>
+	      <Link to="/stories-hub">< LinkButton /></Link>
 	    </main>
 	  )
 

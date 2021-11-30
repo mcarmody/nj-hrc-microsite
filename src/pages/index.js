@@ -1,8 +1,9 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import Logo from "../components/njhrc-logo";
-import SkipButton from "../components/skip-button";
+import LinkButton from "../components/link-button";
 import BackgroundMovie from "../components/background-movie";
+import "../styles/index-styles.css";
 
 const landingVid = "https://d2ycth98mhglth.cloudfront.net/media/vid/rain-test.mp4"
 
@@ -41,7 +42,10 @@ const LandingPage = () => {
         <span style={headingBoldStyles}>Human.</span>
       </h1>
       < Logo />
-      <Link to="/stories-hub">< SkipButton /></Link>
+      <div className = "link-container">
+        <Link to="/intro">< LinkButton title = "Enter Experience"/></Link>
+        <Link to="/stories-hub">< LinkButton title = "Main Site" /></Link>
+      </div>
     </main>
   )
 }

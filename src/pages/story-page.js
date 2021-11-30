@@ -2,7 +2,6 @@ import * as React from "react"
 import { Link } from "gatsby"
 import landingVid from "../media/vid/rain-test.mp4"
 import Logo from "../components/njhrc-logo";
-import SkipButton from "../components/skip-button";
 import NavMovie from "../components/nav-movie";
 import SideNavItem from "../components/side-nav-item.js"
 import "../styles/individual-page-styles.css";

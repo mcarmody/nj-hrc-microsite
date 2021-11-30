@@ -1,9 +1,11 @@
 import * as React from "react"
 import "../styles/video-page-styles.css";
 import BackgroundMovie from "./background-movie";
-import rainVid from "../media/vid/rain-test.mp4"
-import godraysVid from "../media/vid/godrays-test.mp4"
-import mountainsVid from "../media/vid/mountains-test.mp4"
+const videoList = [
+  "https://d2ycth98mhglth.cloudfront.net/media/vid/rain-test.mp4",
+  "https://d2ycth98mhglth.cloudfront.net/media/vid/godrays-test.mp4",
+  "https://d2ycth98mhglth.cloudfront.net/media/vid/mountains-test.mp4",
+  ]
 
 const headingBoldStyles = {
 	fontWeight: 700,
@@ -26,7 +28,6 @@ var thirdVideoDuration; //length of third video in milliseconds
 var betweenCopyDelay = 2000;
 var videoOverlay;
 var overlayBG;
-var bgVideo;
 var buttonsContainer;
 
 const copyUpdates = [
@@ -45,7 +46,7 @@ class QuestionOverlay extends React.Component {
 		super(props);
 		this.state = {
 			stage: 0,
-			video: mountainsVid,
+			video: videoList[0],
 			copy: copyUpdates[0],
 			yesVal: 2,
 			noVal: 3,
@@ -56,7 +57,6 @@ class QuestionOverlay extends React.Component {
 		//assign all the variables so we don't keep calling getElements
 		videoOverlay = document.getElementsByClassName("video-overlay-copy")[0];
 		overlayBG = document.getElementsByClassName("overlay-background")[0];
-		bgVideo = document.getElementById("landing-clip");
 		buttonsContainer = document.getElementsByClassName("overlay-buttons-container")[0];
 		this.updateCopy();
 		this.playNewVideo(firstVideoDuration, betweenCopyDelay, this.state.stage);
@@ -83,10 +83,11 @@ class QuestionOverlay extends React.Component {
 			buttonsContainer.classList.add("hidden");
 
 			setTimeout(function() { //the first round of copy appearing
+				document.getElementById("landing-clip").classList.add("hidden");
 				videoOverlay.innerHTML = copyUpdates[stage];
 				videoOverlay.classList.remove("hidden");
-				bgVideo.classList.add("hidden");
 				console.log("hide the video");
+				console.log(document.getElementById("landing-clip"));
 			}, firstTimer);
 
 			setTimeout(function() { //second part of the question
@@ -100,7 +101,7 @@ class QuestionOverlay extends React.Component {
 			//the first round of copy appearing
 			videoOverlay.innerHTML = copyUpdates[stage];
 			videoOverlay.classList.remove("hidden");
-			bgVideo.classList.add("hidden");
+			document.getElementById("landing-clip").classList.add("hidden");
 
 			setTimeout(function() { //second part of the question
 				videoOverlay.innerHTML = copyUpdates[stage+1];
@@ -112,25 +113,25 @@ class QuestionOverlay extends React.Component {
 	stateSwitch = () => {
 		switch(this.state.stage) {
 			case 0: //this is the landing video
-				this.setState({video: mountainsVid, videoReset: true})
+				this.setState({video: videoList[0], videoReset: true})
 				break;
 			case 1: //this is the first questions
 				this.setState({yesVal: 2, noVal: 3})
 				break;
 			case 2: //this is the second video page
-				this.setState({video: rainVid, videoReset: true})
+				this.setState({video: videoList[1], videoReset: true})
 				break;
 			case 3: //this is the second questions
 				this.setState({yesVal: 4, noVal: 5})
 				break;
 			case 4: //this is the third video
-				this.setState({video: mountainsVid, videoReset: true})
+				this.setState({video: videoList[0], videoReset: true})
 				break;
 			case 5: //this is the third questions
 				this.setState({yesVal: 6, noVal: 6})
 				break;
 			case 6: //this is the last video
-				this.setState({video: godraysVid, videoReset: true})
+				this.setState({video: videoList[2], videoReset: true})
 				break;
 		}
 		
@@ -147,6 +148,7 @@ class QuestionOverlay extends React.Component {
 		}
 		if(this.state.videoReset) {
 			this.playNewVideo(firstVideoDuration, betweenCopyDelay, this.state.stage);
+			this.setState({videoReset: false});
 		}
 	}
 
