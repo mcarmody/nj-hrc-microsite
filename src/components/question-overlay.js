@@ -1,4 +1,5 @@
 import * as React from "react"
+import { navigate } from "gatsby"
 import "../styles/video-page-styles.css";
 import BackgroundMovie from "./background-movie";
 const videoList = [
@@ -22,21 +23,21 @@ const vidStyles = {
 }
 
 var timerCount = 0; //duration of current video in milliseconds
-var firstVideoDuration = 6000; //length of first video in milliseconds
-var secondVideoDuration; //length of second video in milliseconds
-var thirdVideoDuration; //length of third video in milliseconds
+var firstVideoDuration = 2000; //length of first video in milliseconds
+var secondVideoDuration = 2000; //length of second video in milliseconds
+var thirdVideoDuration = 2000; //length of third video in milliseconds
 var betweenCopyDelay = 2000;
 var videoOverlay;
 var overlayBG;
 var buttonsContainer;
 
 const copyUpdates = [
-	"<span style={headingBoldStyles}>Here in New Jersey,</span><br />when it comes to<br />opioids and overdoses...",
-	"Do you think what we</br> are doing is working?",
-	"What about now...",
-	"How do you feel?",
-	"This is ridiculous...",
-	"Are you convinced yet?",
+	"<span style={headingBoldStyles}>Here in New Jersey,</span><br />when it comes to<br />opioids and overdoses...", //1
+	"...do you think what we</br> are doing is working?", //1B
+	"Given those facts...", //2A
+	"...do you think continuing to do more of the same will work?", //2B
+	"Would you at least be willing to learn about how harm reductionworks to address these critical issues facing New Jerseyans?", //3A
+	"Would you be willing to try something new?", //3B
 	"Placeholder text, this is where we go to the main site"
 ];
 
@@ -81,6 +82,12 @@ class QuestionOverlay extends React.Component {
 			videoOverlay.classList.add("hidden");
 			buttonsContainer.classList.add("hidden");
 
+			if(stage==6) {
+				setTimeout(function(){
+					navigate('/stories-hub');
+				}, thirdVideoDuration);
+			}
+
 			setTimeout(function() { //the first round of copy appearing
 				document.getElementById("landing-clip").classList.add("hidden");
 				videoOverlay.innerHTML = copyUpdates[stage];
@@ -89,10 +96,13 @@ class QuestionOverlay extends React.Component {
 				console.log(document.getElementById("landing-clip"));
 			}, firstTimer);
 
+			
 			setTimeout(function() { //second part of the question
-				videoOverlay.innerHTML = copyUpdates[stage+1];
+				if(stage!==4) {
+					videoOverlay.innerHTML = copyUpdates[stage+1];
+				}
 				buttonsContainer.classList.remove("hidden");
-			}, firstTimer + secondTimer);
+				}, firstTimer + secondTimer);
 
 		} else {
 			console.log("Straight to the question");
@@ -154,14 +164,14 @@ class QuestionOverlay extends React.Component {
 			console.log("Straight to the question");
 
 			//the first round of copy appearing
-			videoOverlay.innerHTML = copyUpdates[4];
+			videoOverlay.innerHTML = copyUpdates[5];
 			videoOverlay.classList.remove("hidden");
 			document.getElementById("landing-clip").classList.add("hidden");
 
-			setTimeout(function() { //second part of the question
-				videoOverlay.innerHTML = copyUpdates[5];
-				buttonsContainer.classList.remove("hidden");
-			}, betweenCopyDelay);
+			// setTimeout(function() { //second part of the question
+			// 	videoOverlay.innerHTML = copyUpdates[5];
+			// 	buttonsContainer.classList.remove("hidden");
+			// }, betweenCopyDelay);
 		} 
 	}
 
