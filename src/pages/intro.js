@@ -26,7 +26,9 @@ class overlayText extends React.Component {
 	    	<title>NJ HRC Site</title>
 	      	< QuestionOverlay />
 	      < Logo />
-	      <Link to="/stories-hub">< LinkButton /></Link>
+	      <div className = "link-container">
+	      	<Link to="/stories-hub">< LinkButton title = "Main Site" /></Link>
+      	</div>
 	    </main>
 	  )
 

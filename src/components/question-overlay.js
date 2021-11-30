@@ -36,10 +36,9 @@ const copyUpdates = [
 	"What about now...",
 	"How do you feel?",
 	"This is ridiculous...",
-	"Are you convinced yet?"
+	"Are you convinced yet?",
+	"Placeholder text, this is where we go to the main site"
 ];
-
-const secondTextUpdate = "Do you think what we</br> are doing is working?";
 
 class QuestionOverlay extends React.Component {
 	constructor(props) {
@@ -99,12 +98,12 @@ class QuestionOverlay extends React.Component {
 			console.log("Straight to the question");
 
 			//the first round of copy appearing
-			videoOverlay.innerHTML = copyUpdates[stage];
+			videoOverlay.innerHTML = copyUpdates[stage-1];
 			videoOverlay.classList.remove("hidden");
 			document.getElementById("landing-clip").classList.add("hidden");
 
 			setTimeout(function() { //second part of the question
-				videoOverlay.innerHTML = copyUpdates[stage+1];
+				videoOverlay.innerHTML = copyUpdates[stage];
 				buttonsContainer.classList.remove("hidden");
 			}, secondTimer);
 		}
@@ -120,12 +119,14 @@ class QuestionOverlay extends React.Component {
 				break;
 			case 2: //this is the second video page
 				this.setState({video: videoList[1], videoReset: true})
+				this.setState({yesVal: 4, noVal: 5})
 				break;
 			case 3: //this is the second questions
 				this.setState({yesVal: 4, noVal: 5})
 				break;
 			case 4: //this is the third video
 				this.setState({video: videoList[0], videoReset: true})
+				this.setState({yesVal: 6, noVal: 6})
 				break;
 			case 5: //this is the third questions
 				this.setState({yesVal: 6, noVal: 6})
@@ -144,12 +145,24 @@ class QuestionOverlay extends React.Component {
 			this.stateSwitch();
 		}
 		if(this.state.copy !== prevState.copy) {
-			this.updateCopy();
+			//this.updateCopy();
 		}
 		if(this.state.videoReset) {
 			this.playNewVideo(firstVideoDuration, betweenCopyDelay, this.state.stage);
 			this.setState({videoReset: false});
-		}
+		} else if(this.state.stage==5) {
+			console.log("Straight to the question");
+
+			//the first round of copy appearing
+			videoOverlay.innerHTML = copyUpdates[4];
+			videoOverlay.classList.remove("hidden");
+			document.getElementById("landing-clip").classList.add("hidden");
+
+			setTimeout(function() { //second part of the question
+				videoOverlay.innerHTML = copyUpdates[5];
+				buttonsContainer.classList.remove("hidden");
+			}, betweenCopyDelay);
+		} 
 	}
 
 
