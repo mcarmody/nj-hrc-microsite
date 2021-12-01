@@ -14,8 +14,7 @@ class IndividualStory extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "test",
-      //this.props.location.state.title
+      title: this.props.location.state.title,
       contentItems: [
         {type: "link", data: "http://www.mikecarmody.net", metadata: "a test link"},
         {type: "link", data: "http://www.mikecarmody.net", metadata: "another test link"},
@@ -26,12 +25,17 @@ class IndividualStory extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.setState({title: this.props.location.state.title})
+  }
+
+
   selectItem = (id) => {
     this.setState({selectedItem: this.state.contentItems[id]});
-    console.log(this.state.selectedItem)
   }
 
   render() {
+    console.log(this.state.title)
 
     var selectedItem = this.state.selectedItem;
 
