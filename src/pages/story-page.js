@@ -8,13 +8,12 @@ import "../styles/individual-page-styles.css";
 
 const mediaLinkUrl = "https://d2ycth98mhglth.cloudfront.net/media"
 
-
 // markup
 class IndividualStory extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      title: this.props.location.state.title,
+    this.state = JSON.parse(window.localStorage.getItem('state')) || {
+      title: "Placeholder",
       contentItems: [
         {type: "link", data: "http://www.mikecarmody.net", metadata: "a test link"},
         {type: "link", data: "http://www.mikecarmody.net", metadata: "another test link"},
@@ -26,16 +25,33 @@ class IndividualStory extends React.Component {
   }
 
   componentDidMount() {
-    this.setState({title: this.props.location.state.title})
+    this.props.location.state ? this.setState({title: this.props.location.state.data}) : console.log("do nothing");
+    if(this.state.title=="undefined") {
+      this.setState({title: this.props.location.state.title});
+    }
   }
 
+  componentWillUnmount() {
+    console.log(this.state.title)
+    console.log("back up")
+  }
+
+  componentDidUpdate() {
+    window.localStorage.setItem('state', JSON.stringify(this.state))
+    if(this.props.location.state && this.state.title!==this.props.location.state.data) {
+      this.setState({title: this.props.location.state.data});
+    }
+    if(this.state !== JSON.parse(window.localStorage.getItem('state'))) {
+      window.localStorage.setItem('state', JSON.stringify(this.state))
+    }
+  }
 
   selectItem = (id) => {
     this.setState({selectedItem: this.state.contentItems[id]});
+    console.log(this.state.title)
   }
 
   render() {
-    console.log(this.state.title)
 
     var selectedItem = this.state.selectedItem;
 
@@ -46,7 +62,7 @@ class IndividualStory extends React.Component {
           <div className = "story-content" style = {{backgroundImage: "url("+mediaLinkUrl+this.state.selectedItem.data+")"}}>
             <div className = "story-copy">{this.state.selectedItem.metadata}</div>
             {this.state.selectedItem.type=="video" ? (
-              <video autoplay="autoPlay" muted loop id="story-clip" className = "story-video-container">
+              <video autoPlay="autoplay" muted loop id="story-clip" className = "story-video-container">
                 <source src = {mediaLinkUrl+this.state.selectedItem.data} type="video/mp4" className = "story-video"/>
               </video>
             ) : console.log("not a video")}

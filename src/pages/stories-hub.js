@@ -18,7 +18,7 @@ const pageStyles = {
 const titlesList = [
   "How We Got Here",
   "Harm Reduction 101",
-  "Viral Hepatitis & HIV",
+  "Viral Hepatitis and HIV",
   "Overdose and Prevention",
   "Connect To Services"
 ]

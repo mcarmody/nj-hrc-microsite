@@ -6,7 +6,7 @@ class SideNavItem extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			
+			source: this.props.data
 		};
 	}
 
@@ -20,7 +20,7 @@ class SideNavItem extends React.Component {
 		}
 
 		return (
-			<div className = "nav-item"  onClick={this.props.onClick}>
+			<div className = "nav-item"  onClick={this.props.onClick} style = {{backgroundImage: "url("+this.state.source+")"}}>
 				{this.props.data}
 			</div>
 		)

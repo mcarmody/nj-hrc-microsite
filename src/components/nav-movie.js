@@ -57,11 +57,6 @@ class NavMovie extends React.Component {
 			backgroundImage: "url("+this.props.source+")"
 		}
 
-		console.log("url:("+this.props.source+")")
-
-		const passThroughData  = this.state.data;
-
-
 		var allNavVideos = [];
 
 		function getNavVideos(self) {
@@ -90,7 +85,7 @@ class NavMovie extends React.Component {
 				<div className = "background-image" />
 
 		  		<div className = "video-title">{this.props.title}</div>
-		  		<Link className = "story-link" to="/story-page" state = {passThroughData}>>></Link>
+		  		<Link className = "story-link" to="/story-page" state = {{data: this.state.data.title}}>>></Link>
 	  		</div>
 		)
 	}

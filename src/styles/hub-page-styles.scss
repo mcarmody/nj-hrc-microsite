@@ -22,7 +22,7 @@ body {
 	background-size: cover;
 
 	&:hover::before {
-		background: rgba(255,255,255,0.3);
+		background: rgba(255,255,255,0.1);
 		z-index: 101;
 		content: "";
 		position: absolute;
@@ -76,7 +76,7 @@ body {
 	height: 140px;
 	padding: 60px 5% 0 5%;
 	z-index: 100;
-	font-weight: bold;
+	line-height: 120px;
 	color: orange;
 	font-size: 36pt;
 	transition: background 1s, color 1s, opacity .5s 0.2s;
