@@ -56,16 +56,18 @@ body {
 	font-weight: bold;
 	color: orange;
 	font-size: 36pt;
-	transition: background 1s, color 1s, opacity 1s 0.2s;
+	transition: background 1s, color 1s, opacity .5s 0.2s;
 	background: rgba(0,0,0,0);
+	pointer-events:  none;
 
 	&:hover {
-		color: black;
-
+		opacity: 1;
+		
 		&::before {
 			opacity: 1;
 		}
 	}
+
 }
 
 .story-link::before {
@@ -83,4 +85,5 @@ body {
 
 .column-highlighted .story-link {
 	opacity: 1;
+	pointer-events:  auto;
 }
