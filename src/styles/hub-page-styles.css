@@ -4,6 +4,7 @@ body {
 }
 
 .video-container {
+  width: 15vw;
   max-width: 15vw;
   height: 100vh;
   overflow: hidden;
@@ -17,6 +18,9 @@ body {
   border-right: 1px solid black;*/
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 .video-container:hover::before {
   background: rgba(255, 255, 255, 0.3);
@@ -30,8 +34,10 @@ body {
 }
 
 .column-highlighted {
+  width: 35vw;
   max-width: 35vw !important;
   cursor: auto;
+  pointer-events: none;
 }
 .column-highlighted:hover::before {
   display: none;

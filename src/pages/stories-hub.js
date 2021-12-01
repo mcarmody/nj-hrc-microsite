@@ -2,10 +2,12 @@ import * as React from "react";
 import Logo from "../components/njhrc-logo";
 import NavMovie from "../components/nav-movie";
 
-const videoList = [
-  "https://d2ycth98mhglth.cloudfront.net/media/vid/rain-test.mp4",
-  "https://d2ycth98mhglth.cloudfront.net/media/vid/godrays-test.mp4",
-  "https://d2ycth98mhglth.cloudfront.net/media/vid/mountains-test.mp4",
+const imageList = [
+  "https://d2ycth98mhglth.cloudfront.net/media/img/story-bg-1.jpg",
+  "https://d2ycth98mhglth.cloudfront.net/media/img/story-bg-2.jpg",
+  "https://d2ycth98mhglth.cloudfront.net/media/img/story-bg-3.jpg",
+  "https://d2ycth98mhglth.cloudfront.net/media/img/story-bg-4.jpg",
+  "https://d2ycth98mhglth.cloudfront.net/media/img/story-bg-5.jpg",
   ]
 
 // styles
@@ -53,11 +55,11 @@ class StoriesHub extends React.Component {
     return (
       <main style={pageStyles}>
       	<title>Stories Hub</title>
-    		< NavMovie source= {videoList[0]} videoName = "first" title = {titlesList[0]}/>
-        < NavMovie source= {videoList[1]} videoName = "second" title = {titlesList[1]}/>
-        < NavMovie source= {videoList[0]} videoName = "third" title = {titlesList[2]}/>
-        < NavMovie source= {videoList[1]} videoName = "fourth" title = {titlesList[3]}/>
-        < NavMovie source= {videoList[0]} videoName = "fifth" title = {titlesList[4]}/>
+    		< NavMovie source= {imageList[0]} videoName = "first" title = {titlesList[0]}/>
+        < NavMovie source= {imageList[1]} videoName = "second" title = {titlesList[1]}/>
+        < NavMovie source= {imageList[2]} videoName = "third" title = {titlesList[2]}/>
+        < NavMovie source= {imageList[3]} videoName = "fourth" title = {titlesList[3]}/>
+        < NavMovie source= {imageList[4]} videoName = "fifth" title = {titlesList[4]}/>
         < Logo wordmark = {true} sideCopy = {false}/>
       </main>
     )
