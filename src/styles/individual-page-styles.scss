@@ -33,6 +33,10 @@
 	width: 75vw;
 	height: 485px;
 	background: black;
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	overflow: hidden;
 }
 
 .side-nav-container {
@@ -49,4 +53,14 @@
 	width: 24vw;
 	background: #E9E9E9;
 	min-height: 72px;
+}
+
+.story-video-container {
+	height: 100%;
+	width: 100%;
+}
+
+.story-video {
+	height: 100%;
+	width: 100%;
 }
