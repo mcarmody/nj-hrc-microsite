@@ -18,9 +18,23 @@ body {
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
 }
+.video-container:hover::before {
+  background: rgba(255, 255, 255, 0.3);
+  z-index: 101;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
 
 .column-highlighted {
-  max-width: 32vw !important;
+  max-width: 35vw !important;
+  cursor: auto;
+}
+.column-highlighted:hover::before {
+  display: none;
 }
 
 .video-title {
@@ -33,11 +47,13 @@ body {
   font-weight: bold;
   font-size: 23px;
   line-height: 30px;
+  -webkit-transition: all 0.4s ease-in-out;
+  transition: all 0.4s ease-in-out;
 }
 
 .column-highlighted .video-title {
   left: 70px;
-  width: 385px;
+  width: 420px;
   font-size: 48px;
   line-height: 60px;
 }

@@ -16,10 +16,26 @@ body {
 	/*border-left: 1px solid black;
 	border-right: 1px solid black;*/
 	transition: all .5s;
+
+	&:hover::before {
+		background: rgba(255,255,255,0.3);
+		z-index: 101;
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+	}
 }
 
 .column-highlighted {
-	max-width: 32vw !important;
+	max-width: 35vw !important;
+	cursor: auto;
+
+	&:hover::before {
+		display: none;
+	}
 }
 
 .video-title {
@@ -32,11 +48,12 @@ body {
 	font-weight: bold;
 	font-size: 23px;
 	line-height: 30px;
+	transition: all .4s ease-in-out;
 }
 
 .column-highlighted .video-title {
 	left: 70px;
-	width: 385px;
+	width: 420px;
 	font-size: 48px;
 	line-height: 60px;
 }

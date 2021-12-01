@@ -42,15 +42,6 @@ class NavMovie extends React.Component {
 
 	render() {
 
-		const vidContainerStyles = {
-			maxWidth: "16vw",
-			height: "100vh",
-			overflow: "hidden",
-			top: 0,
-			position: "relative",
-			display: "inline-block",
-			cursor: "pointer"
-		}
 
 		const passThroughData  = this.state.data;
 
@@ -72,14 +63,14 @@ class NavMovie extends React.Component {
 				ReactDOM.findDOMNode(self).classList.add("column-highlighted");
 				document.getElementById(self.props.videoName).play();
 			} else {
-				ReactDOM.findDOMNode(self).classList.remove("column-highlighted");
-				document.getElementById(self.props.videoName).pause();
+				// ReactDOM.findDOMNode(self).classList.remove("column-highlighted");
+				// document.getElementById(self.props.videoName).pause();
 			}
 		}
 
 		return (
 			<div className = "video-container" onClick={() => toggle(this)}>
-				<video muted loop style={vidStyles} id={this.props.videoName}>
+				<video muted loop className = "video-content" id={this.props.videoName}>
 		      		<source src = {this.props.source} type="video/mp4" />
 		  		</video>
 		  		<div className = "video-title">{this.props.title}</div>
