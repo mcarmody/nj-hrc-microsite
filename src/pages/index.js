@@ -5,6 +5,7 @@ import LinkButton from "../components/link-button";
 import BackgroundMovie from "../components/background-movie";
 import "../styles/index-styles.css";
 
+
 const landingVid = "https://d2ycth98mhglth.cloudfront.net/media/vid/rain-test.mp4"
 
 
