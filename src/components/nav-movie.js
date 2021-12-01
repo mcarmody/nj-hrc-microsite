@@ -83,7 +83,7 @@ class NavMovie extends React.Component {
 		      		<source src = {this.props.source} type="video/mp4" />
 		  		</video>
 		  		<div className = "video-title">{this.props.title}</div>
-		  		<Link className = "story-link" to="/story-page" state = {passThroughData}>Click here to explore</Link>
+		  		<Link className = "story-link" to="/story-page" state = {passThroughData}>>></Link>
 	  		</div>
 		)
 	}

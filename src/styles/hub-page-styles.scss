@@ -15,6 +15,7 @@ body {
 	color:  white;
 	/*border-left: 1px solid black;
 	border-right: 1px solid black;*/
+	transition: all .5s;
 }
 
 .column-highlighted {
@@ -23,9 +24,10 @@ body {
 
 .video-title {
 	left: 12px;
-	width: 150px;
+	width: 185px;
 	display: block;
 	position: absolute;
+	text-transform: uppercase;
 	top: 40px;
 	font-weight: bold;
 	font-size: 23px;
@@ -34,19 +36,51 @@ body {
 
 .column-highlighted .video-title {
 	left: 70px;
-	width: 230px;
+	width: 385px;
 	font-size: 48px;
 	line-height: 60px;
 }
 
 .story-link {
-	display: none;
+	display: block;
+	opacity: 0;
+	background: rgba(0,0,0,0);
+	text-decoration: none;
 	position: absolute;
-	top:  50vh;
+	top:  0px;
+	text-align: right;
+	width: 90%;
+	height: 140px;
+	padding: 60px 5% 0 5%;
 	z-index: 100;
+	font-weight: bold;
+	color: orange;
+	font-size: 36pt;
+	transition: background 1s, color 1s, opacity 1s 0.2s;
+	background: rgba(0,0,0,0);
+
+	&:hover {
+		color: black;
+
+		&::before {
+			opacity: 1;
+		}
+	}
+}
+
+.story-link::before {
+	position: absolute;
+	content: "";
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	opacity: 0;
+	background: linear-gradient(147.23deg, rgba(255, 84, 0, 0.54) 10.03%, rgba(255, 105, 31, 0) 45.96%);
+	z-index: -1;
+	transition:  opacity .5s;
 }
 
 .column-highlighted .story-link {
-	display: block;
-	left:  70px;
+	opacity: 1;
 }
