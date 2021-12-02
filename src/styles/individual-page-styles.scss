@@ -50,9 +50,23 @@
 	position: relative;
 	color: black;
 	display: block;
-	width: 24vw;
+	width: 22vw;
 	background: #E9E9E9;
 	min-height: 72px;
+	padding-left: 12px;
+	line-height: 64px;
+	cursor: pointer;
+
+	&:hover::before {
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(255,255,255,.2);
+		z-index: 101;
+		position: absolute;
+		content: "";
+	}
 }
 
 .story-video-container {
@@ -63,4 +77,28 @@
 .story-video {
 	height: 100%;
 	width: 100%;
+}
+
+.back-link {
+	display: block;
+	position: relative;
+	padding-left: 12px;
+	width: 22vw;
+	height: 64px;
+	background: #CC4400;
+	color:  white;
+	line-height: 64px;
+	text-decoration: none;
+	font-weight: bold;
+
+	&:hover::before {
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: rgba(255,255,255,.5);
+		z-index: 101;
+		position: absolute;
+		content: "";
+	}
 }

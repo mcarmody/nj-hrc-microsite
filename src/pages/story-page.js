@@ -99,6 +99,7 @@ class IndividualStory extends React.Component {
           
         </div>
         <div className = "side-nav-container">
+          <Link to="/stories-hub" className = "back-link">Home</Link>
           < SideNavItem type = {this.state.contentItems[(this.state.id*4)].type} data = {this.state.contentItems[(this.state.id*4)].data} onClick={() => this.selectItem((this.state.id*4))} />
           < SideNavItem type = {this.state.contentItems[(this.state.id*4+1)].type} data = {this.state.contentItems[(this.state.id*4+1)].data} onClick={() => this.selectItem((this.state.id*4+1))} />
           < SideNavItem type = {this.state.contentItems[(this.state.id*4+2)].type} data = {this.state.contentItems[(this.state.id*4+2)].data} onClick={() => this.selectItem((this.state.id*4+2))} />
