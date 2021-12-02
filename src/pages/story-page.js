@@ -11,27 +11,27 @@ const rawContent = [
         {type: "link", data: "http://www.mikecarmody.net", metadata: "a test link"},
         {type: "link", data: "http://www.mikecarmody.net", metadata: "another test link"},
         {type: "image", data: "/img/harm_reduction_test.png", metadata: "harm reduction image test"},
-        {type: "video", data: "/vid/godrays-test.mp4", metadata: "godrays video test"},
+        {type: "video", data: "/vid/godrays-test.mp4", metadata: "godrays video test", metadata2: "/img/harm_reduction_test.png"},
         //second group
         {type: "link", data: "http://www.mikecarmody2.net", metadata: "a test link"},
         {type: "link", data: "http://www.mikecarmody2.net", metadata: "another test link"},
         {type: "image", data: "/img/harm_reduction_test.png", metadata: "harm reduction image test"},
-        {type: "video", data: "/vid/godrays-test.mp4", metadata: "godrays video test"},
+        {type: "video", data: "/vid/godrays-test.mp4", metadata: "godrays video test", metadata2: "/img/harm_reduction_test.png"},
         //third group
         {type: "link", data: "http://www.mikecarmody3.net", metadata: "a test link"},
         {type: "link", data: "http://www.mikecarmody3.net", metadata: "another test link"},
         {type: "image", data: "/img/harm_reduction_test.png", metadata: "harm reduction image test"},
-        {type: "video", data: "/vid/godrays-test.mp4", metadata: "godrays video test"},
+        {type: "video", data: "/vid/godrays-test.mp4", metadata: "godrays video test", metadata2: "/img/harm_reduction_test.png"},
         //fourth group
         {type: "link", data: "http://www.mikecarmody4.net", metadata: "a test link"},
         {type: "link", data: "http://www.mikecarmody4.net", metadata: "another test link"},
         {type: "image", data: "/img/harm_reduction_test.png", metadata: "harm reduction image test"},
-        {type: "video", data: "/vid/godrays-test.mp4", metadata: "godrays video test"},
+        {type: "video", data: "/vid/godrays-test.mp4", metadata: "godrays video test", metadata2: "/img/harm_reduction_test.png"},
         //fifth group
         {type: "link", data: "http://www.mikecarmody5.net", metadata: "a test link"},
         {type: "link", data: "http://www.mikecarmody5.net", metadata: "another test link"},
         {type: "image", data: "/img/harm_reduction_test.png", metadata: "harm reduction image test"},
-        {type: "video", data: "/vid/godrays-test.mp4", metadata: "godrays video test"}
+        {type: "video", data: "/vid/godrays-test.mp4", metadata: "godrays video test", metadata2: "/img/harm_reduction_test.png"}
       ];
 
 const mediaLinkUrl = "https://d2ycth98mhglth.cloudfront.net/media";
@@ -100,10 +100,11 @@ class IndividualStory extends React.Component {
         </div>
         <div className = "side-nav-container">
           <Link to="/stories-hub" className = "back-link">Home</Link>
-          < SideNavItem type = {this.state.contentItems[(this.state.id*4)].type} data = {this.state.contentItems[(this.state.id*4)].data} onClick={() => this.selectItem((this.state.id*4))} />
-          < SideNavItem type = {this.state.contentItems[(this.state.id*4+1)].type} data = {this.state.contentItems[(this.state.id*4+1)].data} onClick={() => this.selectItem((this.state.id*4+1))} />
-          < SideNavItem type = {this.state.contentItems[(this.state.id*4+2)].type} data = {this.state.contentItems[(this.state.id*4+2)].data} onClick={() => this.selectItem((this.state.id*4+2))} />
-          < SideNavItem type = {this.state.contentItems[(this.state.id*4+3)].type} data = {this.state.contentItems[(this.state.id*4+3)].data} onClick={() => this.selectItem((this.state.id*4+3))} />
+          < SideNavItem type = {this.state.contentItems[(this.state.id*4)].type} data = {mediaLinkUrl+this.state.contentItems[(this.state.id*4)].data} metadata = {this.state.contentItems[(this.state.id*4)].metadata} onClick={() => this.selectItem((this.state.id*4))} />
+          < SideNavItem type = {this.state.contentItems[(this.state.id*4+1)].type} data = {mediaLinkUrl+this.state.contentItems[(this.state.id*4+1)].data} metadata = {this.state.contentItems[(this.state.id*4+1)].metadata} onClick={() => this.selectItem((this.state.id*4+1))} />
+          < SideNavItem type = {this.state.contentItems[(this.state.id*4+2)].type} data = {mediaLinkUrl+this.state.contentItems[(this.state.id*4+2)].data} metadata = {this.state.contentItems[(this.state.id*4+2)].metadata} onClick={() => this.selectItem((this.state.id*4+2))} />
+          < SideNavItem type = {this.state.contentItems[(this.state.id*4+3)].type} data = {mediaLinkUrl+this.state.contentItems[(this.state.id*4+3)].data} metadata = {this.state.contentItems[(this.state.id*4+3)].metadata} metadata2 = {mediaLinkUrl+this.state.contentItems[(this.state.id*4+3)].metadata2} onClick={() => this.selectItem((this.state.id*4+3))} />
+          < SideNavItem type = {this.state.contentItems[(this.state.id*4+3)].type} data = {mediaLinkUrl+this.state.contentItems[(this.state.id*4+3)].data} metadata = {this.state.contentItems[(this.state.id*4+3)].metadata} metadata2 = {mediaLinkUrl+this.state.contentItems[(this.state.id*4+3)].metadata2} onClick={() => this.selectItem((this.state.id*4+3))} />
         </div>
         < Logo wordmark = {false} sideCopy = {true} size = {"small"}/>
       </div>
