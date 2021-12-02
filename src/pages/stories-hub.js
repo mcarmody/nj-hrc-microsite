@@ -55,11 +55,11 @@ class StoriesHub extends React.Component {
     return (
       <main style={pageStyles}>
       	<title>Stories Hub</title>
-    		< NavMovie source= {imageList[0]} videoName = "first" title = {titlesList[0]}/>
-        < NavMovie source= {imageList[1]} videoName = "second" title = {titlesList[1]}/>
-        < NavMovie source= {imageList[2]} videoName = "third" title = {titlesList[2]}/>
-        < NavMovie source= {imageList[3]} videoName = "fourth" title = {titlesList[3]}/>
-        < NavMovie source= {imageList[4]} videoName = "fifth" title = {titlesList[4]}/>
+    		< NavMovie source= {imageList[0]} id = "0" videoName = "first" title = {titlesList[0]}/>
+        < NavMovie source= {imageList[1]} id = "1" videoName = "second" title = {titlesList[1]}/>
+        < NavMovie source= {imageList[2]} id = "2" videoName = "third" title = {titlesList[2]}/>
+        < NavMovie source= {imageList[3]} id = "3" videoName = "fourth" title = {titlesList[3]}/>
+        < NavMovie source= {imageList[4]} id = "4" videoName = "fifth" title = {titlesList[4]}/>
         < Logo wordmark = {true} sideCopy = {false}/>
       </main>
     )

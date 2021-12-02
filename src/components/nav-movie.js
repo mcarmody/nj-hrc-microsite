@@ -37,7 +37,7 @@ class NavMovie extends React.Component {
 			highlighted: false,
 			data: {
 				title: this.props.title,
-				source: this.props.source
+				id: this.props.id
 			},
 		};
 	}
@@ -85,7 +85,7 @@ class NavMovie extends React.Component {
 				<div className = "background-image" />
 
 		  		<div className = "video-title">{this.props.title}</div>
-		  		<Link className = "story-link" to="/story-page" state = {{data: this.state.data.title}}>>></Link>
+		  		<Link className = "story-link" to="/story-page" state = {{data: this.state.data}}>>></Link>
 	  		</div>
 		)
 	}
