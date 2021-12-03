@@ -22,7 +22,7 @@
   top: 52px;
   left: 64px;
   text-transform: uppercase;
-  max-width: 270px;
+  max-width: 400px;
 }
 
 .story-copy {
@@ -33,10 +33,10 @@
 
 .story-content {
   position: absolute;
-  top: 270px;
+  top: 200px;
   left: 0px;
   width: 75vw;
-  height: 485px;
+  height: 560px;
   background: black;
   background-repeat: no-repeat;
   background-size: contain;

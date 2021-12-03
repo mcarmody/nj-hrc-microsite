@@ -3,6 +3,7 @@ import { Link } from "gatsby"
 import { navigate } from "gatsby"
 import landingVid from "../media/vid/rain-test.mp4"
 import Logo from "../components/njhrc-logo";
+import ActionLinks from "../components/action-links";
 import NavMovie from "../components/nav-movie";
 import SideNavItem from "../components/side-nav-item.js"
 import "../styles/individual-page-styles.css";
@@ -107,6 +108,7 @@ class IndividualStory extends React.Component {
             < SideNavItem type = {rawContent[(this.state.id*4+3)].type} data = {mediaLinkUrl+rawContent[(this.state.id*4+3)].data} metadata = {rawContent[(this.state.id*4+3)].metadata} metadata2 = {mediaLinkUrl+rawContent[(this.state.id*4+3)].metadata2} onClick={() => this.selectItem((this.state.id*4+3))} />
           </div>
           < Logo wordmark = {false} sideCopy = {true} size = {"small"}/>
+          < ActionLinks social = {true} donate = {true}/>
         </div>
       )
     } else {
