@@ -99,16 +99,16 @@ class IndividualStory extends React.Component {
             
           </div>
           <div className = "side-nav-container">
-            <Link to="/stories-hub" className = "back-link">Home</Link>
-            
+            <Link to="/stories-hub" className = "back-link">Home</Link>           
             < SideNavItem type = {rawContent[(this.state.id*4)].type} data = {mediaLinkUrl+rawContent[(this.state.id*4)].data} metadata = {rawContent[(this.state.id*4)].metadata} onClick={() => this.selectItem((this.state.id*4))} />
             < SideNavItem type = {rawContent[(this.state.id*4+1)].type} data = {mediaLinkUrl+rawContent[(this.state.id*4+1)].data} metadata = {rawContent[(this.state.id*4+1)].metadata} onClick={() => this.selectItem((this.state.id*4+1))} />
             < SideNavItem type = {rawContent[(this.state.id*4+2)].type} data = {mediaLinkUrl+rawContent[(this.state.id*4+2)].data} metadata = {rawContent[(this.state.id*4+2)].metadata} onClick={() => this.selectItem((this.state.id*4+2))} />
             < SideNavItem type = {rawContent[(this.state.id*4+3)].type} data = {mediaLinkUrl+rawContent[(this.state.id*4+3)].data} metadata = {rawContent[(this.state.id*4+3)].metadata} metadata2 = {mediaLinkUrl+rawContent[(this.state.id*4+3)].metadata2} onClick={() => this.selectItem((this.state.id*4+3))} />
             < SideNavItem type = {rawContent[(this.state.id*4+3)].type} data = {mediaLinkUrl+rawContent[(this.state.id*4+3)].data} metadata = {rawContent[(this.state.id*4+3)].metadata} metadata2 = {mediaLinkUrl+rawContent[(this.state.id*4+3)].metadata2} onClick={() => this.selectItem((this.state.id*4+3))} />
+          
+            < ActionLinks social = {true} donate = {true}/>
           </div>
           < Logo wordmark = {false} sideCopy = {true} size = {"small"}/>
-          < ActionLinks social = {true} donate = {true}/>
         </div>
       )
     } else {
