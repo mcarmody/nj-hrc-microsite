@@ -1,5 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import { navigate } from "gatsby"
 import landingVid from "../media/vid/rain-test.mp4"
 import Logo from "../components/njhrc-logo";
 import NavMovie from "../components/nav-movie";
@@ -40,11 +41,11 @@ const mediaLinkUrl = "https://d2ycth98mhglth.cloudfront.net/media";
 class IndividualStory extends React.Component {
   constructor(props) {
     super(props);
-    this.state = JSON.parse(window.localStorage.getItem('state')) || {
+    this.state = {
       title: "Placeholder",
       contentItems: [],
       selectedItem: "",
-      id: 10
+      id: 0
     };
   }
 
@@ -54,6 +55,8 @@ class IndividualStory extends React.Component {
     if(this.props.location.state) {
       this.setState({title: this.props.location.state.data.title})
       this.setState({id: this.props.location.state.data.id});
+    } else {
+       navigate("/stories-hub");
     }
     if(this.state.title=="undefined") {
       this.setState({title: this.props.location.state.title});
@@ -64,15 +67,10 @@ class IndividualStory extends React.Component {
   }
 
   componentDidUpdate() {
-    window.localStorage.setItem('state', JSON.stringify(this.state))
     if(this.props.location.state && this.state.title!==this.props.location.state.data.title) {
       this.setState({title: this.props.location.state.data.title});
       this.setState({id: this.props.location.state.data.id});
     }
-    if(this.state !== JSON.parse(window.localStorage.getItem('state'))) {
-      window.localStorage.setItem('state', JSON.stringify(this.state))
-    }
-    console.log(this.state)
   }
 
   selectItem = (id) => {
@@ -82,33 +80,38 @@ class IndividualStory extends React.Component {
 
   render() {
 
-    var selectedItem = this.state.selectedItem;
+    if(this.props.location.state) {
+      var selectedItem = this.state.selectedItem;
 
-    return (
-      <div className = "story-parent-container">
-        <div className = "selected-topic-container">
-          <div className = "story-title">{this.state.title}</div>
-          <div className = "story-content" style = {{backgroundImage: "url("+mediaLinkUrl+this.state.selectedItem.data+")"}}>
-            <div className = "story-copy">{this.state.selectedItem.metadata}</div>
-            {this.state.selectedItem.type=="video" ? (
-              <video autoPlay="autoplay" muted loop id="story-clip" className = "story-video-container">
-                <source src = {mediaLinkUrl+this.state.selectedItem.data} type="video/mp4" className = "story-video"/>
-              </video>
-            ) : console.log("not a video")}
+      return (
+        <div className = "story-parent-container">
+          <div className = "selected-topic-container">
+            <div className = "story-title">{this.state.title}</div>
+            <div className = "story-content" style = {{backgroundImage: "url("+mediaLinkUrl+this.state.selectedItem.data+")"}}>
+              <div className = "story-copy">{this.state.selectedItem.metadata}</div>
+              {this.state.selectedItem.type=="video" ? (
+                <video autoPlay="autoplay" muted loop id="story-clip" className = "story-video-container">
+                  <source src = {mediaLinkUrl+this.state.selectedItem.data} type="video/mp4" className = "story-video"/>
+                </video>
+              ) : console.log("not a video")}
+            </div>
+            
           </div>
-          
+          <div className = "side-nav-container">
+            <Link to="/stories-hub" className = "back-link">Home</Link>
+            
+            < SideNavItem type = {rawContent[(this.state.id*4)].type} data = {mediaLinkUrl+rawContent[(this.state.id*4)].data} metadata = {rawContent[(this.state.id*4)].metadata} onClick={() => this.selectItem((this.state.id*4))} />
+            < SideNavItem type = {rawContent[(this.state.id*4+1)].type} data = {mediaLinkUrl+rawContent[(this.state.id*4+1)].data} metadata = {rawContent[(this.state.id*4+1)].metadata} onClick={() => this.selectItem((this.state.id*4+1))} />
+            < SideNavItem type = {rawContent[(this.state.id*4+2)].type} data = {mediaLinkUrl+rawContent[(this.state.id*4+2)].data} metadata = {rawContent[(this.state.id*4+2)].metadata} onClick={() => this.selectItem((this.state.id*4+2))} />
+            < SideNavItem type = {rawContent[(this.state.id*4+3)].type} data = {mediaLinkUrl+rawContent[(this.state.id*4+3)].data} metadata = {rawContent[(this.state.id*4+3)].metadata} metadata2 = {mediaLinkUrl+rawContent[(this.state.id*4+3)].metadata2} onClick={() => this.selectItem((this.state.id*4+3))} />
+            < SideNavItem type = {rawContent[(this.state.id*4+3)].type} data = {mediaLinkUrl+rawContent[(this.state.id*4+3)].data} metadata = {rawContent[(this.state.id*4+3)].metadata} metadata2 = {mediaLinkUrl+rawContent[(this.state.id*4+3)].metadata2} onClick={() => this.selectItem((this.state.id*4+3))} />
+          </div>
+          < Logo wordmark = {false} sideCopy = {true} size = {"small"}/>
         </div>
-        <div className = "side-nav-container">
-          <Link to="/stories-hub" className = "back-link">Home</Link>
-          < SideNavItem type = {this.state.contentItems[(this.state.id*4)].type} data = {mediaLinkUrl+this.state.contentItems[(this.state.id*4)].data} metadata = {this.state.contentItems[(this.state.id*4)].metadata} onClick={() => this.selectItem((this.state.id*4))} />
-          < SideNavItem type = {this.state.contentItems[(this.state.id*4+1)].type} data = {mediaLinkUrl+this.state.contentItems[(this.state.id*4+1)].data} metadata = {this.state.contentItems[(this.state.id*4+1)].metadata} onClick={() => this.selectItem((this.state.id*4+1))} />
-          < SideNavItem type = {this.state.contentItems[(this.state.id*4+2)].type} data = {mediaLinkUrl+this.state.contentItems[(this.state.id*4+2)].data} metadata = {this.state.contentItems[(this.state.id*4+2)].metadata} onClick={() => this.selectItem((this.state.id*4+2))} />
-          < SideNavItem type = {this.state.contentItems[(this.state.id*4+3)].type} data = {mediaLinkUrl+this.state.contentItems[(this.state.id*4+3)].data} metadata = {this.state.contentItems[(this.state.id*4+3)].metadata} metadata2 = {mediaLinkUrl+this.state.contentItems[(this.state.id*4+3)].metadata2} onClick={() => this.selectItem((this.state.id*4+3))} />
-          < SideNavItem type = {this.state.contentItems[(this.state.id*4+3)].type} data = {mediaLinkUrl+this.state.contentItems[(this.state.id*4+3)].data} metadata = {this.state.contentItems[(this.state.id*4+3)].metadata} metadata2 = {mediaLinkUrl+this.state.contentItems[(this.state.id*4+3)].metadata2} onClick={() => this.selectItem((this.state.id*4+3))} />
-        </div>
-        < Logo wordmark = {false} sideCopy = {true} size = {"small"}/>
-      </div>
-    )
+      )
+    } else {
+      return ( null )
+    }
   }
 }
 
