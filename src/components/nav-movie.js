@@ -30,6 +30,14 @@ const imgStyle = {
 	background: "black"
 }
 
+const blurbsList = [
+	"Harm reduction works where criminalization of drug use fails.",
+	"Syringe access leads the way in preventing the spread of HIV and viral hepatitis.",
+	"Harm reduction works where criminalization of drug use fails.",
+	"Harm reduction works where criminalization of drug use fails.",
+	"Harm reduction works where criminalization of drug use fails.",
+]
+
 class NavMovie extends React.Component {
 	constructor(props) {
 		super(props);
@@ -37,7 +45,8 @@ class NavMovie extends React.Component {
 			highlighted: false,
 			data: {
 				title: this.props.title,
-				id: this.props.id
+				id: this.props.id,
+				blurb: blurbsList[this.props.id]
 			},
 		};
 	}

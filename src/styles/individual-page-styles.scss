@@ -18,8 +18,9 @@
 	position: relative;
 	font-weight: bold;
 	font-size: 48px;
+	padding-top: 20px;
 	line-height: 60px;
-	top:  52px;
+	height: 180px;
 	left: 64px;
 	text-transform: uppercase;
 	max-width: 400px;
@@ -32,8 +33,7 @@
 }
 
 .story-content {
-	position: absolute;
-	top: 200px;
+	position: relative;
 	left: 0px;
 	width: 75vw;
 	height: 560px;
@@ -161,4 +161,35 @@
 
 .nav-item-container.selected .nav-item {
 	background-color: white;
+
+	&::before {
+		content: "<";
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		background: rgba(255,255,255,.5);
+		line-height: 200px;
+		font-size: 72px;
+		margin-left: -.8vw;
+		color:  #CC4400;
+		text-align: left;
+		font-weight: 900;
+		width: 100%;
+	}
+}
+
+.contentBlurb {
+	width: 300px;
+	height: 400px;
+	color: white;
+	z-index: 1000;
+	position: relative;
+	display: block;
+	float: right;
+	padding: 32px 400px 0 0;
+	font-size: 28px;
+	font-weight: 400;
+	line-height: 40px;
 }

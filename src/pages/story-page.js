@@ -46,7 +46,8 @@ class IndividualStory extends React.Component {
       title: "Placeholder",
       contentItems: [],
       selectedItem: "",
-      id: 0
+      id: 0,
+      blurb: "Placeholder content"
     };
   }
 
@@ -56,6 +57,8 @@ class IndividualStory extends React.Component {
     if(this.props.location.state) {
       this.setState({title: this.props.location.state.data.title})
       this.setState({id: this.props.location.state.data.id});
+      this.setState({blurb: this.props.location.state.data.blurb});
+      console.log(this.props.location.state.data)
     } else {
        navigate("/stories-hub");
     }
@@ -71,6 +74,7 @@ class IndividualStory extends React.Component {
     if(this.props.location.state && this.state.title!==this.props.location.state.data.title) {
       this.setState({title: this.props.location.state.data.title});
       this.setState({id: this.props.location.state.data.id});
+      this.setState({blurb: this.props.location.state.data.blurb});
     }
   }
 
@@ -96,7 +100,7 @@ class IndividualStory extends React.Component {
                 </video>
               ) : console.log("not a video")}
             </div>
-            
+            <div className = "contentBlurb">{this.state.blurb}</div>
           </div>
           <div className = "side-nav-container">
             <Link to="/stories-hub" className = "back-link">Home</Link>           
