@@ -62,7 +62,7 @@
 .story-content {
 	position: relative;
 	left: 0px;
-	width: 75vw;
+	//width: 75vw;
 	height: 560px;
 	background: black;
 	background-repeat: no-repeat;
@@ -221,6 +221,11 @@
 		font-weight: 900;
 		width: 100%;
 	}
+}
+
+.video-player {
+	display: block;
+	margin: 0 auto;
 }
 
 .contentBlurb {

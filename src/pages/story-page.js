@@ -13,7 +13,7 @@ const rawContent = [
         //How We Got Here
         {type: "link", data: "/img/HOW+WE+GOT+HERE+STAT.JPG", title: "Cost of the Drug War", metadata: '<span className = "stat-highlight">$11.6 billion</span>spent on drug war arrests <span className = "stat-highlight">544.6 times</span>more than investment in harm reduction services'},
         {type: "link", data: "/img/HOW+WE+GOT+HERE+TESTIMONIAL.JPG", title: "Testimonial", metadata: "“New Jersey law states you need local municipal ordinance to have a syringe access program. A lot of municipal leaders don’t have a public health background and don’t understand that syringe access saves lives, saves money, and can help clean up the city.”", metadata2: "—Georgett Watson, South Jersey AIDS Alliance"},
-        {type: "video", data: "/vid/godrays-test.mp4", title: "Share the campaign", metadata: "", metadata2: "/img/how+we+got+here.jpg"},
+        {type: "video", data: "https://www.youtube.com/embed/_44LjDGKJWs", title: "Share the campaign", metadata: "", metadata2: "/img/how+we+got+here.jpg"},
         {type: "image", data: "/img/how-we-got-here_icon.png", title: "Rates of HIV where you live", metadata: "", metadata2: "/img/harm_reduction_test.png"},
         //second group
         {type: "link", data: "http://www.mikecarmody2.net", title: "", metadata: "a test link"},
@@ -114,11 +114,12 @@ class IndividualStory extends React.Component {
           <div className = "selected-topic-container">
             <div className = "story-title">{this.state.title}</div>
             <div className = {this.state.contentClass} style = {{backgroundImage: "url("+mediaLinkUrl+this.state.selectedItem.data+")"}}>
-              <div className = "story-copy" dangerouslySetInnerHTML={{ __html: this.state.description}} />
+              {this.state.selectedItem.type !== "video" ? (
+                <div className = "story-copy" dangerouslySetInnerHTML={{ __html: this.state.description}} />
+              ) : console.log("this is a video")}
               {this.state.selectedItem.type=="video" ? (
-                <video autoPlay="autoplay" muted loop id="story-clip" className = "story-video-container">
-                  <source src = {mediaLinkUrl+this.state.selectedItem.data} type="video/mp4" className = "story-video"/>
-                </video>
+                  <iframe className = "video-player" width="1280" height="560" src={this.state.selectedItem.data} title="YouTube video player" frameborder="0" autoplay="1" mute="1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
               ) : console.log("not a video")}
             </div>
             <div className = "contentBlurb">{this.state.blurb}</div>
