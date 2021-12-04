@@ -16,25 +16,25 @@ const rawContent = [
         {type: "video", data: "https://www.youtube.com/embed/_44LjDGKJWs", title: "Share the campaign", metadata: "", metadata2: "/img/how+we+got+here.jpg"},
         {type: "image", data: "/img/how-we-got-here_icon.png", title: "Rates of HIV where you live", metadata: "", metadata2: "/img/harm_reduction_test.png"},
         //second group
-        {type: "link", data: "http://www.mikecarmody2.net", title: "", metadata: "a test link"},
-        {type: "link", data: "http://www.mikecarmody2.net", title: "", metadata: "another test link"},
-        {type: "image", data: "/img/harm_reduction_test.png", title: "", metadata: "harm reduction image test"},
-        {type: "video", data: "/vid/godrays-test.mp4", title: "", metadata: "godrays video test", metadata2: "/img/harm_reduction_test.png"},
+        {type: "link", data: "/img/HOW+WE+GOT+HERE+STAT.JPG", title: "Cost of the Drug War", metadata: '<span className = "stat-highlight">$11.6 billion</span>spent on drug war arrests <span className = "stat-highlight">544.6 times</span>more than investment in harm reduction services'},
+        {type: "link", data: "/img/HOW+WE+GOT+HERE+TESTIMONIAL.JPG", title: "Testimonial", metadata: "“New Jersey law states you need local municipal ordinance to have a syringe access program. A lot of municipal leaders don’t have a public health background and don’t understand that syringe access saves lives, saves money, and can help clean up the city.”", metadata2: "—Georgett Watson, South Jersey AIDS Alliance"},
+        {type: "video", data: "https://www.youtube.com/embed/_44LjDGKJWs", title: "Share the campaign", metadata: "", metadata2: "/img/how+we+got+here.jpg"},
+        {type: "image", data: "/img/how-we-got-here_icon.png", title: "Rates of HIV where you live", metadata: "", metadata2: "/img/harm_reduction_test.png"},
         //third group
-        {type: "link", data: "http://www.mikecarmody3.net", title: "", metadata: "a test link"},
-        {type: "link", data: "http://www.mikecarmody3.net", title: "", metadata: "another test link"},
-        {type: "image", data: "/img/harm_reduction_test.png", title: "", metadata: "harm reduction image test"},
-        {type: "video", data: "/vid/godrays-test.mp4", title: "", metadata: "godrays video test", metadata2: "/img/harm_reduction_test.png"},
+        {type: "link", data: "/img/HOW+WE+GOT+HERE+STAT.JPG", title: "Cost of the Drug War", metadata: '<span className = "stat-highlight">$11.6 billion</span>spent on drug war arrests <span className = "stat-highlight">544.6 times</span>more than investment in harm reduction services'},
+        {type: "link", data: "/img/HOW+WE+GOT+HERE+TESTIMONIAL.JPG", title: "Testimonial", metadata: "“New Jersey law states you need local municipal ordinance to have a syringe access program. A lot of municipal leaders don’t have a public health background and don’t understand that syringe access saves lives, saves money, and can help clean up the city.”", metadata2: "—Georgett Watson, South Jersey AIDS Alliance"},
+        {type: "video", data: "https://www.youtube.com/embed/_44LjDGKJWs", title: "Share the campaign", metadata: "", metadata2: "/img/how+we+got+here.jpg"},
+        {type: "image", data: "/img/how-we-got-here_icon.png", title: "Rates of HIV where you live", metadata: "", metadata2: "/img/harm_reduction_test.png"},
         //fourth group
-        {type: "link", data: "http://www.mikecarmody4.net", title: "", metadata: "a test link"},
-        {type: "link", data: "http://www.mikecarmody4.net", title: "", metadata: "another test link"},
-        {type: "image", data: "/img/harm_reduction_test.png", title: "", metadata: "harm reduction image test"},
-        {type: "video", data: "/vid/godrays-test.mp4", title: "", metadata: "godrays video test", metadata2: "/img/harm_reduction_test.png"},
+        {type: "link", data: "/img/HOW+WE+GOT+HERE+STAT.JPG", title: "Cost of the Drug War", metadata: '<span className = "stat-highlight">$11.6 billion</span>spent on drug war arrests <span className = "stat-highlight">544.6 times</span>more than investment in harm reduction services'},
+        {type: "link", data: "/img/HOW+WE+GOT+HERE+TESTIMONIAL.JPG", title: "Testimonial", metadata: "“New Jersey law states you need local municipal ordinance to have a syringe access program. A lot of municipal leaders don’t have a public health background and don’t understand that syringe access saves lives, saves money, and can help clean up the city.”", metadata2: "—Georgett Watson, South Jersey AIDS Alliance"},
+        {type: "video", data: "https://www.youtube.com/embed/_44LjDGKJWs", title: "Share the campaign", metadata: "", metadata2: "/img/how+we+got+here.jpg"},
+        {type: "image", data: "/img/how-we-got-here_icon.png", title: "Rates of HIV where you live", metadata: "", metadata2: "/img/harm_reduction_test.png"},
         //fifth group
-        {type: "link", data: "http://www.mikecarmody5.net", title: "", metadata: "a test link"},
-        {type: "link", data: "http://www.mikecarmody5.net", title: "", metadata: "another test link"},
-        {type: "image", data: "/img/harm_reduction_test.png", title: "", metadata: "harm reduction image test"},
-        {type: "video", data: "/vid/godrays-test.mp4", title: "", metadata: "godrays video test", metadata2: "/img/harm_reduction_test.png"}
+        {type: "link", data: "/img/HOW+WE+GOT+HERE+STAT.JPG", title: "Cost of the Drug War", metadata: '<span className = "stat-highlight">$11.6 billion</span>spent on drug war arrests <span className = "stat-highlight">544.6 times</span>more than investment in harm reduction services'},
+        {type: "link", data: "/img/HOW+WE+GOT+HERE+TESTIMONIAL.JPG", title: "Testimonial", metadata: "“New Jersey law states you need local municipal ordinance to have a syringe access program. A lot of municipal leaders don’t have a public health background and don’t understand that syringe access saves lives, saves money, and can help clean up the city.”", metadata2: "—Georgett Watson, South Jersey AIDS Alliance"},
+        {type: "video", data: "https://www.youtube.com/embed/_44LjDGKJWs", title: "Share the campaign", metadata: "", metadata2: "/img/how+we+got+here.jpg"},
+        {type: "image", data: "/img/how-we-got-here_icon.png", title: "Rates of HIV where you live", metadata: "", metadata2: "/img/harm_reduction_test.png"},
       ];
 
 const mediaLinkUrl = "https://d2ycth98mhglth.cloudfront.net/media";
@@ -52,6 +52,9 @@ class IndividualStory extends React.Component {
       description: "",
       source: "",
       contentClass: "story-content",
+      gradient: {
+          background: "linear-gradient(115.66deg, #CC4400 -1.53%, "+this.props.location.state.data.color+" 21.96%, rgba(196, 196, 196, 0) 66.95%);"
+      }
     };
   }
 
@@ -63,6 +66,11 @@ class IndividualStory extends React.Component {
       this.setState({id: this.props.location.state.data.id});
       this.setState({blurb: this.props.location.state.data.blurb});
       console.log(this.props.location.state.data)
+      this.setState({
+        gradient: {
+          background: "linear-gradient(115.66deg, #CC4400 -1.53%, "+this.props.location.state.data.color+" 21.96%, rgba(196, 196, 196, 0) 66.95%);"
+        }
+      })
     } else {
        navigate("/stories-hub");
     }
@@ -72,15 +80,20 @@ class IndividualStory extends React.Component {
     if(this.state.contentItems !== rawContent) {
       this.setState({contentItems: rawContent})
     }
+    console.log(this.state.gradient)
   }
 
   componentDidUpdate(prevProps, prevState) {
-
    
     if(this.props.location.state && this.state.title!==this.props.location.state.data.title) {
       this.setState({title: this.props.location.state.data.title});
       this.setState({id: this.props.location.state.data.id});
       this.setState({blurb: this.props.location.state.data.blurb});
+      this.setState({
+        gradient: {
+          background: "linear-gradient(115.66deg, #CC4400 -1.53%, "+this.props.location.state.data.color+" 21.96%, rgba(196, 196, 196, 0) 66.95%);"
+        }
+      })
     }
     
     if(this.state.selectedItem !== prevState.selectedItem) {
@@ -111,7 +124,7 @@ class IndividualStory extends React.Component {
 
       return (
         <div className = "story-parent-container">
-          <div className = "selected-topic-container">
+          <div className = "selected-topic-container" style = {this.state.gradient} >
             <div className = "story-title">{this.state.title}</div>
             <div className = {this.state.contentClass} style = {{backgroundImage: "url("+mediaLinkUrl+this.state.selectedItem.data+")"}}>
               {this.state.selectedItem.type !== "video" ? (
