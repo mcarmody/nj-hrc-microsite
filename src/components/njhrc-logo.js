@@ -6,7 +6,7 @@ const logoStyles = {
 	position: "fixed",
 	bottom: 0,
 	left: 0,
-	margin: "70px",
+	margin: "40px",
 	maxHeight: "78px",
 	display: "inline-block",
 	color: "white",

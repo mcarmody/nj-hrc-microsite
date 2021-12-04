@@ -20,16 +20,29 @@
 	font-size: 48px;
 	padding-top: 20px;
 	line-height: 60px;
-	height: 180px;
+	height: 140px;
 	left: 64px;
 	text-transform: uppercase;
 	max-width: 400px;
 }
 
+.tagline-low {
+	font-size: 30pt !important;
+	padding-left: 40px !important;
+	bottom: 8vh !important;
+}
+
 .story-copy {
 	position: absolute;
 	right: 40px;
-	bottom: 40px;
+	top: 40px;
+	width: 480px;
+	line-height: 50px;
+	font-size: 28px;
+
+	.story-source {
+		font-size:  18px;
+	}
 }
 
 .story-content {
@@ -39,8 +52,8 @@
 	height: 560px;
 	background: black;
 	background-repeat: no-repeat;
-	background-size: contain;
-	background-position: center;
+	background-size: 1050px;
+	background-position: bottom left;
 	overflow: hidden;
 }
 
@@ -60,11 +73,13 @@
 	color: black;
 	display: block;
 	width: 24vw;
+	text-transform: uppercase;
 	background: #E9E9E9;
 	min-height: 72px;
 	padding-left: 12px;
-	line-height: 64px;
+	line-height: 70px;
 	cursor: pointer;
+	color:  #440649;
 
 	&:hover::before {
 		top: 0;
@@ -75,6 +90,11 @@
 		z-index: 101;
 		position: absolute;
 		content: "";
+	}
+
+	span {
+		color:  #CC4400;
+		font-size: 16pt;
 	}
 }
 
@@ -163,7 +183,7 @@
 	background-color: white;
 
 	&::before {
-		content: "<";
+		content: "";
 		position: absolute;
 		top: 0;
 		bottom: 0;

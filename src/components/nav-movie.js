@@ -32,10 +32,10 @@ const imgStyle = {
 
 const blurbsList = [
 	"Harm reduction works where criminalization of drug use fails.",
-	"Syringe access leads the way in preventing the spread of HIV and viral hepatitis.",
-	"Harm reduction works where criminalization of drug use fails.",
-	"Harm reduction works where criminalization of drug use fails.",
-	"Harm reduction works where criminalization of drug use fails.",
+	"Harm reduction works because it helps people make realistic, incremental changes.",
+	"Syringe access leads the way in preventing the spread of HIV and viral hepatitis..",
+	"People who use drugs are on the frontline of overdose prevention.",
+	"Syringe Access connects people to other stabilizing services.",
 ]
 
 class NavMovie extends React.Component {

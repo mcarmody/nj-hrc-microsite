@@ -21,6 +21,7 @@ class SideNavItem extends React.Component {
 	render() {
 		let navContent;
 
+		//toggle nav item selected state 
 		function selectNav(self) {
 			console.log(ReactDOM.findDOMNode(self));
 
@@ -38,14 +39,13 @@ class SideNavItem extends React.Component {
 			console.log(self.props.data)
 		}
 
-		this.props.type == "link" && this.state.clickFunction !== null ? this.setState({clickFunction: null}) : console.log("not a link")
+		//this.props.type == "link" && this.state.clickFunction !== null ? this.setState({clickFunction: null}) : console.log("not a link")
 
 
 		if(this.props.type == "image") {
 			navContent = <div className = "nav-item image-nav" style = {{backgroundImage: "url("+this.props.data+")"}}  onClick={() => {this.state.clickFunction(); selectNav(this)}}></div>
-			console.log(this.props.type)
 		} else if(this.props.type == "link") {
-			navContent = <Link to = {this.props.data} className = "nav-item link-nav">{this.props.metadata} </Link>
+			navContent = <div className = "nav-item link-nav" onClick={() => {this.state.clickFunction(); selectNav(this)}}><span>>>  </span>{this.props.title}</div>
 		} else if(this.props.type == "video") {
 			navContent = <div className = "nav-item video-nav" style = {{backgroundImage: "url("+this.props.metadata2+")"}}  onClick={() => {this.state.clickFunction(); selectNav(this)}}></div>
 		}

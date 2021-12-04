@@ -7,33 +7,34 @@ import ActionLinks from "../components/action-links";
 import NavMovie from "../components/nav-movie";
 import SideNavItem from "../components/side-nav-item.js"
 import "../styles/individual-page-styles.css";
+import Tagline from "../components/tagline";
 
 const rawContent = [
-        //first group
-        {type: "link", data: "http://www.mikecarmody.net", metadata: "a test link"},
-        {type: "link", data: "http://www.mikecarmody.net", metadata: "another test link"},
-        {type: "image", data: "/img/harm_reduction_test.png", metadata: "harm reduction image test"},
-        {type: "video", data: "/vid/godrays-test.mp4", metadata: "godrays video test", metadata2: "/img/harm_reduction_test.png"},
+        //How We Got Here
+        {type: "link", data: "/img/HOW+WE+GOT+HERE+TESTIMONIAL.JPG", title: "Cost of the Drug War", metadata: "“New Jersey law states you need local municipal ordinance to have a syringe access program. A lot of municipal leaders don’t have a public health background and don’t understand that syringe access saves lives, saves money, and can help clean up the city.”", metadata2: "—Georgett Watson, South Jersey AIDS Alliance"},
+        {type: "link", data: "/img/HOW+WE+GOT+HERE+TESTIMONIAL.JPG", title: "Testimonial", metadata: ""},
+        {type: "image", data: "/img/harm_reduction_test.png", title: "Share the campaign", metadata: ""},
+        {type: "video", data: "/vid/godrays-test.mp4", title: "Rates of HIV where you live", metadata: "", metadata2: "/img/harm_reduction_test.png"},
         //second group
-        {type: "link", data: "http://www.mikecarmody2.net", metadata: "a test link"},
-        {type: "link", data: "http://www.mikecarmody2.net", metadata: "another test link"},
-        {type: "image", data: "/img/harm_reduction_test.png", metadata: "harm reduction image test"},
-        {type: "video", data: "/vid/godrays-test.mp4", metadata: "godrays video test", metadata2: "/img/harm_reduction_test.png"},
+        {type: "link", data: "http://www.mikecarmody2.net", title: "", metadata: "a test link"},
+        {type: "link", data: "http://www.mikecarmody2.net", title: "", metadata: "another test link"},
+        {type: "image", data: "/img/harm_reduction_test.png", title: "", metadata: "harm reduction image test"},
+        {type: "video", data: "/vid/godrays-test.mp4", title: "", metadata: "godrays video test", metadata2: "/img/harm_reduction_test.png"},
         //third group
-        {type: "link", data: "http://www.mikecarmody3.net", metadata: "a test link"},
-        {type: "link", data: "http://www.mikecarmody3.net", metadata: "another test link"},
-        {type: "image", data: "/img/harm_reduction_test.png", metadata: "harm reduction image test"},
-        {type: "video", data: "/vid/godrays-test.mp4", metadata: "godrays video test", metadata2: "/img/harm_reduction_test.png"},
+        {type: "link", data: "http://www.mikecarmody3.net", title: "", metadata: "a test link"},
+        {type: "link", data: "http://www.mikecarmody3.net", title: "", metadata: "another test link"},
+        {type: "image", data: "/img/harm_reduction_test.png", title: "", metadata: "harm reduction image test"},
+        {type: "video", data: "/vid/godrays-test.mp4", title: "", metadata: "godrays video test", metadata2: "/img/harm_reduction_test.png"},
         //fourth group
-        {type: "link", data: "http://www.mikecarmody4.net", metadata: "a test link"},
-        {type: "link", data: "http://www.mikecarmody4.net", metadata: "another test link"},
-        {type: "image", data: "/img/harm_reduction_test.png", metadata: "harm reduction image test"},
-        {type: "video", data: "/vid/godrays-test.mp4", metadata: "godrays video test", metadata2: "/img/harm_reduction_test.png"},
+        {type: "link", data: "http://www.mikecarmody4.net", title: "", metadata: "a test link"},
+        {type: "link", data: "http://www.mikecarmody4.net", title: "", metadata: "another test link"},
+        {type: "image", data: "/img/harm_reduction_test.png", title: "", metadata: "harm reduction image test"},
+        {type: "video", data: "/vid/godrays-test.mp4", title: "", metadata: "godrays video test", metadata2: "/img/harm_reduction_test.png"},
         //fifth group
-        {type: "link", data: "http://www.mikecarmody5.net", metadata: "a test link"},
-        {type: "link", data: "http://www.mikecarmody5.net", metadata: "another test link"},
-        {type: "image", data: "/img/harm_reduction_test.png", metadata: "harm reduction image test"},
-        {type: "video", data: "/vid/godrays-test.mp4", metadata: "godrays video test", metadata2: "/img/harm_reduction_test.png"}
+        {type: "link", data: "http://www.mikecarmody5.net", title: "", metadata: "a test link"},
+        {type: "link", data: "http://www.mikecarmody5.net", title: "", metadata: "another test link"},
+        {type: "image", data: "/img/harm_reduction_test.png", title: "", metadata: "harm reduction image test"},
+        {type: "video", data: "/vid/godrays-test.mp4", title: "", metadata: "godrays video test", metadata2: "/img/harm_reduction_test.png"}
       ];
 
 const mediaLinkUrl = "https://d2ycth98mhglth.cloudfront.net/media";
@@ -93,7 +94,9 @@ class IndividualStory extends React.Component {
           <div className = "selected-topic-container">
             <div className = "story-title">{this.state.title}</div>
             <div className = "story-content" style = {{backgroundImage: "url("+mediaLinkUrl+this.state.selectedItem.data+")"}}>
-              <div className = "story-copy">{this.state.selectedItem.metadata}</div>
+              <div className = "story-copy">{this.state.selectedItem.metadata}
+                <div className = "story-source">{this.state.selectedItem.metadata2}</div>
+              </div>
               {this.state.selectedItem.type=="video" ? (
                 <video autoPlay="autoplay" muted loop id="story-clip" className = "story-video-container">
                   <source src = {mediaLinkUrl+this.state.selectedItem.data} type="video/mp4" className = "story-video"/>
@@ -104,14 +107,15 @@ class IndividualStory extends React.Component {
           </div>
           <div className = "side-nav-container">
             <Link to="/stories-hub" className = "back-link">Home</Link>           
-            < SideNavItem type = {rawContent[(this.state.id*4)].type} data = {mediaLinkUrl+rawContent[(this.state.id*4)].data} metadata = {rawContent[(this.state.id*4)].metadata} onClick={() => this.selectItem((this.state.id*4))} />
-            < SideNavItem type = {rawContent[(this.state.id*4+1)].type} data = {mediaLinkUrl+rawContent[(this.state.id*4+1)].data} metadata = {rawContent[(this.state.id*4+1)].metadata} onClick={() => this.selectItem((this.state.id*4+1))} />
-            < SideNavItem type = {rawContent[(this.state.id*4+2)].type} data = {mediaLinkUrl+rawContent[(this.state.id*4+2)].data} metadata = {rawContent[(this.state.id*4+2)].metadata} onClick={() => this.selectItem((this.state.id*4+2))} />
-            < SideNavItem type = {rawContent[(this.state.id*4+3)].type} data = {mediaLinkUrl+rawContent[(this.state.id*4+3)].data} metadata = {rawContent[(this.state.id*4+3)].metadata} metadata2 = {mediaLinkUrl+rawContent[(this.state.id*4+3)].metadata2} onClick={() => this.selectItem((this.state.id*4+3))} />
-            < SideNavItem type = {rawContent[(this.state.id*4+3)].type} data = {mediaLinkUrl+rawContent[(this.state.id*4+3)].data} metadata = {rawContent[(this.state.id*4+3)].metadata} metadata2 = {mediaLinkUrl+rawContent[(this.state.id*4+3)].metadata2} onClick={() => this.selectItem((this.state.id*4+3))} />
+            < SideNavItem type = {rawContent[(this.state.id*4)].type} data = {mediaLinkUrl+rawContent[(this.state.id*4)].data} title = {rawContent[(this.state.id*4)].title} onClick={() => this.selectItem((this.state.id*4))} />
+            < SideNavItem type = {rawContent[(this.state.id*4+1)].type} data = {mediaLinkUrl+rawContent[(this.state.id*4+1)].data} title = {rawContent[(this.state.id*4+1)].title} onClick={() => this.selectItem((this.state.id*4+1))} />
+            < SideNavItem type = {rawContent[(this.state.id*4+2)].type} data = {mediaLinkUrl+rawContent[(this.state.id*4+2)].data} title = {rawContent[(this.state.id*4+2)].title} onClick={() => this.selectItem((this.state.id*4+2))} />
+            < SideNavItem type = {rawContent[(this.state.id*4+3)].type} data = {mediaLinkUrl+rawContent[(this.state.id*4+3)].data} title = {rawContent[(this.state.id*4+3)].title} metadata2 = {mediaLinkUrl+rawContent[(this.state.id*4+3)].metadata2} onClick={() => this.selectItem((this.state.id*4+3))} />
+            < SideNavItem type = {rawContent[(this.state.id*4+3)].type} data = {mediaLinkUrl+rawContent[(this.state.id*4+3)].data} title = {rawContent[(this.state.id*4+3)].title} metadata2 = {mediaLinkUrl+rawContent[(this.state.id*4+3)].metadata2} onClick={() => this.selectItem((this.state.id*4+3))} />
           
             < ActionLinks social = {true} donate = {true}/>
           </div>
+          < Tagline size = "small" position = "extra-low"/>
           < Logo wordmark = {false} sideCopy = {true} size = {"small"}/>
         </div>
       )

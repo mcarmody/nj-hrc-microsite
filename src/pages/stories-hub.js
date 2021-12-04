@@ -1,5 +1,6 @@
 import * as React from "react";
 import Logo from "../components/njhrc-logo";
+import Tagline from "../components/tagline";
 import NavMovie from "../components/nav-movie";
 
 const imageList = [
@@ -60,6 +61,7 @@ class StoriesHub extends React.Component {
         < NavMovie source= {imageList[2]} id = "2" videoName = "third" title = {titlesList[2]}/>
         < NavMovie source= {imageList[3]} id = "3" videoName = "fourth" title = {titlesList[3]}/>
         < NavMovie source= {imageList[4]} id = "4" videoName = "fifth" title = {titlesList[4]}/>
+        < Tagline size = "small" />
         < Logo wordmark = {true} sideCopy = {false}/>
       </main>
     )

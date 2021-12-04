@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import Logo from "../components/njhrc-logo";
+import Tagline from "../components/tagline";
 import LinkButton from "../components/link-button";
 import BackgroundMovie from "../components/background-movie";
 import "../styles/index-styles.css";
@@ -25,10 +26,6 @@ const headingStyles = {
   lineHeight: 1,
 }
 
-const headingBoldStyles = {
-  fontWeight: 700,
-}
-
 
 // markup
 const LandingPage = () => {
@@ -37,12 +34,8 @@ const LandingPage = () => {
     <main style={pageStyles}>
       <title>NJ HRC Site</title>
       < BackgroundMovie video= {landingVid} />
-      <h1 style={headingStyles}>
-        Essential. <br />
-        Effective. <br />
-        <span style={headingBoldStyles}>Human.</span>
-      </h1>
-      < Logo />
+      < Tagline size = "large"/>
+      < Logo/>
       <div className = "link-container">
         <Link to="/intro">< LinkButton title = "Enter Experience"/></Link>
         <Link to="/stories-hub">< LinkButton title = "Main Site" /></Link>
