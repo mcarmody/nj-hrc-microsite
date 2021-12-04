@@ -53,7 +53,7 @@ class IndividualStory extends React.Component {
       source: "",
       contentClass: "story-content",
       gradient: {
-          background: "linear-gradient(115.66deg, #CC4400 -1.53%, "+this.props.location.state.data.color+" 21.96%, rgba(196, 196, 196, 0) 66.95%);"
+          background: "linear-gradient(115.66deg, "+this.props.location.state.data.color+" -2%, rgba(196, 196, 196, 0) 50%"
       }
     };
   }
@@ -68,7 +68,7 @@ class IndividualStory extends React.Component {
       console.log(this.props.location.state.data)
       this.setState({
         gradient: {
-          background: "linear-gradient(115.66deg, #CC4400 -1.53%, "+this.props.location.state.data.color+" 21.96%, rgba(196, 196, 196, 0) 66.95%);"
+          background: "linear-gradient(115.66deg, "+this.props.location.state.data.color+" -2%, rgba(196, 196, 196, 0) 50%"
         }
       })
     } else {
@@ -89,11 +89,6 @@ class IndividualStory extends React.Component {
       this.setState({title: this.props.location.state.data.title});
       this.setState({id: this.props.location.state.data.id});
       this.setState({blurb: this.props.location.state.data.blurb});
-      this.setState({
-        gradient: {
-          background: "linear-gradient(115.66deg, #CC4400 -1.53%, "+this.props.location.state.data.color+" 21.96%, rgba(196, 196, 196, 0) 66.95%);"
-        }
-      })
     }
     
     if(this.state.selectedItem !== prevState.selectedItem) {
