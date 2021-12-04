@@ -43,6 +43,15 @@
 .story-copy .story-source {
   font-size: 18px;
 }
+.story-copy span {
+  display: block;
+  font-size: 60px;
+  margin-top: 16px;
+}
+.story-copy span::after {
+  content: "\a";
+  white-space: pre-wrap;
+}
 
 .story-content {
   position: relative;

@@ -11,8 +11,8 @@ import Tagline from "../components/tagline";
 
 const rawContent = [
         //How We Got Here
-        {type: "link", data: "/img/HOW+WE+GOT+HERE+TESTIMONIAL.JPG", title: "Cost of the Drug War", metadata: "“New Jersey law states you need local municipal ordinance to have a syringe access program. A lot of municipal leaders don’t have a public health background and don’t understand that syringe access saves lives, saves money, and can help clean up the city.”", metadata2: "—Georgett Watson, South Jersey AIDS Alliance"},
-        {type: "link", data: "/img/HOW+WE+GOT+HERE+TESTIMONIAL.JPG", title: "Testimonial", metadata: ""},
+        {type: "link", data: "/img/HOW+WE+GOT+HERE+STAT.JPG", title: "Cost of the Drug War", metadata: '<span className = "stat-highlight">$11.6 billion</span>spent on drug war arrests <span className = "stat-highlight">544.6 times</span>more than investment in harm reduction services'},
+        {type: "link", data: "/img/HOW+WE+GOT+HERE+TESTIMONIAL.JPG", title: "Testimonial", metadata: "“New Jersey law states you need local municipal ordinance to have a syringe access program. A lot of municipal leaders don’t have a public health background and don’t understand that syringe access saves lives, saves money, and can help clean up the city.”", metadata2: "—Georgett Watson, South Jersey AIDS Alliance"},
         {type: "image", data: "/img/harm_reduction_test.png", title: "Share the campaign", metadata: ""},
         {type: "video", data: "/vid/godrays-test.mp4", title: "Rates of HIV where you live", metadata: "", metadata2: "/img/harm_reduction_test.png"},
         //second group
@@ -48,7 +48,9 @@ class IndividualStory extends React.Component {
       contentItems: [],
       selectedItem: "",
       id: 0,
-      blurb: "Placeholder content"
+      blurb: "Placeholder content",
+      description: "",
+      source: ""
     };
   }
 
@@ -71,18 +73,34 @@ class IndividualStory extends React.Component {
     }
   }
 
-  componentDidUpdate() {
+  componentDidUpdate(prevProps, prevState) {
+
+   
     if(this.props.location.state && this.state.title!==this.props.location.state.data.title) {
       this.setState({title: this.props.location.state.data.title});
       this.setState({id: this.props.location.state.data.id});
       this.setState({blurb: this.props.location.state.data.blurb});
     }
+    
+    if(this.state.selectedItem !== prevState.selectedItem) {
+      var dom = document.createElement('div');
+      dom.innerHTML = this.state.selectedItem.metadata;
+      this.setState({description: dom.innerHTML+"<div class = 'story-source'>"+this.state.source+"</div>"});
+      console.log(dom)
+    }
   }
 
   selectItem = (id) => {
     this.setState({selectedItem: this.state.contentItems[id]});
-    console.log(this.state.title+" "+this.state.id)
+    console.log(this.state.selectedItem.metadata2)
+
+    if(this.state.contentItems[id].metadata2 !== undefined) {
+      this.setState({source: this.state.contentItems[id].metadata2})
+    } else {
+      this.setState({source: ""})
+    }
   }
+
 
   render() {
 
@@ -94,9 +112,8 @@ class IndividualStory extends React.Component {
           <div className = "selected-topic-container">
             <div className = "story-title">{this.state.title}</div>
             <div className = "story-content" style = {{backgroundImage: "url("+mediaLinkUrl+this.state.selectedItem.data+")"}}>
-              <div className = "story-copy">{this.state.selectedItem.metadata}
-                <div className = "story-source">{this.state.selectedItem.metadata2}</div>
-              </div>
+              <div className = "story-copy" dangerouslySetInnerHTML={{ __html: this.state.description}} />
+              
               {this.state.selectedItem.type=="video" ? (
                 <video autoPlay="autoplay" muted loop id="story-clip" className = "story-video-container">
                   <source src = {mediaLinkUrl+this.state.selectedItem.data} type="video/mp4" className = "story-video"/>
