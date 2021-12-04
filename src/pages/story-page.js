@@ -53,7 +53,7 @@ class IndividualStory extends React.Component {
       source: "",
       contentClass: "story-content",
       gradient: {
-          background: "linear-gradient(115.66deg, "+this.props.location.state.data.color+" -2%, rgba(196, 196, 196, 0) 50%"
+          background: "linear-gradient(115.66deg, #CC4400 -2%, rgba(196, 196, 196, 0) 50%"
       }
     };
   }
