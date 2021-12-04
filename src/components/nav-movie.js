@@ -38,6 +38,14 @@ const blurbsList = [
 	"Syringe Access connects people to other stabilizing services.",
 ]
 
+const colorsList = [
+	"#CC4400",
+	"#70EBCA",
+	"#B999FF",
+	"#FF925C",
+	"#FFE4D6"
+]
+
 class NavMovie extends React.Component {
 	constructor(props) {
 		super(props);
@@ -46,15 +54,25 @@ class NavMovie extends React.Component {
 			data: {
 				title: this.props.title,
 				id: this.props.id,
-				blurb: blurbsList[this.props.id]
+				blurb: blurbsList[this.props.id],
+				color: colorsList[this.props.id]
 			},
-		};
+		}
 	}
 
 	componentDidMount() {
 		if(this.props.videoName == "first") {
 			ReactDOM.findDOMNode(this).click();
 		}
+
+		this.setState({beforeStyle: {
+				'::before': {
+					background: 'linear-gradient(147.23deg, rgba(255, 84, 0, 0.54) 10.03%, '+colorsList[this.state.data.id]+' 45.96%)',
+				}
+			}
+		})
+		console.log(this.state.beforeStyle)
+		console.log(imgStyle)
 	}
 
 	render() {
@@ -89,12 +107,14 @@ class NavMovie extends React.Component {
 			}
 		}
 
+		console.log(this.state.id)
+
 		return (
 			<div className = "video-container" onClick={() => toggle(this)} style = {imgStyle}>
 				<div className = "background-image" />
 
 		  		<div className = "video-title">{this.props.title}</div>
-		  		<Link className = "story-link" to="/story-page" state = {{data: this.state.data}}>>></Link>
+		  		<Link className = "story-link" to="/story-page" id={"story-link-"+this.props.id} state = {{data: this.state.data}}>>></Link>
 	  		</div>
 		)
 	}

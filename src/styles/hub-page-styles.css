@@ -23,7 +23,7 @@ body {
   background-size: cover;
 }
 .video-container:hover::before {
-  background: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
   z-index: 101;
   content: "";
   position: absolute;
@@ -73,10 +73,10 @@ body {
   top: 0px;
   text-align: right;
   width: 90%;
-  height: 140px;
+  height: 160px;
   padding: 60px 5% 0 5%;
   z-index: 100;
-  font-weight: bold;
+  line-height: 120px;
   color: orange;
   font-size: 36pt;
   -webkit-transition: background 1s, color 1s, opacity 0.5s 0.2s;
@@ -99,10 +99,29 @@ body {
   bottom: 0;
   left: 0;
   opacity: 0;
-  background: linear-gradient(147.23deg, rgba(255, 84, 0, 0.54) 10.03%, rgba(255, 105, 31, 0) 45.96%);
   z-index: -1;
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
+}
+
+#story-link-0::before {
+  background: linear-gradient(147.23deg, #CC4400 10.03%, rgba(255, 105, 31, 0) 35.96%);
+}
+
+#story-link-1::before {
+  background: linear-gradient(147.23deg, #70EBCA 10.03%, rgba(255, 105, 31, 0) 35.96%);
+}
+
+#story-link-2::before {
+  background: linear-gradient(147.23deg, #B999FF 10.03%, rgba(255, 105, 31, 0) 35.96%);
+}
+
+#story-link-3::before {
+  background: linear-gradient(147.23deg, #FF925C 10.03%, rgba(255, 105, 31, 0) 35.96%);
+}
+
+#story-link-4::before {
+  background: linear-gradient(147.23deg, #FFE4D6 10.03%, rgba(255, 105, 31, 0) 35.96%);
 }
 
 .column-highlighted .story-link {

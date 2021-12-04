@@ -1,3 +1,10 @@
+
+$color1: #CC4400;
+$color2: #70EBCA;
+$color3: #B999FF;
+$color4: #FF925C;
+$color5: #FFE4D6;
+
 body {
 	height: 100vh;
 	overflow:  hidden;
@@ -73,7 +80,7 @@ body {
 	top:  0px;
 	text-align: right;
 	width: 90%;
-	height: 140px;
+	height: 160px;
 	padding: 60px 5% 0 5%;
 	z-index: 100;
 	line-height: 120px;
@@ -101,9 +108,24 @@ body {
 	bottom: 0;
 	left: 0;
 	opacity: 0;
-	background: linear-gradient(147.23deg, rgba(255, 84, 0, 0.54) 10.03%, rgba(255, 105, 31, 0) 45.96%);
 	z-index: -1;
 	transition:  opacity .5s;
+}
+
+#story-link-0::before {
+	background: linear-gradient(147.23deg, $color1 10.03%, rgba(255, 105, 31, 0) 35.96%);
+}
+#story-link-1::before {
+	background: linear-gradient(147.23deg, $color2 10.03%, rgba(255, 105, 31, 0) 35.96%);
+}
+#story-link-2::before {
+	background: linear-gradient(147.23deg, $color3 10.03%, rgba(255, 105, 31, 0) 35.96%);
+}
+#story-link-3::before {
+	background: linear-gradient(147.23deg, $color4 10.03%, rgba(255, 105, 31, 0) 35.96%);
+}
+#story-link-4::before {
+	background: linear-gradient(147.23deg, $color5 10.03%, rgba(255, 105, 31, 0) 35.96%);
 }
 
 .column-highlighted .story-link {
