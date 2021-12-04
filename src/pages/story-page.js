@@ -50,7 +50,8 @@ class IndividualStory extends React.Component {
       id: 0,
       blurb: "Placeholder content",
       description: "",
-      source: ""
+      source: "",
+      contentClass: "story-content",
     };
   }
 
@@ -86,7 +87,8 @@ class IndividualStory extends React.Component {
       var dom = document.createElement('div');
       dom.innerHTML = this.state.selectedItem.metadata;
       this.setState({description: dom.innerHTML+"<div class = 'story-source'>"+this.state.source+"</div>"});
-      console.log(dom)
+      console.log(this.state.selectedItem)
+      this.state.selectedItem.type !== "video" ? this.setState({contentClass: "story-content image-content"}) : this.setState({contentClass: "story-content"});
     }
   }
 
@@ -111,7 +113,7 @@ class IndividualStory extends React.Component {
         <div className = "story-parent-container">
           <div className = "selected-topic-container">
             <div className = "story-title">{this.state.title}</div>
-            <div className = "story-content" style = {{backgroundImage: "url("+mediaLinkUrl+this.state.selectedItem.data+")"}}>
+            <div className = {this.state.contentClass} style = {{backgroundImage: "url("+mediaLinkUrl+this.state.selectedItem.data+")"}}>
               <div className = "story-copy" dangerouslySetInnerHTML={{ __html: this.state.description}} />
               {this.state.selectedItem.type=="video" ? (
                 <video autoPlay="autoplay" muted loop id="story-clip" className = "story-video-container">
