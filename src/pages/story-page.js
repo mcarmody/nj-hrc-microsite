@@ -72,8 +72,8 @@ class IndividualStory extends React.Component {
 
   componentDidMount() {
     console.log(this.state.selectedItem)
-    this.setState({selectedItem: rawContent[this.props.location.state.data.id*5]})
     if(this.props.location.state) {
+      this.setState({selectedItem: rawContent[this.props.location.state.data.id*5]})
       this.setState({title: this.props.location.state.data.title})
       this.setState({id: this.props.location.state.data.id});
       this.setState({blurb: this.props.location.state.data.blurb});
