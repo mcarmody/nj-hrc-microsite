@@ -7,6 +7,10 @@
   background: #272727;
 }
 
+.ytp-show-cards-title {
+  display: none !important;
+}
+
 .selected-topic-container {
   width: 75vw;
   height: 100%;
