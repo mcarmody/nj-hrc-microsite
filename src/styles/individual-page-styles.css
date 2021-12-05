@@ -98,8 +98,7 @@
   background: black;
   background-repeat: no-repeat;
   background-size: 1050px;
-  background-position: center;
-  background-size: contain;
+  background-position: left;
   overflow: hidden;
 }
 
