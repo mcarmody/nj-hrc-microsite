@@ -140,8 +140,9 @@ class IndividualStory extends React.Component {
                 <div className = "story-copy" dangerouslySetInnerHTML={{ __html: this.state.description}} />
               ) : console.log("this is a video")}
               {this.state.selectedItem.type=="video" ? (
+                <div className = "iframe-container">
                   <iframe className = "video-player" width="1280" height="560" src={this.state.selectedItem.data+"?autoplay=1&cc_load_policy=1&loop=0&modestbranding=1&controls=0"} title="YouTube video player" frameborder="0" autoplay="1" mute="1" loop="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
+                </div>
               ) : console.log("not a video")}
             </div>
             <div className = "contentBlurb">{this.state.blurb}</div>
