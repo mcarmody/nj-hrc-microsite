@@ -23,7 +23,7 @@ const rawContent = [
         {type: "link", data: "/img/HOW+WE+GOT+HERE+STAT.JPG", title: "Cost of the Drug War", metadata: '<span className = "stat-highlight">$11.6 billion</span>spent on drug war arrests <span className = "stat-highlight">544.6 times</span>more than investment in harm reduction services'},
         {type: "link", data: "/img/HOW+WE+GOT+HERE+TESTIMONIAL.JPG", title: "Testimonial", metadata: "“New Jersey law states you need local municipal ordinance to have a syringe access program. A lot of municipal leaders don’t have a public health background and don’t understand that syringe access saves lives, saves money, and can help clean up the city.”", metadata2: "—Georgett Watson, South Jersey AIDS Alliance"},
         {type: "video", data: "/vid/SIDE+VIDEO-HOW+WE+GOT+HERE.mp4", title: "Share the campaign", metadata: "", metadata2: "/img/how+we+got+here.jpg"},
-        {type: "image", data: "/img/how-we-got-here-info.png", title: "Rates of HIV where you live", metadata: "70 to 90% of people who use a criminalized drug (including heroin, cocaine, and methamphetamine) do not experience a substance use disorder.", metadata2: ""},
+        {type: "image", data: "/img/how-we-got-here-info.png", title: "Rates of HIV where you live", metadata: "70 to 90% of people who use a criminalized drug (including heroin, cocaine, and methamphetamine) do not experience a substance use disorder.", metadata2: "<div className = 'source-1'><span>>></span> Source: the Global Commission on Drug Policy reports</div><div className = 'source-2'><span>>></span> Source: New Jersey Policy Perspective—A War on Us: How Much New Jersey Spends Enforcing the War on Drugs</div>"},
         //HR 101
         {type: "video", data: "/vid/HARM+REDUCTION+101.mp4", title: "How We Got Here", metadata: "", metadata2: "/img/story-bg-2.jpg"},
         {type: "link", data: "/img/HR101+STAT.JPG", title: "Reducing Transmission", metadata: 'People who access harm reduction programs are <span className = "stat-highlight">50% less likely</span>to contract HIV or Hepatitis C.'},
@@ -153,16 +153,16 @@ class IndividualStory extends React.Component {
               </div>
             ) :
             <div className = {this.state.contentClass} style = {{backgroundImage: "url("+mediaLinkUrl+this.state.selectedItem.metadata2+")"}}>
-                {this.state.selectedItem.type !== "video" ? (
-                  <div className = "story-copy" dangerouslySetInnerHTML={{ __html: this.state.description}} />
-                ) : console.log("this is a video")}
-                {this.state.selectedItem.type=="video" ? (
-                  <video id="story-clip" className = "story-video-container hidden">
-                    <source src = {mediaLinkUrl+this.state.selectedItem.data} type="video/mp4" className = "story-video"/>
-                  </video>
-                ) : console.log("not a video")}
-                < InteractionLinks />
-              </div>
+            {this.state.selectedItem.type !== "video" ? (
+              <div className = "story-copy" dangerouslySetInnerHTML={{ __html: this.state.description}} />
+              ) : console.log("this is a video")}
+              {this.state.selectedItem.type=="video" ? (
+                <video id="story-clip" className = "story-video-container hidden">
+                  <source src = {mediaLinkUrl+this.state.selectedItem.data} type="video/mp4" className = "story-video"/>
+                </video>
+              ) : console.log("not a video")}
+              < InteractionLinks />
+            </div>
             }
             <div className = "contentBlurb">{this.state.blurb}</div>
           </div>
