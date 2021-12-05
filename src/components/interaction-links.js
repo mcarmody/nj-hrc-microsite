@@ -10,8 +10,12 @@ class InteractionLinks extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			video: this.props.video
+			video: document.getElementById('story-clip')
 		}
+	}
+
+	componentDidMount() {
+		this.setState({video: document.getElementById('story-clip')})
 	}
 
 	share = () => {
@@ -20,6 +24,8 @@ class InteractionLinks extends React.Component {
 	}
 
 	toggleVideo = () => {
+		this.state.video==undefined ? this.setState({video: document.getElementById('story-clip')}) : console.log("we have a video")
+		this.state.video.paused ? this.state.video.play() : this.state.video.pause()
 		console.log("play "+this.state.video)
 	}
 

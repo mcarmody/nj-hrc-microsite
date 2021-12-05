@@ -19,7 +19,7 @@ const rawContent = [
         //  infographic
 
         //How We Got Here
-        {type: "video", data: "https://www.youtube.com/embed/UuA_CzSoO8A", title: "How We Got Here", metadata: "", metadata2: "/img/how+we+got+here.jpg"},
+        {type: "video", data: "/vid/HOW+WE+GOT+HERE.mp4", title: "How We Got Here", metadata: "", metadata2: "/img/how+we+got+here.jpg"},
         {type: "link", data: "/img/HOW+WE+GOT+HERE+STAT.JPG", title: "Cost of the Drug War", metadata: '<span className = "stat-highlight">$11.6 billion</span>spent on drug war arrests <span className = "stat-highlight">544.6 times</span>more than investment in harm reduction services'},
         {type: "link", data: "/img/HOW+WE+GOT+HERE+TESTIMONIAL.JPG", title: "Testimonial", metadata: "“New Jersey law states you need local municipal ordinance to have a syringe access program. A lot of municipal leaders don’t have a public health background and don’t understand that syringe access saves lives, saves money, and can help clean up the city.”", metadata2: "—Georgett Watson, South Jersey AIDS Alliance"},
         {type: "video", data: "https://www.youtube.com/embed/LLqrvn294KA", title: "Share the campaign", metadata: "", metadata2: "/img/how+we+got+here.jpg"},
@@ -50,7 +50,7 @@ const rawContent = [
         {type: "image", data: "/img/how-we-got-here_icon.png", title: "Rates of HIV where you live", metadata: "", metadata2: "/img/harm_reduction_test.png"},
       ];
 
-const mediaLinkUrl = "https://d2ycth98mhglth.cloudfront.net/media";
+const mediaLinkUrl = "https://nj-hrc-project-media.s3.amazonaws.com/media";
 
 // markup
 class IndividualStory extends React.Component {
@@ -80,7 +80,8 @@ class IndividualStory extends React.Component {
       this.setState({title: this.props.location.state.data.title})
       this.setState({id: this.props.location.state.data.id});
       this.setState({blurb: this.props.location.state.data.blurb});
-      console.log(this.props.location.state.data)
+      this.setState({video: document.getElementById('story-clip')});
+      console.log(this.state.video)
       this.setState({
         gradient: {
           background: "linear-gradient(115.66deg, "+this.props.location.state.data.color+" -2%, rgba(196, 196, 196, 0) 50%"
@@ -114,14 +115,11 @@ class IndividualStory extends React.Component {
       console.log(this.state.selectedItem)
       this.state.selectedItem.type !== "video" ? this.setState({contentClass: "story-content image-content"}) : this.setState({contentClass: "story-content"});
     }
-
-    if(document.getElementsByClassName('ytp-pause-overlay')[0]) {
-      document.getElementsByClassName('ytp-pause-overlay')[0].classList.add("hidden");
-    }
   }
 
   selectItem = (id) => {
     this.setState({selectedItem: this.state.contentItems[id]});
+    this.setState({video: document.getElementById('story-clip')});
     console.log(this.state.selectedItem.metadata2)
 
     if(this.state.contentItems[id].metadata2 !== undefined) {
@@ -129,14 +127,6 @@ class IndividualStory extends React.Component {
     } else {
       this.setState({source: ""})
     }
-  }
-
-  toggleVideo = () => {
-    console.log("play");
-  }
-
-  share = () => {
-    console.log("tweet this")
   }
 
   render() {
@@ -153,11 +143,11 @@ class IndividualStory extends React.Component {
                 <div className = "story-copy" dangerouslySetInnerHTML={{ __html: this.state.description}} />
               ) : console.log("this is a video")}
               {this.state.selectedItem.type=="video" ? (
-                <div className = "iframe-container">
-                  <iframe className = "video-player" width="1280" height="560" src={this.state.selectedItem.data+"?autoplay=1&enablejsapi=1&cc_load_policy=1&loop=0&modestbranding=1&controls=0"} title="YouTube video player" frameborder="0" autoplay="1" mute="1" loop="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
+                <video autoplay="autoPlay" muted loop id="story-clip" className = "story-video-container">
+                  <source src = {mediaLinkUrl+this.state.selectedItem.data} type="video/mp4" className = "story-video"/>
+                </video>
               ) : console.log("not a video")}
-              < InteractionLinks video = {this.state.video}/>
+              < InteractionLinks />
             </div>
             <div className = "contentBlurb">{this.state.blurb}</div>
           </div>
