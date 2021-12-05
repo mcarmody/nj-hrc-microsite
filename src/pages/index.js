@@ -23,8 +23,7 @@ const headingStyles = {
   color: "white",
   top: "20vh",
   display: "block",
-  lineHeight: 1,
-  textShadow: "0 4px 6px black"
+  lineHeight: 1
 }
 
 

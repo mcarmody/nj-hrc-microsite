@@ -11,7 +11,8 @@ var taglineStyles = {
 
 const largeStyle = {
 	fontSize: "82pt",
-	top: "20vh"
+	top: "20vh",
+	textShadow: "0 4px 6px black"
 }
 
 const smallStyle = {
