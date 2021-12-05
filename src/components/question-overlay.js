@@ -87,9 +87,12 @@ class QuestionOverlay extends React.Component {
 	showCopy = () => {
 		videoOverlay.classList.remove("hidden");
 		//videoPlayer.classList.add("hidden");
-		buttonsContainer.classList.remove("hidden");
 		document.getElementById("landing-clip").classList.add("hidden");
 		console.log("hide the video");
+	}
+
+	showButtons = () => {
+		buttonsContainer.classList.remove("hidden");
 	}
 
 	stateSwitch = () => {
@@ -99,6 +102,7 @@ class QuestionOverlay extends React.Component {
 				this.showCopy()
 				setTimeout(function() {
 					this.updateCopy(1)
+					this.showButtons()
 				}.bind(this), betweenCopyDelay)
 				break;
 
@@ -117,6 +121,7 @@ class QuestionOverlay extends React.Component {
 				this.showCopy()
 				setTimeout(function() {
 					this.updateCopy(3)
+					this.showButtons()
 				}.bind(this), betweenCopyDelay)
 				break;
 
@@ -131,12 +136,14 @@ class QuestionOverlay extends React.Component {
 
 			case 5: //this is the third questions
 				this.setState({yesVal: 7, noVal: 7})
+				this.showButtons()
 				this.updateCopy(4)
 				this.showCopy()
 				break;
 
 			case 6: //this is the last question
 				this.setState({yesVal: 7, noVal: 7})
+				this.showButtons()
 				this.updateCopy(5)
 				this.showCopy()
 				break;
