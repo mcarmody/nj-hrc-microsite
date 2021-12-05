@@ -27,12 +27,15 @@ class InteractionLinks extends React.Component {
 
 	toggleVideo = () => {
 		var video = document.getElementById('story-clip');
+		var storyContainer = document.getElementsByClassName('story-content')[0];
 		video==undefined ? this.setState({video: video}) : console.log("we have a video")
 		if(video.paused) {
-			video.classList.remove('hidden')
+			video.classList.remove('hidden');
+			storyContainer.classList.add('no-bg');
 			video.play()
 		} else {
 			video.classList.add('hidden')
+			storyContainer.classList.remove('no-bg');
 			video.pause()
 		}
 		video.paused ? this.setState({videoButtonText: "Play"}) : this.setState({videoButtonText: "Pause"})

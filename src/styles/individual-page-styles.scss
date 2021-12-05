@@ -284,6 +284,14 @@
 	line-height: 40px;
 }
 
+.no-bg {
+	background-image: none !important;
+
+	&::before {
+		display: none !important;
+	}
+}
+
 @media only screen and (min-width:  1400px) {
 	.story-content::before {
 		position: absolute;
