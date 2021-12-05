@@ -38,7 +38,7 @@ const copyUpdates = [
 	"...do you think what we</br> are doing is working?", //1B
 	"Given those facts...", //2A
 	"...do you think continuing to do more of the same will work?", //2B
-	"Would you at least be willing to learn about how harm reductionworks to address these critical issues facing New Jerseyans?", //3A
+	"Would you at least be willing to learn about how harm reduction works to address these critical issues facing New Jerseyans?", //3A
 	"Would you be willing to try something new?", //3B
 	""
 ];
@@ -86,8 +86,9 @@ class QuestionOverlay extends React.Component {
 
 	showCopy = () => {
 		videoOverlay.classList.remove("hidden");
-		videoPlayer.classList.add("hidden");
+		//videoPlayer.classList.add("hidden");
 		buttonsContainer.classList.remove("hidden");
+		document.getElementById("landing-clip").classList.add("hidden");
 		console.log("hide the video");
 	}
 
