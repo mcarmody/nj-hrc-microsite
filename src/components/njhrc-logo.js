@@ -2,7 +2,6 @@ import * as React from "react"
 import wordmark from "../media/img/njhrc-wordmark.png"
 
 const logoStyles = {
-	fontFamily: "Roboto",
 	position: "fixed",
 	bottom: 0,
 	left: 0,
