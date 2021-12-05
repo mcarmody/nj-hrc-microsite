@@ -25,6 +25,8 @@ class SideNavItem extends React.Component {
 		function selectNav(self) {
 			console.log(ReactDOM.findDOMNode(self));
 
+			document.getElementById('story-clip').load()
+
 			var allNavItems = Array.prototype.slice.call(document.getElementsByClassName("nav-item-container"));
 			for (var i = allNavItems.length - 1; i >= 0; i--) {
 				if(allNavItems[i] !== self) {
