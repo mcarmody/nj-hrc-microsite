@@ -7,7 +7,7 @@ import BackgroundMovie from "../components/background-movie";
 import "../styles/index-styles.css";
 
 
-const landingVid = "https://d2ycth98mhglth.cloudfront.net/media/vid/rain-test.mp4"
+const landingVid = "https://d2ycth98mhglth.cloudfront.net/media/vid/NJHRC+SITE+LANDING+PAGE.mp4"
 
 
 // styles
@@ -24,6 +24,7 @@ const headingStyles = {
   top: "20vh",
   display: "block",
   lineHeight: 1,
+  textShadow: "0 4px 6px black"
 }
 
 

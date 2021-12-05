@@ -21,14 +21,13 @@ class BackgroundMovie extends React.Component {
 
 	componentDidUpdate(prevProps) {
 		if(prevProps.video !== this.props.video) {
-			console.log("test: "+this.props.video)
 	  		this.setState({ video: this.props.video });
 	  	}
 	}
 
 	render() {
 		return (
-			<video autoplay="autoplay" muted loop style={vidStyles} id="landing-clip" key={this.state.video}>
+			<video autoplay="autoplay" muted loop style={vidStyles} className = "bg-video" id="landing-clip" key={this.state.video}>
 	      		<source src = {this.state.video} type="video/mp4" />
 	  		</video>
 		)
