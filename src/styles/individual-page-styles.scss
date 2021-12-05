@@ -21,6 +21,48 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
+		//pointer-events: none;
+	}
+}
+
+.interaction-container {
+	position: absolute;
+	bottom: 30px;
+	z-index: 1000;
+	display: inline-block;
+	height: 25px;
+	width: calc(100% - 64px*3);
+	padding: 0 64px;
+	font-weight: 700;
+	line-height: 24px;
+	text-transform: uppercase;
+
+	div {
+		position: absolute;
+		display:  inline-block;
+
+		span {
+			color: #CC4400;
+			font-size: 22px;
+		}
+	}
+
+	#play-link {
+		right: 0px;
+		cursor: pointer;
+	}
+
+	#twitter-link {
+		margin: 0px 4px 0px 12px;
+	}
+
+	img {
+		position: relative;
+		height: 20px;
+		top: 4px;
+		margin: 0px 4px;
+		cursor: pointer;
+		border-radius: 4px;
 	}
 }
 

@@ -22,6 +22,42 @@
   height: 100%;
 }
 
+.interaction-container {
+  position: absolute;
+  bottom: 30px;
+  z-index: 1000;
+  display: inline-block;
+  height: 25px;
+  width: calc(100% - 64px*3);
+  padding: 0 64px;
+  font-weight: 700;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+.interaction-container div {
+  position: absolute;
+  display: inline-block;
+}
+.interaction-container div span {
+  color: #CC4400;
+  font-size: 22px;
+}
+.interaction-container #play-link {
+  right: 0px;
+  cursor: pointer;
+}
+.interaction-container #twitter-link {
+  margin: 0px 4px 0px 12px;
+}
+.interaction-container img {
+  position: relative;
+  height: 20px;
+  top: 4px;
+  margin: 0px 4px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
 .selected-topic-container {
   width: 75vw;
   height: 100%;

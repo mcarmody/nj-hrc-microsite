@@ -4,6 +4,7 @@ import { navigate } from "gatsby"
 import landingVid from "../media/vid/rain-test.mp4"
 import Logo from "../components/njhrc-logo";
 import ActionLinks from "../components/action-links";
+import InteractionLinks from "../components/interaction-links";
 import NavMovie from "../components/nav-movie";
 import SideNavItem from "../components/side-nav-item.js"
 import "../styles/individual-page-styles.css";
@@ -66,7 +67,8 @@ class IndividualStory extends React.Component {
       contentClass: "story-content",
       gradient: {
           background: "linear-gradient(115.66deg, #CC4400 -2%, rgba(196, 196, 196, 0) 50%"
-      }
+      },
+      video: ""
     };
   }
 
@@ -112,6 +114,10 @@ class IndividualStory extends React.Component {
       console.log(this.state.selectedItem)
       this.state.selectedItem.type !== "video" ? this.setState({contentClass: "story-content image-content"}) : this.setState({contentClass: "story-content"});
     }
+
+    if(document.getElementsByClassName('ytp-pause-overlay')[0]) {
+      document.getElementsByClassName('ytp-pause-overlay')[0].classList.add("hidden");
+    }
   }
 
   selectItem = (id) => {
@@ -125,6 +131,13 @@ class IndividualStory extends React.Component {
     }
   }
 
+  toggleVideo = () => {
+    console.log("play");
+  }
+
+  share = () => {
+    console.log("tweet this")
+  }
 
   render() {
 
@@ -141,9 +154,10 @@ class IndividualStory extends React.Component {
               ) : console.log("this is a video")}
               {this.state.selectedItem.type=="video" ? (
                 <div className = "iframe-container">
-                  <iframe className = "video-player" width="1280" height="560" src={this.state.selectedItem.data+"?autoplay=1&cc_load_policy=1&loop=0&modestbranding=1&controls=0"} title="YouTube video player" frameborder="0" autoplay="1" mute="1" loop="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                  <iframe className = "video-player" width="1280" height="560" src={this.state.selectedItem.data+"?autoplay=1&enablejsapi=1&cc_load_policy=1&loop=0&modestbranding=1&controls=0"} title="YouTube video player" frameborder="0" autoplay="1" mute="1" loop="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
               ) : console.log("not a video")}
+              < InteractionLinks video = {this.state.video}/>
             </div>
             <div className = "contentBlurb">{this.state.blurb}</div>
           </div>
