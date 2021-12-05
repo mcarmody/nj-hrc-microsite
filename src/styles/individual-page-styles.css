@@ -110,6 +110,7 @@
   background-size: 1050px;
   background-position: left;
   overflow: hidden;
+  max-height: 55vh;
 }
 
 .side-nav-container {
@@ -291,13 +292,13 @@
   .story-content::before {
     position: absolute;
     top: 0;
-    left: 750px;
+    left: 850px;
     right: 0;
     bottom: 0;
     background: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0)), to(black));
     background: linear-gradient(to right, rgba(0, 0, 0, 0), black);
     content: "";
     z-index: 99;
-    width: 300px;
+    width: 200px;
   }
 }

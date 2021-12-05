@@ -141,9 +141,7 @@ class IndividualStory extends React.Component {
             <div className = "story-title">{this.state.title}</div>
             {this.state.selectedItem.type !== "video" ? (
               <div className = {this.state.contentClass} style = {{backgroundImage: "url("+mediaLinkUrl+this.state.selectedItem.data+")"}}>
-                {this.state.selectedItem.type !== "video" ? (
-                  <div className = "story-copy" dangerouslySetInnerHTML={{ __html: this.state.description}} />
-                ) : console.log("this is a video")}
+                
                 {this.state.selectedItem.type=="video" ? (
                   <video id="story-clip" className = "story-video-container">
                     <source src = {mediaLinkUrl+this.state.selectedItem.data} type="video/mp4" className = "story-video"/>
@@ -172,7 +170,8 @@ class IndividualStory extends React.Component {
             < SideNavItem type = {rawContent[(this.state.id*5+2)].type} data = {mediaLinkUrl+rawContent[(this.state.id*5+2)].data} title = {rawContent[(this.state.id*5+2)].title} metadata2 = {mediaLinkUrl+rawContent[(this.state.id*5+2)].metadata2} onClick={() => this.selectItem((this.state.id*5+2))} />
             < SideNavItem type = {rawContent[(this.state.id*5+3)].type} data = {mediaLinkUrl+rawContent[(this.state.id*5+3)].data} title = {rawContent[(this.state.id*5+3)].title} metadata2 = {mediaLinkUrl+rawContent[(this.state.id*5+3)].metadata2} onClick={() => this.selectItem((this.state.id*5+3))} />
             < SideNavItem type = {rawContent[(this.state.id*5+4)].type} icon = {mediaLinkUrl+rawContent[(this.state.id*5+4)].icon} data = {mediaLinkUrl+rawContent[(this.state.id*5+4)].data} title = {rawContent[(this.state.id*5+4)].title} metadata2 = {mediaLinkUrl+rawContent[(this.state.id*5+4)].metadata2} onClick={() => this.selectItem((this.state.id*5+4))} />
-           
+            
+            
             < ActionLinks social = {true} donate = {true}/>
           </div>
           < Tagline size = "small" position = "extra-low"/>
