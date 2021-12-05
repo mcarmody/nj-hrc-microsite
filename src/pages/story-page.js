@@ -3,8 +3,8 @@ import { Link } from "gatsby"
 import { navigate } from "gatsby"
 import landingVid from "../media/vid/rain-test.mp4"
 import Logo from "../components/njhrc-logo";
-import ActionLinks from "../components/action-links";
 import InteractionLinks from "../components/interaction-links";
+import SocialLinks from "../components/social-links";
 import NavMovie from "../components/nav-movie";
 import SideNavItem from "../components/side-nav-item.js"
 import "../styles/individual-page-styles.css";
@@ -150,7 +150,7 @@ class IndividualStory extends React.Component {
                     <source src = {mediaLinkUrl+this.state.selectedItem.data} type="video/mp4" className = "story-video"/>
                   </video>
                 ) : console.log("not a video")}
-                {this.state.selectedItem.type !== "image" ? < InteractionLinks /> : "no share links for this one" }
+                {this.state.selectedItem.type !== "image" ? < InteractionLinks /> : console.log("no share links for this one") }
               </div>
             ) :
             <div className = {this.state.contentClass} style = {{backgroundImage: "url("+mediaLinkUrl+this.state.selectedItem.metadata2+")"}}>
@@ -162,7 +162,7 @@ class IndividualStory extends React.Component {
                   <source src = {mediaLinkUrl+this.state.selectedItem.data} type="video/mp4" className = "story-video"/>
                 </video>
               ) : console.log("not a video")}
-              < InteractionLinks type = {this.state.selectedItem.type} />
+              < InteractionLinks type = {this.state.selectedItem.type} share = {true}/>
             </div>
             }
             <div className = "contentBlurb">{this.state.blurb}</div>
@@ -175,8 +175,7 @@ class IndividualStory extends React.Component {
             < SideNavItem type = {rawContent[(this.state.id*5+4)].type} icon = {mediaLinkUrl+rawContent[(this.state.id*5+4)].icon} data = {mediaLinkUrl+rawContent[(this.state.id*5+4)].data} title = {rawContent[(this.state.id*5+4)].title} metadata2 = {mediaLinkUrl+rawContent[(this.state.id*5+4)].metadata2} onClick={() => this.selectItem((this.state.id*5+4))} />
             < SideNavItem type = {rawContent[(this.state.id*5)].type} data = {mediaLinkUrl+rawContent[(this.state.id*5)].data} title = {rawContent[(this.state.id*5)].title} metadata2 = {mediaLinkUrl+rawContent[(this.state.id*5)].metadata2} onClick={() => this.selectItem((this.state.id*5))} />
            
-            
-            < ActionLinks social = {true} donate = {true}/>
+            < SocialLinks />
           </div>
           < Tagline size = "small" position = "extra-low"/>
           < Logo wordmark = {false} sideCopy = {true} size = {"small"}/>
