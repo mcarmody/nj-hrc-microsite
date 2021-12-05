@@ -10,17 +10,14 @@ class InteractionLinks extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			video: document.getElementById('story-clip'),
 			videoButtonText: "Play"
 		}
 	}
 
 	componentDidMount() {
-		this.setState({video: document.getElementById('story-clip')})
 	}
 
 	componentDidUpdate(prevProps, prevState) {
-		this.state.video==undefined ? this.setState({video: document.getElementById('story-clip')}) : console.log("we have a video")
 	}
 
 	share = () => {
@@ -29,9 +26,9 @@ class InteractionLinks extends React.Component {
 	}
 
 	toggleVideo = () => {
-		this.state.video==undefined ? this.setState({video: document.getElementById('story-clip')}) : console.log("we have a video")
-		this.state.video.paused ? this.state.video.play() : this.state.video.pause()
-		this.state.video.paused ? this.setState({videoButtonText: "Play"}) : this.setState({videoButtonText: "Pause"})
+		document.getElementById('story-clip')==undefined ? this.setState({video: document.getElementById('story-clip')}) : console.log("we have a video")
+		document.getElementById('story-clip').paused ? document.getElementById('story-clip').play() : document.getElementById('story-clip').pause()
+		document.getElementById('story-clip').paused ? this.setState({videoButtonText: "Play"}) : this.setState({videoButtonText: "Pause"})
 	}
 
 
