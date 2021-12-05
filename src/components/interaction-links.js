@@ -26,9 +26,16 @@ class InteractionLinks extends React.Component {
 	}
 
 	toggleVideo = () => {
-		document.getElementById('story-clip')==undefined ? this.setState({video: document.getElementById('story-clip')}) : console.log("we have a video")
-		document.getElementById('story-clip').paused ? document.getElementById('story-clip').play() : document.getElementById('story-clip').pause()
-		document.getElementById('story-clip').paused ? this.setState({videoButtonText: "Play"}) : this.setState({videoButtonText: "Pause"})
+		var video = document.getElementById('story-clip');
+		video==undefined ? this.setState({video: video}) : console.log("we have a video")
+		if(video.paused) {
+			video.classList.remove('hidden')
+			video.play()
+		} else {
+			video.classList.add('hidden')
+			video.pause()
+		}
+		video.paused ? this.setState({videoButtonText: "Play"}) : this.setState({videoButtonText: "Pause"})
 	}
 
 

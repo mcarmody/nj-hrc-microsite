@@ -139,17 +139,31 @@ class IndividualStory extends React.Component {
         <div className = "story-parent-container">
           <div className = "selected-topic-container" style = {this.state.gradient} >
             <div className = "story-title">{this.state.title}</div>
-            <div className = {this.state.contentClass} style = {{backgroundImage: "url("+mediaLinkUrl+this.state.selectedItem.data+")"}}>
-              {this.state.selectedItem.type !== "video" ? (
-                <div className = "story-copy" dangerouslySetInnerHTML={{ __html: this.state.description}} />
-              ) : console.log("this is a video")}
-              {this.state.selectedItem.type=="video" ? (
-                <video id="story-clip" className = "story-video-container">
-                  <source src = {mediaLinkUrl+this.state.selectedItem.data} type="video/mp4" className = "story-video"/>
-                </video>
-              ) : console.log("not a video")}
-              < InteractionLinks />
-            </div>
+            {this.state.selectedItem.type !== "video" ? (
+              <div className = {this.state.contentClass} style = {{backgroundImage: "url("+mediaLinkUrl+this.state.selectedItem.data+")"}}>
+                {this.state.selectedItem.type !== "video" ? (
+                  <div className = "story-copy" dangerouslySetInnerHTML={{ __html: this.state.description}} />
+                ) : console.log("this is a video")}
+                {this.state.selectedItem.type=="video" ? (
+                  <video id="story-clip" className = "story-video-container">
+                    <source src = {mediaLinkUrl+this.state.selectedItem.data} type="video/mp4" className = "story-video"/>
+                  </video>
+                ) : console.log("not a video")}
+                < InteractionLinks />
+              </div>
+            ) :
+            <div className = {this.state.contentClass} style = {{backgroundImage: "url("+mediaLinkUrl+this.state.selectedItem.metadata2+")"}}>
+                {this.state.selectedItem.type !== "video" ? (
+                  <div className = "story-copy" dangerouslySetInnerHTML={{ __html: this.state.description}} />
+                ) : console.log("this is a video")}
+                {this.state.selectedItem.type=="video" ? (
+                  <video id="story-clip" className = "story-video-container hidden">
+                    <source src = {mediaLinkUrl+this.state.selectedItem.data} type="video/mp4" className = "story-video"/>
+                  </video>
+                ) : console.log("not a video")}
+                < InteractionLinks />
+              </div>
+            }
             <div className = "contentBlurb">{this.state.blurb}</div>
           </div>
           <div className = "side-nav-container">
