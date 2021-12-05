@@ -19,31 +19,31 @@ const rawContent = [
         //  infographic
 
         //How We Got Here
-        {type: "video", data: "/vid/HOW+WE+GOT+HERE.mp4", title: "How We Got Here", metadata: "", metadata2: "/img/how+we+got+here.jpg"},
+        {type: "video", data: "/vid/HOW+WE+GOT+HERE.mp4", title: "How We Got Here", metadata: "", metadata2: "/img/story-bg-1.jpg"},
         {type: "link", data: "/img/HOW+WE+GOT+HERE+STAT.JPG", title: "Cost of the Drug War", metadata: '<span className = "stat-highlight">$11.6 billion</span>spent on drug war arrests <span className = "stat-highlight">544.6 times</span>more than investment in harm reduction services'},
         {type: "link", data: "/img/HOW+WE+GOT+HERE+TESTIMONIAL.JPG", title: "Testimonial", metadata: "“New Jersey law states you need local municipal ordinance to have a syringe access program. A lot of municipal leaders don’t have a public health background and don’t understand that syringe access saves lives, saves money, and can help clean up the city.”", metadata2: "—Georgett Watson, South Jersey AIDS Alliance"},
         {type: "video", data: "/vid/SIDE+VIDEO-HOW+WE+GOT+HERE.mp4", title: "Share the campaign", metadata: "", metadata2: "/img/how+we+got+here.jpg"},
         {type: "image", data: "/img/how-we-got-here_icon.png", title: "Rates of HIV where you live", metadata: "", metadata2: "/img/harm_reduction_test.png"},
         //HR 101
-        {type: "video", data: "/vid/HARM+REDUCTION+101.mp4", title: "How We Got Here", metadata: "", metadata2: "/img/how+we+got+here.jpg"},
+        {type: "video", data: "/vid/HARM+REDUCTION+101.mp4", title: "How We Got Here", metadata: "", metadata2: "/img/story-bg-2.jpg"},
         {type: "link", data: "/img/HR101+STAT.JPG", title: "Reducing Transmission", metadata: 'People who access harm reduction programs are <span className = "stat-highlight">50% less likely</span>to contract HIV or Hepatitis C.'},
         {type: "link", data: "/img/HR101+TESTIMONIAL.JPG", title: "Testimonial", metadata: "Going to a syringe access program was probably the smartest thing that I did.  They saved me from infectious disease.”", metadata2: "—Domenick"},
         {type: "video", data: "/vid/SIDE+VIDEO-HR101.mp4", title: "Share the campaign", metadata: "", metadata2: "/img/how+we+got+here.jpg"},
         {type: "image", data: "/img/how-we-got-here_icon.png", title: "Rates of HIV where you live", metadata: "", metadata2: "/img/harm_reduction_test.png"},
         //HEP&HIV
-        {type: "video", data: "/vid/HIV+_+HEP+C.mp4", title: "How We Got Here", metadata: "", metadata2: "/img/how+we+got+here.jpg"},
+        {type: "video", data: "/vid/HIV+_+HEP+C.mp4", title: "How We Got Here", metadata: "", metadata2: "/img/story-bg-3.jpg"},
         {type: "link", data: "/img/HIV+STAT.JPG", title: "Reducing rates", metadata: 'As syringe access has become available, rates of HIV transmission among people who inject drugs have declined by one-third.'},
         {type: "link", data: "/img/HIV+TESTIMONIAL.JPG", title: "Testimonial", metadata: "HIV Treatment for one person in their lifetime is about $600,000. The current cost of one syringe is 10 cents.”", metadata2: "—Georgett Watson, South Jersey AIDS Alliance"},
         {type: "video", data: "/vid/SIDE+VIDEO-HIV+_+HEP+C.mp4", title: "Share the campaign", metadata: "", metadata2: "/img/how+we+got+here.jpg"},
         {type: "image", data: "/img/how-we-got-here_icon.png", title: "Rates of HIV where you live", metadata: "", metadata2: "/img/harm_reduction_test.png"},
         //Overdose
-        {type: "video", data: "/vid/OVERDOSE.m4v", title: "How We Got Here", metadata: "", metadata2: "/img/how+we+got+here.jpg"},
+        {type: "video", data: "/vid/OVERDOSE.m4v", title: "How We Got Here", metadata: "", metadata2: "/img/story-bg-4.jpg"},
         {type: "link", data: "/img/OVERDOSE+STAT.JPG", title: "Overdoses in New Jersey", metadata: 'There were <span className = "stat-highlight">18,492</span>overdose deaths in the state of New Jersey between 2010 and 2019'},
         {type: "link", data: "/img/OVERDOSE+TESTIMONIAL.JPG", title: "Testimonial", metadata: "The numbers don’t lie. Individuals who come to our syringe access program have less of a chance of overdosing.”", metadata2: "—Eddie - Hyacinth AIDS Foundation"},
         {type: "video", data: "/vid/SIDE+VIDEO-OVERDOSE.mp4", title: "Share the campaign", metadata: "", metadata2: "/img/how+we+got+here.jpg"},
         {type: "image", data: "/img/how-we-got-here_icon.png", title: "Rates of HIV where you live", metadata: "", metadata2: "/img/harm_reduction_test.png"},
         //Services
-        {type: "video", data: "/vid/CONNECTION+TO+SERVICES.mp4", title: "How We Got Here", metadata: "", metadata2: "/img/how+we+got+here.jpg"},
+        {type: "video", data: "/vid/CONNECTION+TO+SERVICES.mp4", title: "How We Got Here", metadata: "", metadata2: "/img/story-bg-5.jpg"},
         {type: "link", data: "/img/HOW+WE+GOT+HERE+STAT.JPG", title: "Access to Harm Reduction", metadata: 'People who access harm reduction programs are 5 times more likely to enter treatment for drug use and 3 times more likely to stop drug use impeding quality of life than those without access.'},
         {type: "link", data: "/img/HOW+WE+GOT+HERE+TESTIMONIAL.JPG", title: "Testimonial", metadata: "“We have great evidence that shows that somebody who participates in a syringe access program is actually more likely to enter into drug treatment.”", metadata2: "—Dr. Amesika Nyaku, Rutgers Institute for Health"},
         {type: "video", data: "/vid/SIDE+VIDEO-CONNECTION+TO+SERVICES.mp4", title: "Share the campaign", metadata: "", metadata2: "/img/how+we+got+here.jpg"},
