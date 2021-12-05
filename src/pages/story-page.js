@@ -173,7 +173,7 @@ class IndividualStory extends React.Component {
             < SideNavItem type = {rawContent[(this.state.id*5+2)].type} data = {mediaLinkUrl+rawContent[(this.state.id*5+2)].data} title = {rawContent[(this.state.id*5+2)].title} metadata2 = {mediaLinkUrl+rawContent[(this.state.id*5+2)].metadata2} onClick={() => this.selectItem((this.state.id*5+2))} />
             < SideNavItem type = {rawContent[(this.state.id*5+3)].type} data = {mediaLinkUrl+rawContent[(this.state.id*5+3)].data} title = {rawContent[(this.state.id*5+3)].title} metadata2 = {mediaLinkUrl+rawContent[(this.state.id*5+3)].metadata2} onClick={() => this.selectItem((this.state.id*5+3))} />
             < SideNavItem type = {rawContent[(this.state.id*5+4)].type} icon = {mediaLinkUrl+rawContent[(this.state.id*5+4)].icon} data = {mediaLinkUrl+rawContent[(this.state.id*5+4)].data} title = {rawContent[(this.state.id*5+4)].title} metadata2 = {mediaLinkUrl+rawContent[(this.state.id*5+4)].metadata2} onClick={() => this.selectItem((this.state.id*5+4))} />
-            < SideNavItem type = {rawContent[(this.state.id*5+1)].type} data = {mediaLinkUrl+rawContent[(this.state.id*5+1)].data} title = {rawContent[(this.state.id*5+1)].title} metadata2 = {mediaLinkUrl+rawContent[(this.state.id*5+1)].metadata2} onClick={() => this.selectItem((this.state.id*5+1))} />
+            < SideNavItem type = {rawContent[(this.state.id*5)].type} data = {mediaLinkUrl+rawContent[(this.state.id*5)].data} title = {rawContent[(this.state.id*5)].title} metadata2 = {mediaLinkUrl+rawContent[(this.state.id*5)].metadata2} onClick={() => this.selectItem((this.state.id*5))} />
            
             
             < ActionLinks social = {true} donate = {true}/>

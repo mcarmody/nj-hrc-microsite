@@ -131,9 +131,9 @@
   width: 24vw;
   text-transform: uppercase;
   background: #E9E9E9;
-  min-height: 72px;
+  min-height: 60px;
   padding-left: 12px;
-  line-height: 70px;
+  line-height: 58px;
   cursor: pointer;
   color: #440649;
 }
@@ -162,7 +162,9 @@
   max-height: 365px;
   background-size: cover;
   background-repeat: no-repeat;
-  min-height: 200px;
+  min-height: 180px;
+  color: white;
+  text-shadow: 0 4px 6px black;
 }
 
 .image-nav {
@@ -170,7 +172,7 @@
   max-height: 365px;
   background-size: 200px;
   background-repeat: no-repeat;
-  min-height: 300px;
+  min-height: 160px;
   background-position: center;
 }
 
