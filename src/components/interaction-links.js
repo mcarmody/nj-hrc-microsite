@@ -32,7 +32,6 @@ class InteractionLinks extends React.Component {
 		this.state.video==undefined ? this.setState({video: document.getElementById('story-clip')}) : console.log("we have a video")
 		this.state.video.paused ? this.state.video.play() : this.state.video.pause()
 		this.state.video.paused ? this.setState({videoButtonText: "Play"}) : this.setState({videoButtonText: "Pause"})
-		console.log("play "+this.state.video)
 	}
 
 
