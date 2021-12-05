@@ -306,7 +306,7 @@
 	}
 }
 
-@media only screen and (min-width:  1400px) {
+@media only screen and (min-width:  1441px) {
 	.story-content::before {
 		position: absolute;
 		top: 0;
@@ -318,4 +318,11 @@
 		z-index: 99;
 		width: 200px;
 	}
+
 }
+
+@media only screen and (max-width:  1440px) {
+	.story-content {
+		background-size: 75vw;
+	}
+}	
