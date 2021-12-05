@@ -5,6 +5,7 @@
 	color: white;
 	display: block;
 	line-height: 1;
+	opacity: 1;
 }
 
 .overlay-background {
@@ -15,6 +16,8 @@
 	display: block;
 	top: 0px;
 	position: fixed;
+	transition: all 1s;
+	opacity: 1;
 }
 
 .overlay-content-container {
@@ -23,6 +26,7 @@
 	position: relative;
 	top: 20vh;
 	transition: all 1s;
+	opacity: 1;
 }
 
 .overlay-buttons-container {
@@ -41,8 +45,14 @@
 	    font-weight: bold;
 	    cursor: pointer;
 	}
+	opacity: 1;
+}
+
+#landing-clip {
+	transition: opacity .5s;
+	opacity: 1;
 }
 
 .hidden {
-	display:  none !important;
+	opacity: 0 !important;
 }
