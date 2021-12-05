@@ -24,7 +24,7 @@ const vidStyles = {
 
 var timerCount = 0; //duration of current video in milliseconds
 var firstVideoDuration = 2000; //length of first video in milliseconds
-var secondVideoDuration = 2000; //length of second video in milliseconds
+var secondVideoDuration = 20000; //length of second video in milliseconds
 var thirdVideoDuration = 2000; //length of third video in milliseconds
 var betweenCopyDelay = 2000;
 var videoOverlay;
@@ -64,6 +64,7 @@ class QuestionOverlay extends React.Component {
 		this.showCopy();
 		this.updateCopy(0);
 		this.stateSwitch();
+		videoPlayer.muted = false;
 	}
 
 	nextQuestion = (stateNumber) => {
@@ -82,6 +83,7 @@ class QuestionOverlay extends React.Component {
 		videoPlayer.classList.remove("hidden");
 		buttonsContainer.classList.add("hidden");
 		console.log("show the video");
+		this.toggleVideo(true);
 	}
 
 	showCopy = () => {
@@ -89,6 +91,7 @@ class QuestionOverlay extends React.Component {
 		//videoPlayer.classList.add("hidden");
 		document.getElementById("landing-clip").classList.add("hidden");
 		console.log("hide the video");
+		this.toggleVideo(false);
 	}
 
 	showButtons = () => {
@@ -99,7 +102,7 @@ class QuestionOverlay extends React.Component {
 		console.log("stage: "+this.state.stage)
 		switch(this.state.stage) {
 			case 0: //this is the question
-				this.showCopy()
+				//this.showCopy()
 				setTimeout(function() {
 					this.updateCopy(1)
 					this.showButtons()
@@ -128,7 +131,6 @@ class QuestionOverlay extends React.Component {
 			case 4: //this is the second video
 				this.setState({video: videoList[1]})
 				this.hideCopy()
-
 				setTimeout(function() {
 					this.setState({stage: 5});
 				}.bind(this), secondVideoDuration)
@@ -158,6 +160,17 @@ class QuestionOverlay extends React.Component {
 		
 	};
 
+	toggleVideo = (doPlay) => {
+		document.getElementById('landing-clip').load()
+		setTimeout(function() {
+			if(doPlay) {
+				document.getElementById('landing-clip').play()
+			} else {
+				document.getElementById('landing-clip').pause();
+			}
+		}, 200)
+	}
+
 
 	componentDidUpdate(prevProps, prevState) {
 		if(this.state.stage !== prevState.stage) {
@@ -166,7 +179,7 @@ class QuestionOverlay extends React.Component {
 		}
 		if(this.state.copy !== prevState.copy) {
 			//this.updateCopy();
-		} 
+		}
 	}
 
 

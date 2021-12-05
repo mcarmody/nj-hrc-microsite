@@ -21,7 +21,7 @@ const titlesList = [
   "Harm Reduction 101",
   "Viral Hepatitis and HIV",
   "Overdose and Prevention",
-  "Connect To Services"
+  "Connection To Services"
 ]
 const navHeadingStyles = {
 	fontFamily: "Roboto",
