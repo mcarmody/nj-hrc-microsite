@@ -29,25 +29,25 @@ const rawContent = [
         {type: "link", data: "/img/HR101+STAT.JPG", title: "Reducing Transmission", metadata: 'People who access harm reduction programs are <span className = "stat-highlight">50% less likely</span>to contract HIV or Hepatitis C.'},
         {type: "link", data: "/img/HR101+TESTIMONIAL.JPG", title: "Testimonial", metadata: "Going to a syringe access program was probably the smartest thing that I did.  They saved me from infectious disease.”", metadata2: "—Domenick"},
         {type: "video", data: "/vid/SIDE+VIDEO-HR101.mp4", title: "Share the campaign", metadata: "", metadata2: "/img/how+we+got+here.jpg"},
-        {type: "image", data: "/img/hr101-info.png", title: "Rates of HIV where you live", metadata: "A nationwide study showed that more than 80% of naloxone reversals were actually carried out by PWUD.", metadata2: ""},
+        {type: "image", data: "/img/hr101-info.png", title: "Rates of HIV where you live", metadata: "A nationwide study showed that more than 80% of naloxone reversals were actually carried out by PWUD.", metadata2: "<div className = 'source-1'><span>>></span> Source: www.cdc.gov/ssp/syringe-services-programs-factsheet.html</div>"},
         //HEP&HIV
         {type: "video", data: "/vid/HIV+_+HEP+C.mp4", title: "How We Got Here", metadata: "", metadata2: "/img/story-bg-3.jpg"},
         {type: "link", data: "/img/HIV+STAT.JPG", title: "Reducing rates", metadata: 'As syringe access has become available, rates of HIV transmission among people who inject drugs have declined by one-third.'},
         {type: "link", data: "/img/HIV+TESTIMONIAL.JPG", title: "Testimonial", metadata: "HIV Treatment for one person in their lifetime is about $600,000. The current cost of one syringe is 10 cents.”", metadata2: "—Georgett Watson, South Jersey AIDS Alliance"},
         {type: "video", data: "/vid/SIDE+VIDEO-HIV+_+HEP+C.mp4", title: "Share the campaign", metadata: "", metadata2: "/img/how+we+got+here.jpg"},
-        {type: "image", data: "/img/hiv-info.png", title: "Rates of HIV where you live", metadata: "SSPs ARE associated with approximately 50% reduction in HIV & Hepatitis C incidence. When combined with medications that treat opioid dependence (also known as medication-assisted treatment) HIV and HCV transmission is reduced by more than two-thirds.", metadata2: ""},
+        {type: "image", data: "/img/hiv-info.png", title: "Rates of HIV where you live", metadata: "SSPs ARE associated with approximately 50% reduction in HIV & Hepatitis C incidence. ", metadata2: "When combined with medications that treat opioid dependence (also known as medication-assisted treatment) HIV and HCV transmission is reduced by more than two-thirds.<div className = 'source-1'><span>>></span> Source: CDC Summary of Information on The Safety and Effectiveness of Syringe Services Programs (SSPs)</div><div className = 'source-2'><span>>></span> Source: all above stats retrieved/calculated from State of New Jersey Department of Health/State of New Jersey Department of Health Overdose Data Dashboard </div>"},
         //Overdose
         {type: "video", data: "/vid/OVERDOSE.m4v", title: "How We Got Here", metadata: "", metadata2: "/img/story-bg-4.jpg"},
         {type: "link", data: "/img/OVERDOSE+STAT.JPG", title: "Overdoses in New Jersey", metadata: 'There were <span className = "stat-highlight">18,492</span>overdose deaths in the state of New Jersey between 2010 and 2019'},
         {type: "link", data: "/img/OVERDOSE+TESTIMONIAL.JPG", title: "Testimonial", metadata: "The numbers don’t lie. Individuals who come to our syringe access program have less of a chance of overdosing.”", metadata2: "—Eddie - Hyacinth AIDS Foundation"},
         {type: "video", data: "/vid/SIDE+VIDEO-OVERDOSE.mp4", title: "Share the campaign", metadata: "", metadata2: "/img/how+we+got+here.jpg"},
-        {type: "image", data: "/img/overdose-info.png", title: "Rates of HIV where you live", metadata: "More than 80% of naloxone reversals were carried out by PWUD", metadata2: ""},
+        {type: "image", data: "/img/overdose-info.png", title: "Rates of HIV where you live", metadata: "More than 80% of naloxone reversals were carried out by PWUD", metadata2: "<div className = 'source-1'><span>>></span> Source: Office of the Chief State Medical Examiner (NJ) https://ocsme.nj.gov/dashboard</div>"},
         //Services
         {type: "video", data: "/vid/CONNECTION+TO+SERVICES.mp4", title: "How We Got Here", metadata: "", metadata2: "/img/story-bg-5.jpg"},
         {type: "link", data: "/img/HOW+WE+GOT+HERE+STAT.JPG", title: "Access to Harm Reduction", metadata: 'People who access harm reduction programs are 5 times more likely to enter treatment for drug use and 3 times more likely to stop drug use impeding quality of life than those without access.'},
         {type: "link", data: "/img/HOW+WE+GOT+HERE+TESTIMONIAL.JPG", title: "Testimonial", metadata: "“We have great evidence that shows that somebody who participates in a syringe access program is actually more likely to enter into drug treatment.”", metadata2: "—Dr. Amesika Nyaku, Rutgers Institute for Health"},
         {type: "video", data: "/vid/SIDE+VIDEO-CONNECTION+TO+SERVICES.mp4", title: "Share the campaign", metadata: "", metadata2: "/img/how+we+got+here.jpg"},
-        {type: "image", data: "/img/connection-info.png", title: "Rates of HIV where you live", metadata: "Studies in Baltimore and New York City found no difference in crime rates between areas with and without syringe services programs.", metadata2: ""},
+        {type: "image", data: "/img/connection-info.png", title: "Rates of HIV where you live", metadata: "Studies in Baltimore and New York City found no difference in crime rates between areas with and without syringe services programs.", metadata2: "<div className = 'source-1'><span>>></span> Source: 2018 CDC publication, Evidence-Based Strategies for Preventing Opioid Overdose: What’s Working in the United States</div><div className = 'source-2'><span>>></span> Source: CDC Syringe Services Programs Fact Sheet  </div>"},
       ];
 
 const mediaLinkUrl = "https://nj-hrc-project-media.s3.amazonaws.com/media";
@@ -161,7 +161,7 @@ class IndividualStory extends React.Component {
                   <source src = {mediaLinkUrl+this.state.selectedItem.data} type="video/mp4" className = "story-video"/>
                 </video>
               ) : console.log("not a video")}
-              < InteractionLinks />
+              < InteractionLinks type = {this.state.selectedItem.type} />
             </div>
             }
             <div className = "contentBlurb">{this.state.blurb}</div>
