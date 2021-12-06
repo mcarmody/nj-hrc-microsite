@@ -106,10 +106,20 @@
   max-width: 400px;
 }
 
-.tagline-low {
-  font-size: 30pt !important;
-  padding-left: 40px !important;
-  bottom: 8vh !important;
+h1.tagline-low {
+  font-size: 30pt;
+  padding-left: 40px;
+  bottom: 8vh;
+}
+
+.tagline {
+  padding-left: 40px;
+  font-size: 35pt;
+  position: fixed;
+  font-weight: 400;
+  color: white;
+  display: block;
+  bottom: 16vh;
 }
 
 .story-copy {

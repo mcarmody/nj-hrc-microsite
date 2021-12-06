@@ -1,20 +1,5 @@
 import * as React from "react"
 
-var taglineStyles = {
-	paddingLeft: "40px",
-	fontSize: "82pt",
-	position: "fixed",
-	fontWeight: "400",
-	color: "white",
-	display: "block"
-}
-
-const largeStyle = {
-	fontSize: "82pt",
-	top: "20vh",
-	textShadow: "0 4px 6px black"
-}
-
 const smallStyle = {
 	fontSize: "35pt",
 	bottom: "16vh"
@@ -30,8 +15,7 @@ class Tagline extends React.Component {
 	constructor(props) {
 	    super(props);
 	    this.state = {
-	    	size: this.props.size === "large" ? largeStyle : smallStyle,
-	    	class: "tagline"
+	    	class: this.props.size === "large" ? "tagline-large" : "tagline-small"
 	    };
 	  }
 
@@ -44,7 +28,7 @@ class Tagline extends React.Component {
 	render() {
 
 		return (
-			<h1 className = {this.state.class} style = {{...taglineStyles,...this.state.size}}>
+			<h1 className = {"tagline "+this.state.class}>
 		        Essential. <br />
 		        Effective. <br />
 		        <span style = {taglineBold}>Human.</span>
