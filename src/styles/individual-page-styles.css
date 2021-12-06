@@ -369,3 +369,9 @@ h1.tagline-low {
     bottom: none;
   }
 }
+@media only screen and (max-height: 860px) {
+  .nav-item-container {
+    max-height: 140px;
+    overflow: hidden;
+  }
+}
