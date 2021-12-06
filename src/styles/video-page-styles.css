@@ -14,7 +14,7 @@
 .overlay-background {
   width: 100vw;
   height: 100vh;
-  background-color: #cc4400;
+  background: linear-gradient(115.66deg, #CC4400 -1.53%, rgba(201, 118, 76, 0.61165) 21.96%, #272727 66.95%);
   -webkit-transition: all 1s;
   transition: all 1s;
   display: block;

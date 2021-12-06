@@ -25,7 +25,7 @@ class overlayText extends React.Component {
 	    <main style={pageStyles}>
 	    	<title>NJ HRC Site</title>
 	      	< QuestionOverlay />
-	      < Logo />
+      	< Logo wordmark = {true} sideCopy = {true} size = {"small"}/>
 	      <div className = "link-container">
 	      	<Link to="/stories-hub">< LinkButton title = "Main Site" /></Link>
       	</div>

@@ -35,7 +35,7 @@ const LandingPage = () => {
       <title>NJ HRC Site</title>
       < BackgroundMovie video= {landingVid} autoplay = {"autoplay"}/>
       < Tagline size = "large"/>
-      < Logo/>
+      < Logo wordmark = {true} sideCopy = {true} size = {"small"}/>
       <div className = "link-container">
         <Link to="/intro">< LinkButton title = "Enter Experience"/></Link>
         <Link to="/stories-hub">< LinkButton title = "Main Site" /></Link>
