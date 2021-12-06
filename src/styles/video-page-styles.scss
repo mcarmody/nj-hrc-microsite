@@ -87,4 +87,15 @@
 		padding-top: 0px;
 		font-size: 8pt !important;
 	}
+
+	.bg-video-container {
+		top: 0;
+		left: 0;
+		width: 100vw;
+		height: 100vh;
+
+		.bg-video {
+			width: 100%;
+		}
+	}
 }
