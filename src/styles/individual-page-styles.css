@@ -402,4 +402,21 @@ h1.tagline-low {
   .nav-item-container .nav-item span {
     font-size: 12px;
   }
+
+  .social-container {
+    bottom: 20px;
+    height: 40px;
+    padding: 4px 0;
+  }
+  .social-container a img {
+    height: 18px;
+    margin: 0 4px;
+  }
+  .social-container div {
+    margin-top: 4px;
+    font-size: 12px;
+  }
+  .social-container div span {
+    font-size: 16px;
+  }
 }
