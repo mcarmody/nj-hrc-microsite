@@ -17,8 +17,8 @@ const pageStyles = {
 }
 
 const titlesList = [
-  "How We Got Here",
-  "Harm Reduction 101",
+  "How We<br />Got Here",
+  "Harm Reduction<br />101",
   "Viral Hepatitis and HIV",
   "Overdose and Prevention",
   "Connection To Services"
@@ -56,7 +56,7 @@ class StoriesHub extends React.Component {
     return (
       <main style={pageStyles}>
       	<title>Stories Hub</title>
-    		< NavMovie source= {imageList[0]} id = "0" videoName = "first" title = {titlesList[0]}/>
+    		< NavMovie source= {imageList[0]} id = "0" videoName = "first" title = {titlesList[0]} />
         < NavMovie source= {imageList[1]} id = "1" videoName = "second" title = {titlesList[1]}/>
         < NavMovie source= {imageList[2]} id = "2" videoName = "third" title = {titlesList[2]}/>
         < NavMovie source= {imageList[3]} id = "3" videoName = "fourth" title = {titlesList[3]}/>

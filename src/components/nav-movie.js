@@ -65,6 +65,13 @@ class NavMovie extends React.Component {
 			ReactDOM.findDOMNode(this).click();
 		}
 
+		if(this.state.title=="undefined") {
+	      this.setState({title: this.props.title});
+	      document.getElementsByClassName('video-title')[this.props.id].innerHTML = this.props.title;
+	    } else {
+	      document.getElementsByClassName('video-title')[this.props.id].innerHTML = this.props.title;
+	    }
+
 		this.setState({beforeStyle: {
 				'::before': {
 					background: 'linear-gradient(147.23deg, rgba(255, 84, 0, 0.54) 10.03%, '+colorsList[this.state.data.id]+' 45.96%)',
@@ -113,7 +120,7 @@ class NavMovie extends React.Component {
 			<div className = "video-container" onClick={() => toggle(this)} style = {imgStyle}>
 				<div className = "background-image" />
 
-		  		<div className = "video-title">{this.props.title}</div>
+		  		<div className = "video-title"></div>
 		  		<Link className = "story-link" to="/story-page" id={"story-link-"+this.props.id} state = {{data: this.state.data}}>>></Link>
 	  		</div>
 		)

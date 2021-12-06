@@ -92,6 +92,9 @@ class IndividualStory extends React.Component {
     }
     if(this.state.title=="undefined") {
       this.setState({title: this.props.location.state.title});
+      document.getElementsByClassName('story-title')[0].innerHTML = this.props.location.state.data.title;
+    } else {
+      document.getElementsByClassName('story-title')[0].innerHTML = this.props.location.state.data.title;
     }
     if(this.state.contentItems !== rawContent) {
       this.setState({contentItems: rawContent})
@@ -138,7 +141,7 @@ class IndividualStory extends React.Component {
       return (
         <div className = "story-parent-container">
           <div className = "selected-topic-container" style = {this.state.gradient} >
-            <div className = "story-title">{this.state.title}</div>
+            <div className = "story-title"></div>
             {this.state.selectedItem.type !== "video" ? (
               <div className = {this.state.contentClass} style = {{backgroundImage: "url("+mediaLinkUrl+this.state.selectedItem.data+")"}}>
                 {this.state.selectedItem.type !== "image" ? (
