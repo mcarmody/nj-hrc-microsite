@@ -92,11 +92,11 @@ html, body {
   .intro-copy {
     font-size: 24px;
     line-height: 1.2;
-    top: 10vh;
+    top: 20vh;
   }
 
   .logoBlock {
-    top: 45vh;
+    top: 70vh;
   }
   .logoBlock .wordmark {
     max-width: 100px;
@@ -109,12 +109,13 @@ html, body {
   }
 
   .logoBlock + .link-container {
-    top: 35vh;
-    left: 40vw;
+    top: 60vh;
+    left: 60vw;
   }
   .logoBlock + .link-container a div {
     font-size: 8pt;
     margin: 0;
+    text-shadow: 0 4px 6px black;
   }
   .logoBlock + .link-container a div div {
     border-top: 5px solid transparent !important;

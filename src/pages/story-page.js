@@ -177,6 +177,7 @@ class IndividualStory extends React.Component {
           </div>
           < Tagline size = "small" position = "extra-low"/>
           < Logo wordmark = {false} sideCopy = {true} size = {"small"}/>
+          <div className = "mobile-modal">This site works best if you hold your device in landscape orientation.</div>
         </div>
       )
     } else {

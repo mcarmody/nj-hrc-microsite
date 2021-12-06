@@ -108,7 +108,22 @@ body {
 			opacity: 1;
 		}
 	}
+}
 
+.mobile-modal {
+	top: 40vh;
+	position: fixed;
+	display: block;
+	width: 200px;
+	height: 80px;
+	border-radius: 10px;
+	border:  2px solid black;
+	background:  #e9e9e9;
+	text-align: center;
+	padding: 20px;
+	left: 20vw;
+	z-index: 10000;
+	display: none;
 }
 
 .story-link::after {
@@ -147,6 +162,12 @@ body {
 @media only screen and (max-width:  1550px) {
 	.column-highlighted .video-title {
 		font-size: 36px;
+	}
+}
+
+@media only screen and (max-width: 850px) and (orientation: portrait) {
+	.mobile-modal {
+		display: block;
 	}
 }
 

@@ -29,6 +29,7 @@ class overlayText extends React.Component {
 	      <div className = "link-container">
 	      	<Link to="/stories-hub">< LinkButton title = "Main Site" /></Link>
       	</div>
+        <div className = "mobile-modal">This site works best if you hold your device in landscape orientation.</div>
 	    </main>
 	  )
 

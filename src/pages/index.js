@@ -40,6 +40,7 @@ services help<br />make <span>New Jersey</span><br />healthier and safer</div>
       <div className = "link-container">
         <Link to="/intro">< LinkButton title = "Enter Experience"/></Link>
         <Link to="/stories-hub">< LinkButton title = "Main Site" /></Link>
+        <div className = "mobile-modal">This site works best if you hold your device in landscape orientation.</div>
       </div>
     </main>
   )

@@ -94,7 +94,7 @@
     font-size: 8pt !important;
   }
 
-  .overlay-background + .link-container {
+  .overlay-background + .logoBlock + .link-container {
     top: 60vh;
     left: 70vw;
   }

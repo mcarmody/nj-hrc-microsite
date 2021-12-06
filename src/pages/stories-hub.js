@@ -63,6 +63,7 @@ class StoriesHub extends React.Component {
         < NavMovie source= {imageList[4]} id = "4" videoName = "fifth" title = {titlesList[4]}/>
         < Tagline size = "small" />
         < Logo wordmark = {true} sideCopy = {false}/>
+        <div className = "mobile-modal">This site works best if you hold your device in landscape orientation.</div>
       </main>
     )
   }
