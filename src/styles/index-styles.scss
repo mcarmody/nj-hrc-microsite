@@ -90,6 +90,43 @@ html, body {
 	top: 85vh;
 }
 
+@media only screen and (max-height: 640px) {
+	.intro-copy {
+		font-size: 48px;
+		line-height: 1.2;
+		top:  20vh;
+	}
+
+	.logoBlock {
+		top: 75vh;
+
+		.wordmark {
+			max-width: 100px;
+			padding-right: 12px;
+		}
+	}
+
+	.logoBlock .logoBlurb {
+		padding-top: 0px;
+		font-size: 8pt !important;
+	}
+
+	.logoBlock+.link-container {
+		top: 60vh;
+		left: 70vw;
+
+		a div {
+			font-size: 16pt;
+			margin: 0;
+			text-shadow: 0 4px 6px black;
+
+			.skipText {
+				line-height: 32px;
+			}
+		}
+	}
+}
+
 @media only screen and (max-width: 850px) {
 	.intro-copy {
 		font-size: 24px;

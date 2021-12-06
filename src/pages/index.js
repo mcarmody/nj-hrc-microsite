@@ -35,7 +35,7 @@ const LandingPage = () => {
       <title>NJ HRC Site</title>
       < BackgroundMovie video= {landingVid} autoplay = {"autoplay"}/>
       <div className = "intro-copy">See how<br />Harm Reduction
-services help<br />make <span>New Jersey</span><br />healthier and safer</div>
+      services help<br />make <span>New Jersey</span><br />healthier and safer</div>
       < Logo wordmark = {true} sideCopy = {true} size = {"small"}/>
       <div className = "link-container">
         <Link to="/intro">< LinkButton title = "Enter Experience"/></Link>
