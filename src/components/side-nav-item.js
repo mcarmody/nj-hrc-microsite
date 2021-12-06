@@ -25,6 +25,10 @@ class SideNavItem extends React.Component {
 		function selectNav(self) {
 			console.log(ReactDOM.findDOMNode(self));
 
+			if(!document.getElementById('story-clip').paused) {
+				document.getElementById('play-link').click()
+			}
+
 			if(document.getElementById('story-clip')) {
 				document.getElementById('story-clip').load()
 			}
