@@ -2,15 +2,6 @@ import * as React from "react";
 import wordmark from "../media/img/njhrc-wordmark.png";
 
 
-const vidStyles = {
-	position: "fixed",
-	top: 0,
-	left: 0,
-	minWidth: "100vw",
-	minHeight: "100vh",
-	zIndex: -1,
-};
-
 class BackgroundMovie extends React.Component {
 	constructor(props) {
 		super(props);
@@ -40,9 +31,11 @@ class BackgroundMovie extends React.Component {
 
 	render() {
 		return (
-			<video style={vidStyles}  autoplay = {this.props.autoplay} onplay = {this.videoPlayed()} className = "bg-video" key={this.state.video}>
-	      		<source src = {this.state.video} type="video/mp4" />
-	  		</video>
+			<div className = "bg-video-container">
+				<video autoPlay = {this.props.autoplay} onplay = {this.videoPlayed()} className = "bg-video" key={this.state.video}>
+		      		<source src = {this.state.video} type="video/mp4" />
+		  		</video>
+	  		</div>
 		)
 	}
 }

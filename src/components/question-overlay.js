@@ -189,15 +189,17 @@ class QuestionOverlay extends React.Component {
 
 		return (
 			<div className = "overlay-background">
-				<video autoplay className = "bg-video hidden">
-	      		<source src = {videoList[0]} type="video/mp4" />
-	  		</video>
-	  		<video autoplay className = "bg-video hidden">
-	      		<source src = {videoList[1]} type="video/mp4" />
-	  		</video>
-	  		<video autoplay className = "bg-video hidden">
-	      		<source src = {videoList[2]} type="video/mp4" />
-	  		</video>
+				<div className = "bg-video-container">
+					<video autoplay className = "bg-video hidden">
+		      		<source src = {videoList[0]} type="video/mp4" />
+		  		</video>
+		  		<video autoplay className = "bg-video hidden">
+		      		<source src = {videoList[1]} type="video/mp4" />
+		  		</video>
+		  		<video autoplay className = "bg-video hidden">
+		      		<source src = {videoList[2]} type="video/mp4" />
+		  		</video>
+	  		</div>
 				<div className = "overlay-content-container">
 					{this.state.smallFont ? (
 						<h1 className = "video-overlay-copy small-font" />
