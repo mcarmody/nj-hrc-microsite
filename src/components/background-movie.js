@@ -40,7 +40,7 @@ class BackgroundMovie extends React.Component {
 
 	render() {
 		return (
-			<video style={vidStyles}  autoplay onplay = {this.videoPlayed()} className = "bg-video" key={this.state.video}>
+			<video style={vidStyles}  autoplay = {this.props.autoplay} onplay = {this.videoPlayed()} className = "bg-video" key={this.state.video}>
 	      		<source src = {this.state.video} type="video/mp4" />
 	  		</video>
 		)

@@ -33,7 +33,7 @@ const LandingPage = () => {
   return (
     <main style={pageStyles}>
       <title>NJ HRC Site</title>
-      < BackgroundMovie video= {landingVid} />
+      < BackgroundMovie video= {landingVid} autoplay = {"autoplay"}/>
       < Tagline size = "large"/>
       < Logo/>
       <div className = "link-container">

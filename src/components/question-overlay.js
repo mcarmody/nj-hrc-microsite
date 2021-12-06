@@ -34,7 +34,6 @@ var videoPlayer1;
 var videoPlayer2;
 var videoPlayer3;
 var videoCopy;
-var playButton;
 
 const copyUpdates = [
 	"<span style={headingBoldStyles}>Here in New Jersey,</span><br />when it comes to<br />opioids and overdoses...", //1
@@ -54,8 +53,7 @@ class QuestionOverlay extends React.Component {
 			copy: copyUpdates[0],
 			yesVal: 2,
 			noVal: 6,
-			doPlay: false,
-			selectedVideoPlayer: ""
+			doPlay: false
 		};
 	}
 	componentDidMount() {
@@ -67,12 +65,9 @@ class QuestionOverlay extends React.Component {
 		videoPlayer1 = document.getElementsByClassName("bg-video")[0];
 		videoPlayer2 = document.getElementsByClassName("bg-video")[1];
 		videoPlayer3 = document.getElementsByClassName("bg-video")[2];
-		playButton = document.getElementById('play-button');
-		this.setState({selectedVideoPlayer: document.getElementsByClassName("bg-video")[0]})
 		//this.showCopy();
 		this.updateCopy(0);
 		this.stateSwitch();
-		playButton.click();
 		this.setState({doPlay: false})
 	}
 
@@ -89,15 +84,26 @@ class QuestionOverlay extends React.Component {
 
 	hideCopy = () => {
 		videoOverlay.classList.add("hidden");
-		this.state.selectedVideoPlayer.classList.remove("hidden");
 		buttonsContainer.classList.add("hidden");
 		console.log("show the video");
 	}
 
 	showCopy = () => {
+		this.switchVideos();
 		videoOverlay.classList.remove("hidden");
-		this.state.selectedVideoPlayer.classList.add("hidden");
 		console.log("hide the video");
+	}
+
+	switchVideos = (videoId) => {
+		var playersList = document.getElementsByClassName('bg-video');
+		for(let i = 0; i < 3; i++){
+			playersList[i].classList.add("hidden");	
+			playersList[i].pause()
+		}
+		if(videoId !== undefined) {
+			playersList[videoId].classList.remove("hidden");
+			playersList[videoId].play();
+		}
 	}
 
 	showButtons = () => {
@@ -116,8 +122,8 @@ class QuestionOverlay extends React.Component {
 				break;
 
 			case 2: //this is the first video page
-				this.setState({selectedVideoPlayer: videoPlayer1})
 				this.hideCopy()
+				this.switchVideos(0);
 
 				setTimeout(function() {
 					this.setState({stage: 3});
@@ -135,8 +141,8 @@ class QuestionOverlay extends React.Component {
 				break;
 
 			case 4: //this is the second video
-				this.setState({selectedVideoPlayer: videoPlayer2})
 				this.hideCopy()
+				this.switchVideos(1);
 				setTimeout(function() {
 					this.setState({stage: 5});
 				}.bind(this), secondVideoDuration)
@@ -157,8 +163,8 @@ class QuestionOverlay extends React.Component {
 				break;
 
 				case 7: //last video
-				this.setState({selectedVideoPlayer: videoPlayer3})
 				this.hideCopy();
+				this.switchVideos(2);
 				setTimeout(function() {
 					navigate("/stories-hub");
 				}.bind(this), thirdVideoDuration)
