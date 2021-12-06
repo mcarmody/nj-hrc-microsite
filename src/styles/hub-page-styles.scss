@@ -62,6 +62,7 @@ body {
 	font-size: 23px;
 	line-height: 30px;
 	transition: all .4s ease-in-out;
+	z-index: 1000;
 }
 
 .column-highlighted .video-title {
@@ -93,14 +94,14 @@ body {
 	&:hover {
 		opacity: 1;
 		
-		&::before {
+		&::after {
 			opacity: 1;
 		}
 	}
 
 }
 
-.story-link::before {
+.story-link::after {
 	position: absolute;
 	content: "";
 	top: 0;
@@ -112,19 +113,19 @@ body {
 	transition:  opacity .5s;
 }
 
-#story-link-0::before {
+#story-link-0::after {
 	background: linear-gradient(147.23deg, $color1 10.03%, rgba(255, 105, 31, 0) 35.96%);
 }
-#story-link-1::before {
+#story-link-1::after {
 	background: linear-gradient(147.23deg, $color2 10.03%, rgba(255, 105, 31, 0) 35.96%);
 }
-#story-link-2::before {
+#story-link-2::after {
 	background: linear-gradient(147.23deg, $color3 10.03%, rgba(255, 105, 31, 0) 35.96%);
 }
-#story-link-3::before {
+#story-link-3::after {
 	background: linear-gradient(147.23deg, $color4 10.03%, rgba(255, 105, 31, 0) 35.96%);
 }
-#story-link-4::before {
+#story-link-4::after {
 	background: linear-gradient(147.23deg, $color5 10.03%, rgba(255, 105, 31, 0) 35.96%);
 }
 
@@ -136,9 +137,5 @@ body {
 @media only screen and (max-width:  1550px) {
 	.column-highlighted .video-title {
 		font-size: 36px;
-	}
-
-	.video-title {
-		font-size: ;
 	}
 }
