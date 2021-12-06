@@ -49,7 +49,7 @@ class SocialLinks extends React.Component {
             	<a href = "https://www.twitter.com/njharmreduction" target="_blank" rel="noopener"><img id = "twitter-link" src={twitterIcon} /></a>
             	<a href = "https://www.facebook.com/njharmreduction" target="_blank" rel="noopener"><img id = "fb-link" src={fbIcon} /></a>
                 <a href = "https://www.instagram.com/njharmreduction" target="_blank" rel="noopener"><img id = "insta-link" src={instaIcon} /></a>
-                <div><span>>></span> <a href="https://njharmreduction.org/donate" target="_blank" rel="noopener">Donate to the cause</a></div>
+                { console.log('<div><span>>></span> <a href="https://njharmreduction.org/donate" target="_blank" rel="noopener">Donate to the cause</a></div>')}
             </div>
 		)
 	}
