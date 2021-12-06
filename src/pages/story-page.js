@@ -44,7 +44,7 @@ const rawContent = [
         {type: "image", icon: "/img/overdose-icon.png", data: "/img/overdose-info.png", title: "Rates in New Jersey", metadata: "More than 80% of naloxone reversals were carried out by PWUD", metadata2: "<div className = 'source-1'><span>>></span> Source: Office of the Chief State Medical Examiner (NJ) https://ocsme.nj.gov/dashboard</div>"},
         //Services
         {type: "video", data: "/vid/CONNECTION+TO+SERVICES.mp4", title: "How We Got Here", metadata: "", metadata2: "/img/connection+to+services+main+photo.jpg"},
-        {type: "link", data: "/img/CONNECTION+STAT.jpg", title: "Access to Harm Reduction", metadata: 'People who access harm reduction programs are 5 times more likely to enter treatment for drug use and 3 times more likely to stop drug use impeding quality of life than those without access.'},
+        {type: "link", data: "/img/CONNECTION+STAT.jpg", title: "Access to Harm Reduction", metadata: 'People who access harm reduction programs are five times more likely to enter treatment for drug use and three times more likely to stop drug use impeding quality of life than those without access.'},
         {type: "link", data: "/img/CONNECTION+TESTIMONIAL.jpg", title: "Testimonial", metadata: "“We have great evidence that shows that somebody who participates in a syringe access program is actually more likely to enter into drug treatment.”", metadata2: "—Dr. Amesika Nyaku, Rutgers Institute for Health"},
         {type: "video", data: "/vid/SIDE+VIDEO-CONNECTION+TO+SERVICES+AND+HIV.mp4", title: "Share the campaign", metadata: "", metadata2: "/img/connection+to+services.jpg"},
         {type: "image", icon: "/img/connections-icon.png", data: "/img/connection-info.png", title: "Harm Reduction by the Numbers", metadata: "Studies in Baltimore and New York City found no difference in crime rates between areas with and without syringe services programs.", metadata2: "<div className = 'source-1'><span>>></span> Source: 2018 CDC publication, Evidence-Based Strategies for Preventing Opioid Overdose: What’s Working in the United States</div><div className = 'source-2'><span>>></span> Source: CDC Syringe Services Programs Fact Sheet  </div>"},
@@ -97,6 +97,9 @@ class IndividualStory extends React.Component {
     this.setState({source: this.state.selectedItem.metadata2})
     console.log(this.state.source)
   }
+
+  //< SideNavItem type = {rawContent[(this.state.id*5+4)].type} icon = {mediaLinkUrl+rawContent[(this.state.id*5+4)].data} data = {mediaLinkUrl+rawContent[(this.state.id*5+4)].data} title = {rawContent[(this.state.id*5+4)].title} metadata2 = {mediaLinkUrl+rawContent[(this.state.id*5+4)].metadata2} onClick={() => this.selectItem((this.state.id*5+4))} />
+            
 
   componentDidUpdate(prevProps, prevState) {
    
@@ -170,7 +173,6 @@ class IndividualStory extends React.Component {
             < SideNavItem type = {rawContent[(this.state.id*5+1)].type} data = {mediaLinkUrl+rawContent[(this.state.id*5+1)].data} title = {rawContent[(this.state.id*5+1)].title} metadata2 = {mediaLinkUrl+rawContent[(this.state.id*5+1)].metadata2} onClick={() => this.selectItem((this.state.id*5+1))} />
             < SideNavItem type = {rawContent[(this.state.id*5+2)].type} data = {mediaLinkUrl+rawContent[(this.state.id*5+2)].data} title = {rawContent[(this.state.id*5+2)].title} metadata2 = {mediaLinkUrl+rawContent[(this.state.id*5+2)].metadata2} onClick={() => this.selectItem((this.state.id*5+2))} />
             < SideNavItem type = {rawContent[(this.state.id*5+3)].type} data = {mediaLinkUrl+rawContent[(this.state.id*5+3)].data} title = {rawContent[(this.state.id*5+3)].title} metadata2 = {mediaLinkUrl+rawContent[(this.state.id*5+3)].metadata2} onClick={() => this.selectItem((this.state.id*5+3))} />
-            < SideNavItem type = {rawContent[(this.state.id*5+4)].type} icon = {mediaLinkUrl+rawContent[(this.state.id*5+4)].data} data = {mediaLinkUrl+rawContent[(this.state.id*5+4)].data} title = {rawContent[(this.state.id*5+4)].title} metadata2 = {mediaLinkUrl+rawContent[(this.state.id*5+4)].metadata2} onClick={() => this.selectItem((this.state.id*5+4))} />
             < SideNavItem type = {rawContent[(this.state.id*5)].type} data = {mediaLinkUrl+rawContent[(this.state.id*5)].data} title = {rawContent[(this.state.id*5)].title} metadata2 = {mediaLinkUrl+rawContent[(this.state.id*5)].metadata2} onClick={() => this.selectItem((this.state.id*5))} />
            
             < SocialLinks />

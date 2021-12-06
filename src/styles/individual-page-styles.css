@@ -385,7 +385,7 @@ h1.tagline-low {
     overflow: hidden;
   }
 }
-@media only screen and (max-height: 850px) {
+@media only screen and (max-height: 850px), only screen and (min-aspect-ratio: 3) {
   .nav-item-container {
     max-height: 120px;
   }
