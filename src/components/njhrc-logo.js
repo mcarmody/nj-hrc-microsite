@@ -3,7 +3,6 @@ import wordmark from "../media/img/njhrc-wordmark.png"
 
 const logoStyles = {
 	position: "fixed",
-	bottom: 0,
 	left: 0,
 	margin: "40px",
 	maxHeight: "78px",

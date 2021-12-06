@@ -82,13 +82,21 @@
     font-size: 24px;
   }
 
-  .logoBlock .wordmark {
+  .overlay-background + .logoBlock {
+    top: 65vh;
+  }
+  .overlay-background + .logoBlock .wordmark {
     max-width: 80px;
   }
 
   .logoBlock .logoBlurb {
     padding-top: 0px;
     font-size: 8pt !important;
+  }
+
+  .overlay-background + .link-container {
+    top: 60vh;
+    left: 70vw;
   }
 
   .bg-video-container {

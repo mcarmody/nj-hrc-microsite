@@ -42,8 +42,8 @@ html, body {
   line-height: 82px;
   color: white;
   width: 780px;
-  top: 300px;
-  left: 200px;
+  top: 30vh;
+  left: 15vw;
   text-shadow: 0 4px 6px black;
 }
 .intro-copy span {
@@ -82,4 +82,44 @@ html, body {
   margin: auto;
   min-height: 50%;
   min-width: 50%;
+}
+
+.logoBlock {
+  top: 85vh;
+}
+
+@media only screen and (max-width: 850px) {
+  .intro-copy {
+    font-size: 24px;
+    line-height: 1.2;
+    top: 10vh;
+  }
+
+  .logoBlock {
+    top: 45vh;
+  }
+  .logoBlock .wordmark {
+    max-width: 100px;
+    padding-right: 12px;
+  }
+
+  .logoBlock .logoBlurb {
+    padding-top: 0px;
+    font-size: 8pt !important;
+  }
+
+  .logoBlock + .link-container {
+    top: 35vh;
+    left: 40vw;
+  }
+  .logoBlock + .link-container a div {
+    font-size: 8pt;
+    margin: 0;
+  }
+  .logoBlock + .link-container a div div {
+    border-top: 5px solid transparent !important;
+    border-bottom: 5px solid transparent !important;
+    border-left: 7px solid #fd7d06 !important;
+    line-height: 0;
+  }
 }
