@@ -24,14 +24,17 @@ const vidStyles = {
 
 var timerCount = 0; //duration of current video in milliseconds
 var firstVideoDuration = 2000; //length of first video in milliseconds
-var secondVideoDuration = 20000; //length of second video in milliseconds
+var secondVideoDuration = 2000; //length of second video in milliseconds
 var thirdVideoDuration = 2000; //length of third video in milliseconds
 var betweenCopyDelay = 2000;
 var videoOverlay;
 var overlayBG;
 var buttonsContainer;
-var videoPlayer;
+var videoPlayer1;
+var videoPlayer2;
+var videoPlayer3;
 var videoCopy;
+var playButton;
 
 const copyUpdates = [
 	"<span style={headingBoldStyles}>Here in New Jersey,</span><br />when it comes to<br />opioids and overdoses...", //1
@@ -48,10 +51,11 @@ class QuestionOverlay extends React.Component {
 		super(props);
 		this.state = {
 			stage: 0,
-			video: videoList[0],
 			copy: copyUpdates[0],
 			yesVal: 2,
-			noVal: 6
+			noVal: 6,
+			doPlay: false,
+			selectedVideoPlayer: ""
 		};
 	}
 	componentDidMount() {
@@ -60,11 +64,16 @@ class QuestionOverlay extends React.Component {
 		videoOverlay = document.getElementsByClassName("overlay-content-container")[0];
 		overlayBG = document.getElementsByClassName("overlay-background")[0];
 		buttonsContainer = document.getElementsByClassName("overlay-buttons-container")[0];
-		videoPlayer = document.getElementById("landing-clip");
-		this.showCopy();
+		videoPlayer1 = document.getElementsByClassName("bg-video")[0];
+		videoPlayer2 = document.getElementsByClassName("bg-video")[1];
+		videoPlayer3 = document.getElementsByClassName("bg-video")[2];
+		playButton = document.getElementById('play-button');
+		this.setState({selectedVideoPlayer: document.getElementsByClassName("bg-video")[0]})
+		//this.showCopy();
 		this.updateCopy(0);
 		this.stateSwitch();
-		videoPlayer.muted = false;
+		playButton.click();
+		this.setState({doPlay: false})
 	}
 
 	nextQuestion = (stateNumber) => {
@@ -80,18 +89,15 @@ class QuestionOverlay extends React.Component {
 
 	hideCopy = () => {
 		videoOverlay.classList.add("hidden");
-		videoPlayer.classList.remove("hidden");
+		this.state.selectedVideoPlayer.classList.remove("hidden");
 		buttonsContainer.classList.add("hidden");
 		console.log("show the video");
-		this.toggleVideo(true);
 	}
 
 	showCopy = () => {
 		videoOverlay.classList.remove("hidden");
-		//videoPlayer.classList.add("hidden");
-		document.getElementById("landing-clip").classList.add("hidden");
+		this.state.selectedVideoPlayer.classList.add("hidden");
 		console.log("hide the video");
-		this.toggleVideo(false);
 	}
 
 	showButtons = () => {
@@ -101,7 +107,7 @@ class QuestionOverlay extends React.Component {
 	stateSwitch = () => {
 		console.log("stage: "+this.state.stage)
 		switch(this.state.stage) {
-			case 0: //this is the question
+			case 0: //this is the first question
 				//this.showCopy()
 				setTimeout(function() {
 					this.updateCopy(1)
@@ -110,7 +116,7 @@ class QuestionOverlay extends React.Component {
 				break;
 
 			case 2: //this is the first video page
-				this.setState({video: videoList[0]})
+				this.setState({selectedVideoPlayer: videoPlayer1})
 				this.hideCopy()
 
 				setTimeout(function() {
@@ -129,7 +135,7 @@ class QuestionOverlay extends React.Component {
 				break;
 
 			case 4: //this is the second video
-				this.setState({video: videoList[1]})
+				this.setState({selectedVideoPlayer: videoPlayer2})
 				this.hideCopy()
 				setTimeout(function() {
 					this.setState({stage: 5});
@@ -151,7 +157,7 @@ class QuestionOverlay extends React.Component {
 				break;
 
 				case 7: //last video
-				this.setState({video: videoList[2]})
+				this.setState({selectedVideoPlayer: videoPlayer3})
 				this.hideCopy();
 				setTimeout(function() {
 					navigate("/stories-hub");
@@ -160,15 +166,17 @@ class QuestionOverlay extends React.Component {
 		
 	};
 
+
+
 	toggleVideo = (doPlay) => {
-		document.getElementById('landing-clip').load()
-		setTimeout(function() {
-			if(doPlay) {
-				document.getElementById('landing-clip').play()
-			} else {
-				document.getElementById('landing-clip').pause();
-			}
-		}, 200)
+		if(doPlay) {
+			console.log("play video")
+			this.state.selectedVideoPlayer.play();
+		} else {
+			console.log("pause video")
+			//this.state.selectedVideoPlayer.pause();
+		}
+		this.setState({doPlay: !doPlay})
 	}
 
 
@@ -187,7 +195,15 @@ class QuestionOverlay extends React.Component {
 
 		return (
 			<div className = "overlay-background">
-				< BackgroundMovie video= {this.state.video} />
+				<video autoplay className = "bg-video hidden">
+	      		<source src = {videoList[0]} type="video/mp4" />
+	  		</video>
+	  		<video autoplay className = "bg-video hidden">
+	      		<source src = {videoList[1]} type="video/mp4" />
+	  		</video>
+	  		<video autoplay className = "bg-video hidden">
+	      		<source src = {videoList[2]} type="video/mp4" />
+	  		</video>
 				<div className = "overlay-content-container">
 					<h1 className = "video-overlay-copy">
 					</h1>
@@ -195,6 +211,7 @@ class QuestionOverlay extends React.Component {
 						<div className = "yes-button" onClick={() => this.nextQuestion(this.state.yesVal)}>Yes</div>
 						<div className = "no-button" onClick={() => this.nextQuestion(this.state.noVal)}>No</div>
 					</div>
+					<div id = "play-button" onClick={() => this.toggleVideo(this.state.doPlay)} />
 				</div>
 			</div>
 		)
