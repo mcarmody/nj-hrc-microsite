@@ -461,7 +461,7 @@ h1.tagline-low {
 	}
 }
 
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 850px), screen and (max-width: 930px) and (orientation: landscape) {
 
 	.story-title {
 		font-size: 20px;

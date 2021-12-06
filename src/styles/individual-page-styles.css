@@ -427,7 +427,7 @@ h1.tagline-low {
     line-height: 1.2;
   }
 }
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 850px), screen and (max-width: 930px) and (orientation: landscape) {
   .story-title {
     font-size: 20px;
     line-height: 1.2;
