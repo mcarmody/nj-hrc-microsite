@@ -451,4 +451,22 @@ h1.tagline-low {
 		}
 	}
 
+	.story-content+.contentBlurb {
+		left: 45vw;
+		font-size: 14px;
+		width: 250px;
+		float: none;
+		padding-top: 8px;
+		line-height: 1.2;
+	}
+
+	.side-nav-container+.tagline {
+		font-size: 20px;
+		bottom: 0;
+
+		&+.logoBlock {
+			top: 74vh !important;
+			left: 100px !important;
+		}
+	}
 }	
