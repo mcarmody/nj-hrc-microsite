@@ -385,4 +385,11 @@ h1.tagline-low {
 	.story-content {
 		background-size: 75vw;
 	}
+}
+
+@media only screen and (min-height: 1015px) {
+	.tagline-low {
+		top: 720px;
+		bottom: none;
+	}
 }	
