@@ -4,7 +4,7 @@ var taglineStyles = {
 	paddingLeft: "40px",
 	fontSize: "82pt",
 	position: "fixed",
-	fontWeight: "300",
+	fontWeight: "400",
 	color: "white",
 	display: "block"
 }
