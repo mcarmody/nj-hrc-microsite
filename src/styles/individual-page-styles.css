@@ -385,3 +385,21 @@ h1.tagline-low {
     overflow: hidden;
   }
 }
+@media only screen and (max-width: 850px) {
+  .story-title {
+    font-size: 20px;
+    line-height: 1.2;
+    height: 60px;
+  }
+
+  .nav-item-container {
+    max-height: 48px;
+  }
+  .nav-item-container .nav-item {
+    font-size: 10px;
+    line-height: 30px;
+  }
+  .nav-item-container .nav-item span {
+    font-size: 12px;
+  }
+}
