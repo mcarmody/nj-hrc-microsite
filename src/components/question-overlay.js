@@ -36,10 +36,8 @@ var videoPlayer3;
 var videoCopy;
 
 const copyUpdates = [
-	"<span style={headingBoldStyles}>Here in New Jersey,</span><br />when it comes to<br />opioids and overdoses...", //1
-	"...do you think what we</br> are doing is working?", //1B
-	"Given those facts...", //2A
-	"...do you think continuing to do more of the same will work?", //2B
+	"<span style='font-weight: 700'>Here in New Jersey,</span><br />when it comes to opioids and overdoses do you think what we are doing is working?", //1A
+	"Given those facts do you think continuing to do more of the same will work?", //2A
 	"Would you at least be willing to learn about how harm reduction works to address these critical issues facing New Jerseyans?", //3A
 	"Would you be willing to try something new?", //3B
 	""
@@ -53,8 +51,7 @@ class QuestionOverlay extends React.Component {
 			copy: copyUpdates[0],
 			yesVal: 2,
 			noVal: 6,
-			doPlay: false,
-			smallFont: false
+			doPlay: false
 		};
 	}
 	componentDidMount() {
@@ -117,7 +114,6 @@ class QuestionOverlay extends React.Component {
 			case 0: //this is the first question
 				//this.showCopy()
 				setTimeout(function() {
-					this.updateCopy(1)
 					this.showButtons()
 				}.bind(this), betweenCopyDelay)
 				break;
@@ -133,10 +129,9 @@ class QuestionOverlay extends React.Component {
 
 			case 3: //this is the second questions
 				this.setState({yesVal: 4})
-				this.updateCopy(2)
+				this.updateCopy(1)
 				this.showCopy()
 				setTimeout(function() {
-					this.updateCopy(3)
 					this.showButtons()
 				}.bind(this), betweenCopyDelay)
 				break;
@@ -150,16 +145,16 @@ class QuestionOverlay extends React.Component {
 				break;
 
 			case 5: //this is the third questions
-				this.setState({yesVal: 7, noVal: 7, smallFont: true})
+				this.setState({yesVal: 7, noVal: 7})
 				this.showButtons()
-				this.updateCopy(4)
+				this.updateCopy(2)
 				this.showCopy()
 				break;
 
 			case 6: //this is the last question
 				this.setState({yesVal: 7, noVal: 7})
 				this.showButtons()
-				this.updateCopy(5)
+				this.updateCopy(3)
 				this.showCopy()
 				break;
 
@@ -201,11 +196,7 @@ class QuestionOverlay extends React.Component {
 		  		</video>
 	  		</div>
 				<div className = "overlay-content-container">
-					{this.state.smallFont ? (
-						<h1 className = "video-overlay-copy small-font" />
-					) : (
 						<h1 className = "video-overlay-copy" />
-					)}
 					<div className = "overlay-buttons-container hidden">
 						<div className = "yes-button" onClick={() => this.nextQuestion(this.state.yesVal)}>Yes</div>
 						<div className = "no-button" onClick={() => this.nextQuestion(this.state.noVal)}>No</div>

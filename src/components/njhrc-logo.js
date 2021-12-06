@@ -28,14 +28,10 @@ class Logo extends React.Component {
 
 
 		const wordmarkStyles = {
-			maxWidth: "158px",
-			float: "left",
-			paddingRight: "36px",
 			display: this.props.wordmark ? "block" : "none",
 		}
 
 		const sideTextStyles = {
-			paddingTop: "16px",
 			display: this.props.sideCopy ? "block" : "none",
 			color: this.props.size == "small" ? "#ACACAC" : "white",
 			fontSize: this.props.size == "small" ? "12pt" : "14pt",

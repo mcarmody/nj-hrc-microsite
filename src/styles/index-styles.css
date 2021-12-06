@@ -11,6 +11,16 @@ html, body {
   width: 325px;
 }
 
+.wordmark {
+  max-width: 158px;
+  float: left;
+  padding-right: 36px;
+}
+
+.logoBlurb {
+  font-size: 16px;
+}
+
 .skipBlock {
   position: relative;
   margin: 12px;

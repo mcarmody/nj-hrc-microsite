@@ -3,6 +3,16 @@ body {
   overflow: hidden;
 }
 
+.wordmark {
+  max-width: 158px;
+  float: left;
+  padding-right: 36px;
+}
+
+.logoBlurb {
+  font-size: 16px;
+}
+
 .video-container {
   width: 15vw;
   max-width: 15vw;

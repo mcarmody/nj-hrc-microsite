@@ -1,14 +1,10 @@
 .video-overlay-copy {
-  font-size: 72pt;
+  font-size: 60px;
   font-weight: 400;
   color: white;
   display: block;
   line-height: 1;
   opacity: 1;
-}
-
-.small-font {
-  font-size: 60pt !important;
 }
 
 .overlay-background {
@@ -69,4 +65,29 @@
   min-width: 100vw;
   min-height: 100vh;
   z-index: -1;
+}
+
+.wordmark {
+  max-width: 158px;
+  float: left;
+  padding-right: 36px;
+}
+
+.logoBlurb {
+  font-size: 16px;
+}
+
+@media only screen and (max-width: 850px) {
+  .video-overlay-copy {
+    font-size: 24px;
+  }
+
+  .logoBlock .wordmark {
+    max-width: 80px;
+  }
+
+  .logoBlock .logoBlurb {
+    padding-top: 0px;
+    font-size: 8pt !important;
+  }
 }
