@@ -111,7 +111,7 @@ class IndividualStory extends React.Component {
       dom.innerHTML = this.state.selectedItem.metadata;
       this.setState({description: dom.innerHTML+"<div class = 'story-source'>"+this.state.source+"</div>"});
       console.log(this.state.selectedItem)
-      this.state.selectedItem.type !== "video" ? this.setState({contentClass: "story-content image-content"}) : this.setState({contentClass: "story-content"});
+      this.state.selectedItem.type !== "video" ? this.setState({contentClass: "story-content image-content"}) : this.setState({contentClass: "story-content video-content"});
     }
   }
 
