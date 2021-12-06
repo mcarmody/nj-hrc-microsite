@@ -7,6 +7,10 @@
   opacity: 1;
 }
 
+.small-font {
+  font-size: 60pt !important;
+}
+
 .overlay-background {
   width: 100vw;
   height: 100vh;

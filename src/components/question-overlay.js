@@ -53,7 +53,8 @@ class QuestionOverlay extends React.Component {
 			copy: copyUpdates[0],
 			yesVal: 2,
 			noVal: 6,
-			doPlay: false
+			doPlay: false,
+			smallFont: false
 		};
 	}
 	componentDidMount() {
@@ -149,7 +150,7 @@ class QuestionOverlay extends React.Component {
 				break;
 
 			case 5: //this is the third questions
-				this.setState({yesVal: 7, noVal: 7})
+				this.setState({yesVal: 7, noVal: 7, smallFont: true})
 				this.showButtons()
 				this.updateCopy(4)
 				this.showCopy()
@@ -211,8 +212,11 @@ class QuestionOverlay extends React.Component {
 	      		<source src = {videoList[2]} type="video/mp4" />
 	  		</video>
 				<div className = "overlay-content-container">
-					<h1 className = "video-overlay-copy">
-					</h1>
+					{this.state.smallFont ? (
+						<h1 className = "video-overlay-copy small-font" />
+					) : (
+						<h1 className = "video-overlay-copy" />
+					)}
 					<div className = "overlay-buttons-container hidden">
 						<div className = "yes-button" onClick={() => this.nextQuestion(this.state.yesVal)}>Yes</div>
 						<div className = "no-button" onClick={() => this.nextQuestion(this.state.noVal)}>No</div>
