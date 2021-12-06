@@ -23,9 +23,9 @@ const vidStyles = {
 }
 
 var timerCount = 0; //duration of current video in milliseconds
-var firstVideoDuration = 2000; //length of first video in milliseconds
-var secondVideoDuration = 2000; //length of second video in milliseconds
-var thirdVideoDuration = 2000; //length of third video in milliseconds
+var firstVideoDuration = 23890; //length of first video in milliseconds
+var secondVideoDuration = 16724; //length of second video in milliseconds
+var thirdVideoDuration = 67900; //length of third video in milliseconds
 var betweenCopyDelay = 2000;
 var videoOverlay;
 var overlayBG;
@@ -173,21 +173,8 @@ class QuestionOverlay extends React.Component {
 		
 	};
 
-
-
-	toggleVideo = (doPlay) => {
-		if(doPlay) {
-			console.log("play video")
-			this.state.selectedVideoPlayer.play();
-		} else {
-			console.log("pause video")
-			//this.state.selectedVideoPlayer.pause();
-		}
-		this.setState({doPlay: !doPlay})
-	}
-
-
 	componentDidUpdate(prevProps, prevState) {
+
 		if(this.state.stage !== prevState.stage) {
 			console.log("New stage! "+prevState.stage+", "+this.state.stage)
 			this.stateSwitch();
@@ -221,7 +208,6 @@ class QuestionOverlay extends React.Component {
 						<div className = "yes-button" onClick={() => this.nextQuestion(this.state.yesVal)}>Yes</div>
 						<div className = "no-button" onClick={() => this.nextQuestion(this.state.noVal)}>No</div>
 					</div>
-					<div id = "play-button" onClick={() => this.toggleVideo(this.state.doPlay)} />
 				</div>
 			</div>
 		)
