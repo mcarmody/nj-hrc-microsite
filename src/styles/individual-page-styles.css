@@ -403,6 +403,21 @@ h1.tagline-low {
     font-size: 12px;
   }
 
+  .story-copy {
+    right: 4px;
+    width: 45%;
+    font-size: 14px;
+    line-height: 1.2;
+  }
+  .story-copy .story-source {
+    font-size: 11px;
+  }
+  .story-copy span {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.2;
+  }
+
   .social-container {
     bottom: 20px;
     height: 40px;
