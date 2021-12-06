@@ -418,6 +418,10 @@ h1.tagline-low {
     line-height: 1.2;
   }
 
+  .story-content.image-content {
+    background-size: contain;
+  }
+
   .social-container {
     bottom: 20px;
     height: 40px;
