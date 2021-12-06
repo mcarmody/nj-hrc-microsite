@@ -1,9 +1,13 @@
+body {
+	background: #272727;
+}
+
 .story-parent-container {
 	position: relative;
 	display: block;
 	height: 100vh;
 	width: 100vw;
-	overflow: hidden;
+	//overflow: hidden;
 	background: #272727;
 }
 
@@ -280,6 +284,7 @@ h1.tagline-low {
 	position: relative;
 	padding-left: 12px;
 	width: 24vw;
+	text-transform: uppercase;
 	height: 64px;
 	background: #CC4400;
 	color:  white;
@@ -375,6 +380,11 @@ h1.tagline-low {
 	font-size: 16px;
 }
 
+
+@media only screen and (max-height: 640px) {
+
+}
+
 @media only screen and (min-width:  1441px) {
 	.story-content.video-content::before {
 		position: absolute;
@@ -433,8 +443,33 @@ h1.tagline-low {
 	}
 }
 
-@media only screen and (max-width: 1050px) {
+@media only screen and (min-height:  768px) {
+	body {
+		overflow: hidden;
+	}
+}
 
+@media only screen and (max-height: 700px) and (min-width: 950px) {
+
+	.side-nav-container {
+		position: fixed;
+		right: 0;
+	}
+
+	.story-parent-container {
+
+		.selected-topic-container {
+		}
+		.tagline {
+			position: absolute;
+			//bottom: -1vh;
+			top: 540px;
+
+			&+.logoBlock {
+				top: 540px;
+			}
+		}
+	}
 }
 
 @media only screen and (max-height: 768px) {
@@ -446,10 +481,11 @@ h1.tagline-low {
 	.side-nav-container+.tagline {
 		font-size: 24px;
 
-		/*&+.logoBlock {
-			top: 74vh !important;
-			left: 100px !important;
-		}*/
+		&+.logoBlock {
+			position: absolute !important;
+			//bottom: -2vh !important;
+			left: 140px !important;
+		}
 	}
 
 	.story-content+.contentBlurb {
