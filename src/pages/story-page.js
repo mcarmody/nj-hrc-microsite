@@ -31,6 +31,8 @@ const rawContent = [
     title: "Cost of the Drug War",
     metadata:
       '<span className = "stat-highlight">$11.6 billion</span>spent on drug war arrests <span className = "stat-highlight">544.6 times</span>more than investment in harm reduction services',
+    metadata2:
+      "<div><span>>></span> SOURCE: New Jersey Policy Perspective—A War on Us: How Much New Jersey Spends Enforcing the War on Drugs</div>",
   },
   {
     type: "link",
