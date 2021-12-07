@@ -19,7 +19,7 @@ const rawContent = [
         //  infographic
 
         //How We Got Here
-        {type: "video", data: "/vid/HOW+WE+GOT+HERE.mp4", title: "How We Got Here", metadata: "", metadata2: "/img/how+we+got+here+main+photo.jpg"},
+        {type: "video", data: "/vid/HOW+WE+GOT+HERE.mp4", title: "How We Got here", metadata: "", metadata2: "/img/how+we+got+here+main+photo.jpg"},
         {type: "link", data: "/img/HOW+WE+GOT+HERE+STAT.jpg", title: "Cost of the Drug War", metadata: '<span className = "stat-highlight">$11.6 billion</span>spent on drug war arrests <span className = "stat-highlight">544.6 times</span>more than investment in harm reduction services'},
         {type: "link", data: "/img/HOW+WE+GOT+HERE+TESTIMONIAL.jpg", title: "Testimonial", metadata: "“New Jersey law states you need local municipal ordinance to have a syringe access program. A lot of municipal leaders don’t have a public health background and don’t understand that syringe access saves lives, saves money, and can help clean up the city.”", metadata2: "—Georgett Watson, South Jersey AIDS Alliance"},
         {type: "video", data: "/vid/SIDE+VIDEO-HOW+WE+GOT+HERE.mp4", title: "Share the campaign", metadata: "", metadata2: "/img/how+we+got+here.jpg"},
