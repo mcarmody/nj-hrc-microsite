@@ -116,14 +116,16 @@ const rawContent = [
     title: "Reducing rates",
     metadata:
       "As syringe access has become available, rates of HIV transmission among people who inject drugs have declined by one-third.",
+    metadata2:
+      "<div className = 'source-1'><span>>></span> Source: www.state.nj.us/health/populationhealth/opioid/</div>",      
   },
   {
     type: "link",
     data: "/img/HIV+TESTIMONIAL.jpg",
     title: "Testimonial",
     metadata:
-      "HIV Treatment for one person in their lifetime is about $600,000. The current cost of one syringe is 10 cents.”",
-    metadata2: "—Georgett, South Jersey AIDS Alliance",
+      `"Going to a syringe access program was probably the smartest thing that I did. They saved me from infectious disease.”`,
+    metadata2: "-Domenick, Person in Recovery"
   },
   {
     type: "video",
