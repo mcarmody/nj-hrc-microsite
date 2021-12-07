@@ -1,7 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { navigate } from "gatsby"
-import landingVid from "../media/vid/rain-test.mp4"
 import Logo from "../components/njhrc-logo";
 import InteractionLinks from "../components/interaction-links";
 import SocialLinks from "../components/social-links";
