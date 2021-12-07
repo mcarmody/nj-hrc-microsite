@@ -1,7 +1,6 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import { navigate } from "gatsby"
-import landingVid from "../media/vid/rain-test.mp4"
 import Logo from "../components/njhrc-logo";
 import InteractionLinks from "../components/interaction-links";
 import SocialLinks from "../components/social-links";
@@ -21,7 +20,7 @@ const rawContent = [
         //How We Got Here
         {type: "video", data: "/vid/HOW+WE+GOT+HERE.mp4", title: "How We Got here", metadata: "", metadata2: "/img/how+we+got+here+main+photo.jpg"},
         {type: "link", data: "/img/HOW+WE+GOT+HERE+STAT.jpg", title: "Cost of the Drug War", metadata: '<span className = "stat-highlight">$11.6 billion</span>spent on drug war arrests <span className = "stat-highlight">544.6 times</span>more than investment in harm reduction services'},
-        {type: "link", data: "/img/HOW+WE+GOT+HERE+TESTIMONIAL.jpg", title: "Testimonial", metadata: "“New Jersey law states you need local municipal ordinance to have a syringe access program. A lot of municipal leaders don’t have a public health background and don’t understand that syringe access saves lives, saves money, and can help clean up the city.”", metadata2: "—Georgett Watson, South Jersey AIDS Alliance"},
+        {type: "link", data: "/img/HOW+WE+GOT+HERE+TESTIMONIAL.jpg", title: "Testimonial", metadata: "“New Jersey law states you need local municipal ordinance to have a syringe access program. A lot of municipal leaders don’t have a public health background and don’t understand that syringe access saves lives, saves money, and can help clean up the city.”", metadata2: "—Georgett, South Jersey AIDS Alliance"},
         {type: "video", data: "/vid/SIDE+VIDEO-HOW+WE+GOT+HERE.mp4", title: "Share the campaign", metadata: "", metadata2: "/img/how+we+got+here.jpg"},
         {type: "image", icon: "/img/hwgh-icon.png", data: "/img/how-we-got-here-info.png", title: "Drug War by the Numbers", metadata: "70 to 90% of people who use a criminalized drug (including heroin, cocaine, and methamphetamine) do not experience a substance use disorder.", metadata2: "<div className = 'source-1'><span>>></span> Source: the Global Commission on Drug Policy reports</div><div className = 'source-2'><span>>></span> Source: New Jersey Policy Perspective—A War on Us: How Much New Jersey Spends Enforcing the War on Drugs</div>"},
         //HR 101
