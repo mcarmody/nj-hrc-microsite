@@ -32,7 +32,7 @@ const rawContent = [
     metadata:
       '<span className = "stat-highlight">$11.6 billion</span>spent on drug war arrests <span className = "stat-highlight">544.6 times</span>more than investment in harm reduction services',
     metadata2:
-      "<div><span>>></span> SOURCE: New Jersey Policy Perspective—A War on Us: How Much New Jersey Spends Enforcing the War on Drugs</div>",
+      "<div className= 'story-source' ><span>>></span> SOURCE: New Jersey Policy Perspective—A War on Us: How Much New Jersey Spends Enforcing the War on Drugs</div>",
   },
   {
     type: "link",
@@ -73,14 +73,17 @@ const rawContent = [
     title: "Reducing Transmission",
     metadata:
       'People who access harm reduction programs are <span className = "stat-highlight">50% less likely</span>to contract HIV or Hepatitis C.',
-  },
+    metadata2:
+      "<div className = 'source-1'><span>>></span> Source: www.cdc.gov/ssp/syringe-services-programs-factsheet.html</div>",
+  
+    },
   {
     type: "link",
     data: "/img/HR101+TESTIMONIAL.jpg",
     title: "Testimonial",
     metadata:
-      "Going to a syringe access program was probably the smartest thing that I did.  They saved me from infectious disease.”",
-    metadata2: "—Domenick",
+      `"I'm taking care of my health. I'm going to doctor's appointments. I'm eating better. I'm living better. I feel better."`,
+    metadata2: "-Tina, Harm Reduction Participant",
   },
   {
     type: "video",
@@ -120,7 +123,7 @@ const rawContent = [
     title: "Testimonial",
     metadata:
       "HIV Treatment for one person in their lifetime is about $600,000. The current cost of one syringe is 10 cents.”",
-    metadata2: "—Georgett Watson, South Jersey AIDS Alliance",
+    metadata2: "—Georgett, South Jersey AIDS Alliance",
   },
   {
     type: "video",
