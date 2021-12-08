@@ -32,7 +32,7 @@ const rawContent = [
     metadata:
       '<span className = "stat-highlight">$11.6 billion</span>spent on drug war arrests <span className = "stat-highlight">544.6 times</span>more than investment in harm reduction services',
     metadata2:
-      "<div className= 'story-source' ><span>>></span> SOURCE: New Jersey Policy Perspective—A War on Us: How Much New Jersey Spends Enforcing the War on Drugs</div>",
+      "<div className = 'story-source'><span>>></span> SOURCE: New Jersey Policy Perspective—A War on Us: How Much New Jersey Spends Enforcing the War on Drugs</div>",
   },
   {
     type: "link",
@@ -158,14 +158,16 @@ const rawContent = [
     title: "Overdoses in New Jersey",
     metadata:
       'There were <span className = "stat-highlight">18,492</span>overdose deaths in the state of New Jersey between 2010 and 2019',
+    metadata2: 
+      "<div className = 'source-1'><span>>></span> Source: https://ocsme.nj.gov/dashboard</div>",
   },
   {
     type: "link",
     data: "/img/OVERDOSE+TESTIMONIAL.jpg",
     title: "Testimonial",
     metadata:
-      "The numbers don’t lie. Individuals who come to our syringe access program have less of a chance of overdosing.”",
-    metadata2: "—Eddie - Hyacinth AIDS Foundation",
+      `"The numbers don’t lie. Individuals who come to our syringe access program have less of a chance of overdosing.”`,
+    metadata2: "—Eddie, Hyacinth AIDS Foundation",
   },
   {
     type: "video",
