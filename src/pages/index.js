@@ -32,7 +32,7 @@ const LandingPage = () => {
 
   return (
     <main style={pageStyles}>
-      <title>NJ HRC Site</title>
+      <title>Essential. Effective. Human.</title>
       < BackgroundMovie video= {landingVid} autoplay = {"autoplay"}/>
       <div className = "intro-copy">See how<br />Harm Reduction
       services help<br />make <span>New Jersey</span><br />healthier and safer</div>

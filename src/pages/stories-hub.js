@@ -55,7 +55,7 @@ class StoriesHub extends React.Component {
     
     return (
       <main style={pageStyles}>
-      	<title>Stories Hub</title>
+      	<title>Essential. Effective. Human.</title>
     		< NavMovie source= {imageList[0]} id = "0" videoName = "first" title = {titlesList[0]} />
         < NavMovie source= {imageList[1]} id = "1" videoName = "second" title = {titlesList[1]}/>
         < NavMovie source= {imageList[2]} id = "2" videoName = "third" title = {titlesList[2]}/>
