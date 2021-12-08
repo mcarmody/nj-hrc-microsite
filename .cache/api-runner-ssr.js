@@ -1,4 +1,8 @@
-var plugins = []
+var plugins = [{
+      name: 'gatsby-plugin-google-gtag',
+      plugin: require('C:/__DEV/PRJ/prv-nj-hrc-microsite/nj-hrc-microsite/node_modules/gatsby-plugin-google-gtag/gatsby-ssr'),
+      options: {"plugins":[],"trackingIds":["G-8Q9PXJFWHJ"]},
+    }]
 /* global plugins */
 // During bootstrap, we write requires at top of this file which looks like:
 // var plugins = [
