@@ -14,6 +14,10 @@ const logoStyles = {
 	fontSize: "14px"
 }
 
+const linkStyles = {
+	textDecoration: "none",
+}
+
 class Logo extends React.Component {
 
 	constructor(props) {
@@ -38,12 +42,14 @@ class Logo extends React.Component {
 
 		return (
 			<div className="logoBlock" style={logoStyles}>
-				<img className="wordmark" style={wordmarkStyles} src = {wordmark} />
-				<div className="logoBlurb" style={sideTextStyles}>
-					SPONSORED BY NEW JERSEY < br />
-					HARM REDUCTION COALITION < br />
-					AND VITAL STRATEGIES
-				</div>
+				<a href = "https://njharmreduction.org" target="_blank" rel="noopener" style={linkStyles}>
+					<img className="wordmark" style={wordmarkStyles} src = {wordmark} />
+					<div className="logoBlurb" style={sideTextStyles}>
+						SPONSORED BY NEW JERSEY < br />
+						HARM REDUCTION COALITION < br />
+						AND VITAL STRATEGIES
+					</div>
+				</a>
 			</div>
 		)
 	}
