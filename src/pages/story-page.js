@@ -63,7 +63,7 @@ const rawContent = [
   {
     type: "video",
     data: "/vid/HARM+REDUCTION+101.mp4",
-    title: "How We Got Here",
+    title: "Harm Reduction 101",
     metadata: "",
     metadata2: "/img/harm+reduction+101+main+photo.jpg",
   },
@@ -106,7 +106,7 @@ const rawContent = [
   {
     type: "video",
     data: "/vid/HIV+_+HEP+C.mp4",
-    title: "How We Got Here",
+    title: "Viral Hepatitis and HIV",
     metadata: "",
     metadata2: "/img/hiv+hepc+main+photo.jpg",
   },
@@ -148,7 +148,7 @@ const rawContent = [
   {
     type: "video",
     data: "/vid/OVERDOSE.m4v",
-    title: "How We Got Here",
+    title: "Overdose and Prevention",
     metadata: "",
     metadata2: "/img/overdose_main_photo.jpg",
   },
@@ -189,7 +189,7 @@ const rawContent = [
   {
     type: "video",
     data: "/vid/CONNECTION+TO+SERVICES.mp4",
-    title: "How We Got Here",
+    title: "Connection to Services",
     metadata: "",
     metadata2: "/img/connection+to+services+main+photo.jpg",
   },
