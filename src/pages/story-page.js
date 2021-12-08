@@ -198,7 +198,10 @@ const rawContent = [
     data: "/img/CONNECTION+STAT.jpg",
     title: "Access to Harm Reduction",
     metadata:
-      "People who access harm reduction programs are five times more likely to enter treatment for drug use and three times more likely to stop drug use impeding quality of life than those without access.",
+      `"People who access harm reduction programs are five times more likely to enter treatment for drug use and three times more likely to stop drug use impeding quality of life than those without access."`,
+    metadata2:
+      "<div className = 'source-1'><span>>></span> Source: https://www.cdc.gov/ssp/syringe-services-programs-factsheet.html</div>",
+
   },
   {
     type: "link",
