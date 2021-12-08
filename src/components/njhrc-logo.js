@@ -40,8 +40,9 @@ class Logo extends React.Component {
 			<div className="logoBlock" style={logoStyles}>
 				<img className="wordmark" style={wordmarkStyles} src = {wordmark} />
 				<div className="logoBlurb" style={sideTextStyles}>
-					sponsored by New Jersey < br />
-					Harm Reduction Coalition
+					SPONSORED BY NEW JERSEY < br />
+					HARM REDUCTION COALITION < br />
+					AND VITAL STRATEGIES
 				</div>
 			</div>
 		)
