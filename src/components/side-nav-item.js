@@ -8,9 +8,10 @@ class SideNavItem extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			clickFunction: this.props.onClick
+			clickFunction: this.props.onClick,
+			type: this.props.type
 		};
-
+		console.log(this.props.onClick)
 	}
 
 	componentDidUpdate(prevProps) {
@@ -20,6 +21,7 @@ class SideNavItem extends React.Component {
 	}
 
 	render() {
+
 		let navContent;
 
 		//toggle nav item selected state 
@@ -53,14 +55,14 @@ class SideNavItem extends React.Component {
 		//this.props.type == "link" && this.state.clickFunction !== null ? this.setState({clickFunction: null}) : console.log("not a link")
 
 
-		if(this.props.type == "image") {
+		if(this.state.type == "image") {
 			navContent = <div className = "nav-item image-nav" style = {{backgroundImage: "url("+this.props.icon+")"}}  onClick={() => {this.state.clickFunction(); selectNav(this)}}><span>>>  </span>{this.props.title}</div>
-		} else if(this.props.type == "link") {
+		} else if(this.state.type == "link") {
 			navContent = <div className = "nav-item link-nav" onClick={() => {this.state.clickFunction(); selectNav(this)}}><span>>>  </span>{this.props.title}</div>
-		} else if(this.props.type == "video") {
+		} else if(this.state.type == "video") {
 			navContent = <div className = "nav-item video-nav" style = {{backgroundImage: "url("+this.props.metadata2+")"}}  onClick={() => {this.state.clickFunction(); selectNav(this)}}><span>>>  </span>{this.props.title}</div>
-		} else if(this.props.type == "external-link") {
-			navContent = <a className = "external-link" href = {this.props.data}><div className = "nav-item link-nav"><span>>>  </span>{this.props.title}</div></a>
+		} else if(this.state.type == "external-link") {
+			navContent = <a className = {this.props.metadata2 ? "external-link-bg" : "external-link"} href = {this.props.data}><div className = "nav-item link-nav" style = {{backgroundImage: "url("+this.props.metadata2+")"}}><span>>>  </span>{this.props.title}</div></a>
 		}
 
 		return (

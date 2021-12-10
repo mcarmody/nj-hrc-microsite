@@ -15,6 +15,21 @@ body {
 	text-decoration: none;
 }
 
+.external-link-bg {
+
+	text-decoration: none;
+
+	.link-nav {
+		width: 100%;
+		max-height: 365px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		min-height: 180px;
+		color: white;
+		text-shadow: 0 4px 6px black;
+	}
+}
+
 .nav-item.social-nav {
 	position: relative;
 	background-color: transparent;
@@ -252,6 +267,9 @@ h1.tagline-low {
 .link-nav {
 	text-decoration: none;
 	z-index: 1000;
+	max-height: 365px;
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
 .video-nav {

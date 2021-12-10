@@ -52,8 +52,8 @@ const rawContent = [
     metadata2: "—Georgett, South Jersey AIDS Alliance",
   },
   {
-    type: "video",
-    data: "/vid/SIDE+VIDEO-HOW+WE+GOT+HERE.mp4",
+    type: "external-link",
+    data: "https://drive.google.com/drive/folders/1CAvK5MB2LCwfLXmtXk2Gx5E1ymq0i6ix?usp=sharing",
     title: "Share the campaign",
     metadata: "",
     metadata2: "/img/how+we+got+here.jpg",
@@ -102,8 +102,8 @@ const rawContent = [
     metadata2: "-Tina, Harm Reduction Participant",
   },
   {
-    type: "video",
-    data: "/vid/SIDE+VIDEO-HR101.mp4",
+    type: "external-link",
+    data: "https://drive.google.com/drive/folders/1CAvK5MB2LCwfLXmtXk2Gx5E1ymq0i6ix?usp=sharing",
     title: "Share the campaign",
     metadata: "",
     metadata2: "/img/harm+reduction+101.jpg",
@@ -152,8 +152,8 @@ const rawContent = [
     metadata2: "-Domenick, Person in Recovery"
   },
   {
-    type: "video",
-    data: "/vid/SIDE+VIDEO-HOW+WE+GOT+HERE.mp4",
+    type: "external-link",
+    data: "https://drive.google.com/drive/folders/1CAvK5MB2LCwfLXmtXk2Gx5E1ymq0i6ix?usp=sharing",
     title: "Share the campaign",
     metadata: "",
     metadata2: "/img/hiv+hep+c.jpg",
@@ -203,8 +203,8 @@ const rawContent = [
     metadata2: "—Eddie, Hyacinth AIDS Foundation",
   },
   {
-    type: "video",
-    data: "/vid/SIDE+VIDEO-OVERDOSE.mp4",
+    type: "external-link",
+    data: "https://drive.google.com/drive/folders/1CAvK5MB2LCwfLXmtXk2Gx5E1ymq0i6ix?usp=sharing",
     title: "Share the campaign",
     metadata: "",
     metadata2: "/img/overdose+prevention.jpg",
@@ -252,8 +252,8 @@ const rawContent = [
     metadata2: "—Dr. Amesika Nyaku, Rutgers Institute for Health",
   },
   {
-    type: "video",
-    data: "/vid/SIDE+VIDEO-CONNECTION+TO+SERVICES+AND+HIV.mp4",
+    type: "external-link",
+    data: "https://drive.google.com/drive/folders/1CAvK5MB2LCwfLXmtXk2Gx5E1ymq0i6ix?usp=sharing",
     title: "Share the campaign",
     metadata: "",
     metadata2: "/img/connection+to+services.jpg",
@@ -478,12 +478,11 @@ class IndividualStory extends React.Component {
             />
             <SideNavItem
               type={rawContent[this.state.id * 5 + 3].type}
-              data={mediaLinkUrl + rawContent[this.state.id * 5 + 3].data}
+              data={rawContent[this.state.id * 5 + 3].data}
               title={rawContent[this.state.id * 5 + 3].title}
               metadata2={
                 mediaLinkUrl + rawContent[this.state.id * 5 + 3].metadata2
               }
-              onClick={() => this.selectItem(this.state.id * 5 + 3)}
             />
             <SideNavItem
               type={rawContent[this.state.id * 5].type}
