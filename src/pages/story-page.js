@@ -36,8 +36,7 @@ const rawContent = [
         <span>>></span> SOURCE: 
         <a 
           target="_blank" 
-          rel="noopener" 
-          style="color:white;" 
+          rel="noopener"
           href="https://www.njpp.org/publications/report/a-war-on-us-how-much-new-jersey-spends-enforcing-the-war-on-drugs/"
         >
           A War on Us: How Much New Jersey Spends Enforcing the War on Drugs [New Jersey Policy Perspective]
@@ -87,8 +86,7 @@ const rawContent = [
       `<div className = 'story-source'><span>>></span> SOURCE: 
           <a 
             target="_blank" 
-            rel="noopener" 
-            style="color:white;" 
+            rel="noopener"
             href="https://www.cdc.gov/ssp/syringe-services-programs-factsheet.html"
           >
             Syringe Services Programs (SSPs) Fact Sheet [CDC]
@@ -138,8 +136,7 @@ const rawContent = [
       `<div className = 'story-source'><span>>></span> SOURCE: 
       <a 
         target="_blank" 
-        rel="noopener" 
-        style="color:white;" 
+        rel="noopener"
         href="https://www.state.nj.us/health/populationhealth/opioid/"
       >
         Overdose Data Dashboard [New Jersey Department of Health]
@@ -190,8 +187,7 @@ const rawContent = [
         <span>>></span> SOURCE: 
         <a 
           target="_blank" 
-          rel="noopener" 
-          style="color:white;" 
+          rel="noopener"
           href="https://ocsme.nj.gov/dashboard"
         >
           Suspected Drug Death Statistics Data Dashboard [New Jersey Office of the Chief State Medical Examiner]
@@ -240,8 +236,7 @@ const rawContent = [
     `<div className = 'story-source'><span>>></span> SOURCE: 
         <a 
           target="_blank" 
-          rel="noopener" 
-          style="color:white;" 
+          rel="noopener"
           href="https://www.cdc.gov/ssp/syringe-services-programs-factsheet.html"
         >
           Syringe Services Programs (SSPs) Fact Sheet [CDC]

@@ -162,6 +162,14 @@ h1.tagline-low {
 		font-size:  18px;
 		line-height: 24px;
 
+		a {
+			color:  white;
+
+			&:hover {
+				color: #939393;
+			}
+		}
+
 		div {
 			margin: 20px 0;
 		}
