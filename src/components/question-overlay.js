@@ -133,9 +133,9 @@ class QuestionOverlay extends React.Component {
 				this.setState({yesVal: 4})
 				this.updateCopy(1)
 				this.showCopy()
-				setTimeout(function() {
+				// setTimeout(function() {
 					this.showButtons()
-				}.bind(this), betweenCopyDelay)
+				// }.bind(this), betweenCopyDelay)
 				break;
 
 			case 4: //this is the second video
