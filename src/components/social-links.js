@@ -46,6 +46,7 @@ class SocialLinks extends React.Component {
 	render() {
 		return (
 			<div className = "social-container">
+				<div className = "nav-item social-nav">Follow NJHRC social media</div>
             	<a href = "https://www.twitter.com/njharmreduction" target="_blank" rel="noopener"><img id = "twitter-link" src={twitterIcon} /></a>
             	<a href = "https://www.facebook.com/njharmreduction" target="_blank" rel="noopener"><img id = "fb-link" src={fbIcon} /></a>
                 <a href = "https://www.instagram.com/njharmreduction" target="_blank" rel="noopener"><img id = "insta-link" src={instaIcon} /></a>
