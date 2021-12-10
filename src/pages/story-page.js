@@ -39,7 +39,7 @@ const rawContent = [
     data: "/img/HOW+WE+GOT+HERE+TESTIMONIAL.jpg",
     title: "Testimonial",
     metadata:
-      "“New Jersey law states you need local municipal ordinance to have a syringe access program. A lot of municipal leaders don’t have a public health background and don’t understand that syringe access saves lives, saves money, and can help clean up the city.”",
+    `“Just because you take away syringe access and needle exchange does not mean that the problem of drug use and overdose deaths is going to go away.”`,
     metadata2: "—Georgett, South Jersey AIDS Alliance",
   },
   {
