@@ -84,12 +84,14 @@ class QuestionOverlay extends React.Component {
 		videoOverlay.classList.add("hidden");
 		buttonsContainer.classList.add("hidden");
 		console.log("show the video");
+		overlayBG.classList.add("black-bg");
 	}
 
 	showCopy = () => {
 		this.switchVideos();
 		videoOverlay.classList.remove("hidden");
 		console.log("hide the video");
+		overlayBG.classList.remove("black-bg");
 	}
 
 	switchVideos = (videoId) => {
@@ -113,9 +115,9 @@ class QuestionOverlay extends React.Component {
 		switch(this.state.stage) {
 			case 0: //this is the first question
 				//this.showCopy()
-				setTimeout(function() {
+				// setTimeout(function() {
 					this.showButtons()
-				}.bind(this), betweenCopyDelay)
+				// }.bind(this), betweenCopyDelay)
 				break;
 
 			case 2: //this is the first video page
@@ -183,7 +185,7 @@ class QuestionOverlay extends React.Component {
 	render() {
 
 		return (
-			<div className = "overlay-background">
+			<div className = "overlay-background" style = {this.state.fullscreenStyle}>
 				<div className = "bg-video-container">
 					<video autoplay className = "bg-video hidden">
 		      		<source src = {videoList[0]} type="video/mp4" />

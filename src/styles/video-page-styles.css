@@ -20,6 +20,10 @@
   opacity: 1;
 }
 
+.black-bg {
+  background: black !important;
+}
+
 .overlay-content-container {
   margin: 0 auto;
   width: 60%;
@@ -58,13 +62,15 @@
   opacity: 0 !important;
 }
 
-.bg-video {
+.overlay-background .bg-video-container .bg-video {
   position: fixed;
   top: 0;
   left: 0;
   min-width: 100vw;
   min-height: 100vh;
   z-index: -1;
+  max-width: 100vw;
+  max-height: 100vh;
 }
 
 .wordmark {
@@ -75,6 +81,7 @@
 
 .logoBlurb {
   font-size: 16px;
+  text-shadow: 0 4px 6px black;
 }
 
 @media only screen and (max-width: 850px) {

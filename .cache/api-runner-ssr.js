@@ -1,6 +1,6 @@
 var plugins = [{
       name: 'gatsby-plugin-google-gtag',
-      plugin: require('C:/__DEV/PRJ/prv-nj-hrc-microsite/nj-hrc-microsite/node_modules/gatsby-plugin-google-gtag/gatsby-ssr'),
+      plugin: require('C:/Users/Michael/Documents/Freelance/nj-hrc-microsite/node_modules/gatsby-plugin-google-gtag/gatsby-ssr'),
       options: {"plugins":[],"trackingIds":["G-8Q9PXJFWHJ"]},
     }]
 /* global plugins */

@@ -13,15 +13,17 @@ class BackgroundMovie extends React.Component {
 		};
 	}
 
+
+
 	componentDidMount() {
 		console.log(this.state.isLiveStyle)
+  		document.getElementsByClassName('bg-video')[0].play();
 	}
 
 	componentDidUpdate(prevProps) {
 		if(prevProps.video !== this.props.video) {
 	  		this.setState({ video: this.props.video });
 	  		console.log("new video")
-	  		//document.getElementsByClassName('bg-video')[0].play();
 	  	}
 	}
 
@@ -32,7 +34,7 @@ class BackgroundMovie extends React.Component {
 	render() {
 		return (
 			<div className = "bg-video-container">
-				<video autoPlay = {this.props.autoplay} onplay = {this.videoPlayed()} className = "bg-video" key={this.state.video}>
+				<video autoPlay = {this.props.autoplay} muted onPlay = {this.videoPlayed()} className = "bg-video" key={this.state.video}>
 		      		<source src = {this.state.video} type="video/mp4" />
 		  		</video>
 	  		</div>

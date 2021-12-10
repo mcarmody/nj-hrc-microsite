@@ -33,7 +33,7 @@ const LandingPage = () => {
   return (
     <main style={pageStyles}>
       <title>Essential. Effective. Human.</title>
-      < BackgroundMovie video= {landingVid} autoplay = {"autoplay"}/>
+      < BackgroundMovie video= {landingVid} autoPlay = {"autoplay"} fullscreen = {true}/>
       <div className = "intro-copy">See how<br />Harm Reduction
       services help<br />make <span>New Jersey</span><br />healthier and safer</div>
       < Logo wordmark = {true} sideCopy = {true} size = {"small"}/>
