@@ -11,8 +11,7 @@ const logoStyles = {
 	lineHeight: "24px",
 	textTransform: "uppercase",
 	width: "440px",
-	fontSize: "14px",
-	bottom: "20px"
+	fontSize: "14px"
 }
 
 const linkStyles = {

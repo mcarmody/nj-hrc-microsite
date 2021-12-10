@@ -13,6 +13,10 @@
   padding-right: 36px;
 }
 
+.intro-copy + .logoBlock {
+  top: 80vh;
+}
+
 .logoBlurb {
   padding-top: 16px;
   font-size: 16px;
@@ -80,13 +84,14 @@
   min-width: 50%;
 }
 
-@media only screen and (max-height: 640px) {
+@media only screen and (max-height: 700px) {
   .intro-copy {
     font-size: 48px;
     line-height: 1.2;
     top: 20vh;
   }
-
+}
+@media only screen and (max-height: 640px) {
   .logoBlock {
     top: 75vh;
   }
