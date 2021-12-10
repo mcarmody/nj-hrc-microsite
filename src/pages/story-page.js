@@ -273,6 +273,11 @@ const rawContent = [
     metadata2:
       "<div className = 'source-1'><span>>></span> Source: 2018 CDC publication, Evidence-Based Strategies for Preventing Opioid Overdose: What’s Working in the United States</div><div className = 'source-2'><span>>></span> Source: CDC Syringe Services Programs Fact Sheet  </div>",
   },
+  {
+    type: "external-link",
+    title: "Harm Reduction Centers",
+    data: "https://www.nj.gov/health/hivstdtb/sap.shtml"
+  },
 ];
 
 const mediaLinkUrl = "https://nj-hrc-project-media.s3.amazonaws.com/media";
@@ -491,6 +496,11 @@ class IndividualStory extends React.Component {
               title={rawContent[this.state.id * 5].title}
               metadata2={mediaLinkUrl + rawContent[this.state.id * 5].metadata2}
               onClick={() => this.selectItem(this.state.id * 5)}
+            />
+            <SideNavItem
+              type={rawContent[25].type}
+              data={rawContent[25].data}
+              title={rawContent[25].title}
             />
 
             <SocialLinks />

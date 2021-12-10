@@ -10,6 +10,7 @@ class SideNavItem extends React.Component {
 		this.state = {
 			clickFunction: this.props.onClick
 		};
+
 	}
 
 	componentDidUpdate(prevProps) {
@@ -58,6 +59,8 @@ class SideNavItem extends React.Component {
 			navContent = <div className = "nav-item link-nav" onClick={() => {this.state.clickFunction(); selectNav(this)}}><span>>>  </span>{this.props.title}</div>
 		} else if(this.props.type == "video") {
 			navContent = <div className = "nav-item video-nav" style = {{backgroundImage: "url("+this.props.metadata2+")"}}  onClick={() => {this.state.clickFunction(); selectNav(this)}}><span>>>  </span>{this.props.title}</div>
+		} else if(this.props.type == "external-link") {
+			navContent = <a className = "external-link" href = {this.props.data}><div className = "nav-item link-nav"><span>>>  </span>{this.props.title}</div></a>
 		}
 
 		return (

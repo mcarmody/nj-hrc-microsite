@@ -10,6 +10,10 @@ body {
   background: #272727;
 }
 
+.external-link {
+  text-decoration: none;
+}
+
 .interaction-container {
   position: absolute;
   bottom: 30px;
