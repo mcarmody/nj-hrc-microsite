@@ -419,6 +419,7 @@ h1.tagline-low {
     float: none;
     padding-top: 8px;
     line-height: 1.2;
+    font-size: 24px;
   }
 }
 @media only screen and (min-height: 768px) {
