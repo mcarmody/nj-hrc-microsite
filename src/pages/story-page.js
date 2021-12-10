@@ -32,7 +32,17 @@ const rawContent = [
     metadata:
       '<span className = "stat-highlight">$11.6 billion</span>spent on drug war arrests <span className = "stat-highlight">544.6 times</span>more than investment in harm reduction services',
     metadata2:
-      "<div className = 'story-source'><span>>></span> SOURCE: New Jersey Policy Perspective—A War on Us: How Much New Jersey Spends Enforcing the War on Drugs</div>",
+      `<div className = 'story-source'>
+        <span>>></span> SOURCE: 
+        <a 
+          target="_blank" 
+          rel="noopener" 
+          style="color:white;" 
+          href="https://www.njpp.org/publications/report/a-war-on-us-how-much-new-jersey-spends-enforcing-the-war-on-drugs/"
+        >
+          A War on Us: How Much New Jersey Spends Enforcing the War on Drugs [New Jersey Policy Perspective]
+        </a>
+        </div>`,
   },
   {
     type: "link",
@@ -74,8 +84,16 @@ const rawContent = [
     metadata:
       'People who access harm reduction programs are <span className = "stat-highlight">50% less likely</span>to contract HIV or Hepatitis C.',
     metadata2:
-      "<div className = 'source-1'><span>>></span> Source: www.cdc.gov/ssp/syringe-services-programs-factsheet.html</div>",
-  
+      `<div className = 'story-source'><span>>></span> SOURCE: 
+          <a 
+            target="_blank" 
+            rel="noopener" 
+            style="color:white;" 
+            href="https://www.cdc.gov/ssp/syringe-services-programs-factsheet.html"
+          >
+            Syringe Services Programs (SSPs) Fact Sheet [CDC]
+          </a>
+        </div>`,
     },
   {
     type: "link",
@@ -117,7 +135,16 @@ const rawContent = [
     metadata:
       "As syringe access has become available, rates of HIV transmission among people who inject drugs have declined by one-third.",
     metadata2:
-      "<div className = 'source-1'><span>>></span> Source: www.state.nj.us/health/populationhealth/opioid/</div>",      
+      `<div className = 'story-source'><span>>></span> SOURCE: 
+      <a 
+        target="_blank" 
+        rel="noopener" 
+        style="color:white;" 
+        href="https://www.state.nj.us/health/populationhealth/opioid/"
+      >
+        Overdose Data Dashboard [New Jersey Department of Health]
+      </a>
+    </div>`,
   },
   {
     type: "link",
@@ -159,7 +186,17 @@ const rawContent = [
     metadata:
       'There were <span className = "stat-highlight">18,492</span>overdose deaths in the state of New Jersey between 2010 and 2019',
     metadata2: 
-      "<div className = 'source-1'><span>>></span> Source: https://ocsme.nj.gov/dashboard</div>",
+      `<div className = 'story-source'>
+        <span>>></span> SOURCE: 
+        <a 
+          target="_blank" 
+          rel="noopener" 
+          style="color:white;" 
+          href="https://ocsme.nj.gov/dashboard"
+        >
+          Suspected Drug Death Statistics Data Dashboard [New Jersey Office of the Chief State Medical Examiner]
+        </a>
+      </div>`,
   },
   {
     type: "link",
@@ -200,8 +237,16 @@ const rawContent = [
     metadata:
       `"People who access harm reduction programs are five times more likely to enter treatment for drug use and three times more likely to stop drug use impeding quality of life than those without access."`,
     metadata2:
-      "<div className = 'source-1'><span>>></span> Source: https://www.cdc.gov/ssp/syringe-services-programs-factsheet.html</div>",
-
+    `<div className = 'story-source'><span>>></span> SOURCE: 
+        <a 
+          target="_blank" 
+          rel="noopener" 
+          style="color:white;" 
+          href="https://www.cdc.gov/ssp/syringe-services-programs-factsheet.html"
+        >
+          Syringe Services Programs (SSPs) Fact Sheet [CDC]
+        </a>
+      </div>`,
   },
   {
     type: "link",
