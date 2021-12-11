@@ -36,20 +36,16 @@ body {
 
 .interaction-container {
   position: absolute;
-  bottom: 30px;
+  bottom: 48px;
   z-index: 1000;
-  display: inline-block;
+  display: block;
   height: 25px;
-  width: calc(100% - 64px*3);
   padding: 0 64px;
   font-weight: 700;
   line-height: 24px;
   text-transform: uppercase;
   text-shadow: 0 4px 6px black;
-}
-.interaction-container div {
-  position: absolute;
-  display: inline-block;
+  right: 24px;
 }
 .interaction-container div span {
   color: #CC4400;
@@ -59,8 +55,11 @@ body {
   right: 0px;
   cursor: pointer;
 }
+.interaction-container #fb-link {
+  margin-left: 12px;
+}
 .interaction-container #twitter-link {
-  margin: 0px 4px 0px 12px;
+  margin: 0px 4px 0px 8px;
 }
 .interaction-container img {
   position: relative;
@@ -174,15 +173,13 @@ h1.tagline-low {
 .story-copy .story-source {
   font-size: 18px;
   line-height: 24px;
+  margin: 20px 0;
 }
 .story-copy .story-source a {
   color: white;
 }
 .story-copy .story-source a:hover {
   color: #939393;
-}
-.story-copy .story-source div {
-  margin: 20px 0;
 }
 .story-copy .story-source span {
   font-size: 20px;
@@ -220,6 +217,7 @@ h1.tagline-low {
   padding-left: 1vw;
   background: white;
   height: 100vh;
+  min-height: 650px;
 }
 
 .nav-item {
@@ -451,13 +449,16 @@ h1.tagline-low {
     font-size: 12px;
   }
 
-  .story-content + .contentBlurb {
-    left: 45vw;
-    width: 250px;
-    float: none;
-    padding-top: 8px;
-    line-height: 1.2;
-    font-size: 24px;
+  .story-copy {
+    font-size: 20px;
+  }
+  .story-copy .story-source {
+    font-size: 14px;
+  }
+  .story-copy span {
+    font-size: 40px;
+    line-height: 1;
+    margin: 0;
   }
 }
 @media only screen and (min-height: 768px) {

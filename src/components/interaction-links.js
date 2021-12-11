@@ -46,8 +46,8 @@ class InteractionLinks extends React.Component {
 		return (
 			<div className = "interaction-container">
                 <div id = "share-link" onClick={() => this.share() }><span>>></span> Share
-                	<a href = {"http://twitter.com/intent/tweet?text=" + preTweet} target="_blank" rel="noopener"><img id = "twitter-link" src={twitterIcon} /></a>
                 	<a href = "https://www.facebook.com/sharer/sharer.php?u=test.com" target="_blank" rel="noopener"><img id = "fb-link" src={fbIcon} /></a>
+                	<a href = {"http://twitter.com/intent/tweet?text=" + preTweet} target="_blank" rel="noopener"><img id = "twitter-link" src={twitterIcon} /></a>
             	</div>
                 { this.props.type == "video" ? <div id = "play-link" onClick={() => this.toggleVideo() }><span>>></span> {this.state.videoButtonText} Video</div> : console.log("no play button")}
               </div>

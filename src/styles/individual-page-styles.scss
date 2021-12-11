@@ -39,20 +39,18 @@ body {
 
 .interaction-container {
 	position: absolute;
-	bottom: 30px;
+	bottom: 48px;
 	z-index: 1000;
-	display: inline-block;
+	display: block;
 	height: 25px;
-	width: calc(100% - 64px*3);
 	padding: 0 64px;
 	font-weight: 700;
 	line-height: 24px;
 	text-transform: uppercase;
 	text-shadow: 0 4px 6px black;
+	right: 24px;
 
 	div {
-		position: absolute;
-		display:  inline-block;
 
 		span {
 			color: #CC4400;
@@ -65,8 +63,12 @@ body {
 		cursor: pointer;
 	}
 
+	#fb-link {
+		margin-left:  12px;
+	}
+
 	#twitter-link {
-		margin: 0px 4px 0px 12px;
+		margin: 0px 4px 0px 8px;
 	}
 
 	img {
@@ -188,6 +190,7 @@ h1.tagline-low {
 	.story-source {
 		font-size:  18px;
 		line-height: 24px;
+		margin: 20px 0;
 
 		a {
 			color:  white;
@@ -195,10 +198,6 @@ h1.tagline-low {
 			&:hover {
 				color: #939393;
 			}
-		}
-
-		div {
-			margin: 20px 0;
 		}
 
 		span {
@@ -243,6 +242,7 @@ h1.tagline-low {
 	padding-left: 1vw;
 	background: white;
 	height: 100vh;
+	min-height: 650px;
 }
 
 .nav-item {
@@ -488,14 +488,20 @@ h1.tagline-low {
 		font-size: 12px;
 	}
 
-	.story-content+.contentBlurb {
-		left: 45vw;
-		width: 250px;
-		float: none;
-		padding-top: 8px;
-		line-height: 1.2;
-	    font-size: 24px;
+	.story-copy {
+		font-size: 20px;
+
+		.story-source {
+			font-size: 14px;
+		}
+
+		span {
+			font-size: 40px;
+			line-height: 1;
+			margin: 0;
+		}
 	}
+
 }
 
 @media only screen and (min-height:  768px) {
