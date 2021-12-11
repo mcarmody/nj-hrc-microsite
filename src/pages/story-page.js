@@ -457,6 +457,7 @@ class IndividualStory extends React.Component {
                 />
               </div>
             )}
+            <Tagline size="small" position="extra-low" />
             <div className="contentBlurb">{this.state.blurb}</div>
           </div>
           <div className="side-nav-container">
@@ -501,9 +502,13 @@ class IndividualStory extends React.Component {
             />
 
             <SocialLinks />
+            <div className="logoBlurb">
+              SPONSORED BY NEW JERSEY < br />
+              HARM REDUCTION COALITION < br />
+              AND VITAL STRATEGIES
+            </div>
           </div>
-          <Tagline size="small" position="extra-low" />
-          <Logo wordmark={false} sideCopy={true} size={"small"} />
+          
           <div className="mobile-modal">
             This site works best if you hold your device in landscape
             orientation.
