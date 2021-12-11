@@ -273,6 +273,11 @@ const rawContent = [
     title: "Harm Reduction Centers",
     data: "https://www.nj.gov/health/hivstdtb/sap.shtml"
   },
+  {
+    type: "external-link",
+    title: "Social Toolkit",
+    data: "https://drive.google.com/drive/folders/1CAvK5MB2LCwfLXmtXk2Gx5E1ymq0i6ix?usp=sharing"
+  },
 ];
 
 const mediaLinkUrl = "https://nj-hrc-project-media.s3.amazonaws.com/media";
@@ -477,24 +482,22 @@ class IndividualStory extends React.Component {
               onClick={() => this.selectItem(this.state.id * 5 + 2)}
             />
             <SideNavItem
-              type={rawContent[this.state.id * 5 + 3].type}
-              data={rawContent[this.state.id * 5 + 3].data}
-              title={rawContent[this.state.id * 5 + 3].title}
-              metadata2={
-                mediaLinkUrl + rawContent[this.state.id * 5 + 3].metadata2
-              }
-            />
-            <SideNavItem
               type={rawContent[this.state.id * 5].type}
               data={mediaLinkUrl + rawContent[this.state.id * 5].data}
               title={rawContent[this.state.id * 5].title}
               metadata2={mediaLinkUrl + rawContent[this.state.id * 5].metadata2}
               onClick={() => this.selectItem(this.state.id * 5)}
             />
+            <div className = "divider" />
             <SideNavItem
               type={rawContent[25].type}
               data={rawContent[25].data}
               title={rawContent[25].title}
+            />
+            <SideNavItem
+              type={rawContent[26].type}
+              data={rawContent[26].data}
+              title={rawContent[26].title}
             />
 
             <SocialLinks />

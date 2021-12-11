@@ -12,22 +12,21 @@ body {
 }
 
 .external-link {
+
 	text-decoration: none;
+
+	.nav-item {
+		background:  transparent;
+		margin: 0;
+		line-height: 24px;
+		min-height: 36px;
+		color: darkgrey;
+	}
 }
 
-.external-link-bg {
-
-	text-decoration: none;
-
-	.link-nav {
-		width: 100%;
-		max-height: 365px;
-		background-size: cover;
-		background-repeat: no-repeat;
-		min-height: 180px;
-		color: white;
-		text-shadow: 0 4px 6px black;
-	}
+.divider {
+	margin: 24px 12px 24px 0;
+	border-top: 2px solid orange;
 }
 
 .nav-item.social-nav {
