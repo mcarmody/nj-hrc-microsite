@@ -537,17 +537,36 @@ h1.tagline-low {
 		height: 60px;
 	}
 
+	.selected-topic-container {
+		min-height: 380px;
+	}
+
+	.side-nav-container {
+		min-height: 380px;
+	}
+
 	.nav-item-container {
-		max-height: 48px;
+		max-height: 32px;
 
 		.nav-item {
 			font-size: 10px;
-			line-height: 30px;
+			line-height: 24px;
+			min-height: 24px;
 
 			span {
 				font-size: 12px;
 			}
 		}
+	}
+
+	.divider {
+		margin: 12px 12px 12px 0;
+	}
+
+	.side-nav-container .logoBlurb {
+		font-size: 10px;
+		line-height: 12px;
+		bottom: 12px;
 	}
 
 	.story-copy {
@@ -571,42 +590,18 @@ h1.tagline-low {
 		background-size: contain;
 	}
 
-	.social-container {
-		bottom: 20px;
-		height: 40px;
-		padding: 4px 0;
-
-		a img {
-			height: 18px;
-			margin: 0 4px;
-		}
-
-		div {
-			margin-top: 4px;
-			font-size: 12px;
-
-			span {
-				font-size: 16px;
-			}
-		}
-	}
-
-	.story-content+.contentBlurb {
-		left: 45vw;
+	.tagline+.contentBlurb {
 		font-size: 14px;
 		width: 250px;
-		float: none;
-		padding-top: 8px;
 		line-height: 1.2;
+		vertical-align: top;
+		padding: 8px 0 0 0;
 	}
 
-	.side-nav-container+.tagline {
+	.story-content+.tagline {
 		font-size: 20px;
 		bottom: 0;
-
-		&+.logoBlock {
-			top: 74vh !important;
-			left: 100px !important;
-		}
+		margin-top: 4px;
+		margin-bottom: 0px;
 	}
 }	
