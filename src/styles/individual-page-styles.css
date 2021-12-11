@@ -16,14 +16,14 @@ body {
 .external-link .nav-item {
   background: transparent;
   margin: 0;
-  line-height: 24px;
-  min-height: 36px;
+  line-height: 30px;
+  min-height: 32px;
   color: darkgrey;
 }
 
 .divider {
   margin: 24px 12px 24px 0;
-  border-top: 2px solid orange;
+  border-top: 2px solid #cc4400;
 }
 
 .nav-item.social-nav {
@@ -72,17 +72,21 @@ body {
 }
 
 .social-container {
-  position: absolute;
+  position: relative;
   bottom: 30px;
   z-index: 1000;
   display: inline-block;
-  height: 110px;
   width: 24vw;
   padding: 0 64px;
-  font-weight: 700;
   line-height: 24px;
   text-transform: uppercase;
   color: #8b8b8b;
+}
+.social-container .nav-item {
+  top: 4px;
+  color: darkgrey;
+  min-height: 32px;
+  line-height: 36px;
 }
 .social-container div {
   position: absolute;
@@ -102,9 +106,9 @@ body {
 }
 .social-container img {
   position: relative;
-  height: 30px;
+  height: 20px;
   top: 4px;
-  margin: 0px 12px;
+  margin: 0px 8px;
   cursor: pointer;
   border-radius: 4px;
   -webkit-filter: invert(0.7);
@@ -423,19 +427,21 @@ h1.tagline-low {
     bottom: none;
   }
 }
-@media only screen and (max-height: 860px) {
+@media only screen and (max-height: 850px) {
   .nav-item-container {
     max-height: 140px;
     overflow: hidden;
   }
 
+  .nav-item {
+    margin: 6px 0;
+  }
+  .nav-item span {
+    font-size: 16px;
+  }
+
   .image-content {
     overflow: visible;
-  }
-}
-@media only screen and (max-height: 850px) {
-  .nav-item-container {
-    max-height: 120px;
   }
 
   .side-nav-container {
