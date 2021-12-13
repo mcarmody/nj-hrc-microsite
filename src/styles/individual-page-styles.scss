@@ -91,6 +91,11 @@ body {
 	line-height: 24px;
 	text-transform: uppercase;
 	color: #8b8b8b;
+	pointer-events: none;
+
+	a {
+		pointer-events: all;
+	}
 
 	.nav-item {
 		top: 4px;
@@ -373,6 +378,10 @@ h1.tagline-low {
 	padding: 12px 0 12px 1vw;
 }
 
+.nav-item-container {
+	position: relative;
+}
+
 .nav-item-container.selected .nav-item {
 	background-color: white;
 
@@ -434,6 +443,10 @@ h1.tagline-low {
 	color: darkgrey;
 	text-shadow: none;
 	margin-left: 12px;
+
+	&:hover {
+		color: lightgrey;
+	}
 }
 
 

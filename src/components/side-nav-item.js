@@ -62,7 +62,7 @@ class SideNavItem extends React.Component {
 		} else if(this.state.type == "video") {
 			navContent = <div className = "nav-item video-nav" style = {{backgroundImage: "url("+this.props.metadata2+")"}}  onClick={() => {this.state.clickFunction(); selectNav(this)}}><span>>>  </span>{this.props.title}</div>
 		} else if(this.state.type == "external-link") {
-			navContent = <a className = {this.props.metadata2 ? "external-link-bg" : "external-link"} href = {this.props.data}><div className = "nav-item link-nav" style = {{backgroundImage: "url("+this.props.metadata2+")"}}><span>>>  </span>{this.props.title}</div></a>
+			navContent = <a className = {this.props.metadata2 ? "external-link-bg" : "external-link"} href = {this.props.data} target="_blank" rel="noopener"><div className = "nav-item link-nav" style = {{backgroundImage: "url("+this.props.metadata2+")"}}><span>>>  </span>{this.props.title}</div></a>
 		}
 
 		return (

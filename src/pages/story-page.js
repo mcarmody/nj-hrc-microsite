@@ -269,7 +269,7 @@ const rawContent = [
   {
     type: "external-link",
     title: "Social Toolkit",
-    data: "https://drive.google.com/drive/folders/1CAvK5MB2LCwfLXmtXk2Gx5E1ymq0i6ix?usp=sharing"
+    data: "https://docs.google.com/document/d/1Wu756L4xff2PelOYXyPbTOLOa6fl0qR10qkXr9Blp7Y/edit"
   },
 ];
 
@@ -495,11 +495,13 @@ class IndividualStory extends React.Component {
             />
 
             <SocialLinks />
-            <div className="logoBlurb">
-              SPONSORED BY NEW JERSEY < br />
-              HARM REDUCTION COALITION < br />
-              AND VITAL STRATEGIES
-            </div>
+            <a href = "https://njharmreduction.org">
+              <div className="logoBlurb">
+                SPONSORED BY NEW JERSEY < br />
+                HARM REDUCTION COALITION < br />
+                AND VITAL STRATEGIES
+              </div>
+            </a>
           </div>
           
           <div className="mobile-modal">
