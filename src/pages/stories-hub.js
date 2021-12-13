@@ -17,8 +17,8 @@ const pageStyles = {
 }
 
 const titlesList = [
-  "How We<br />Got Here",
-  "Harm Reduction<br />101",
+  "How We<br /> Got Here",
+  "Harm Reduction<br /> 101",
   "Viral Hepatitis and HIV",
   "Overdose and Prevention",
   "Connection To Services"

@@ -527,6 +527,16 @@ h1.tagline-low {
 		padding-top: 8px;
 		line-height: 1.2;
 	}
+
+	.story-title {
+		font-size: 30px;
+		line-height: 44px;
+		height: 60px;
+
+		br {
+			display: none;
+		}
+	}
 }
 
 @media only screen and (max-width: 850px), screen and (max-width: 930px) and (orientation: landscape) {
