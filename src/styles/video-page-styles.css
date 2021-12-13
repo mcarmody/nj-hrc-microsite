@@ -115,6 +115,13 @@
     left: 70vw;
   }
 
+  .overlay-buttons-container div {
+    height: 32px;
+    width: 70px;
+    font-size: 12pt;
+    line-height: 32px;
+  }
+
   .bg-video-container {
     top: 0;
     left: 0;

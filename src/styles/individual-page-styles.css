@@ -464,6 +464,8 @@ h1.tagline-low {
   }
   .story-copy .story-source {
     font-size: 14px;
+    margin: 0 0 30px 0;
+    line-height: 14px;
   }
   .story-copy span {
     font-size: 40px;
