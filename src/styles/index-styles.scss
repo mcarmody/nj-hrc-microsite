@@ -98,6 +98,12 @@ html, body {
 	}
 }
 
+@media only screen and (max-height: 850px) {
+	.logoBlock+.link-container {
+		bottom: 10vh;
+	}
+}
+
 @media only screen and (max-height: 640px) {
 
 	.logoBlock {
@@ -137,34 +143,35 @@ html, body {
 		top:  20vh;
 	}
 
-	.logoBlock {
-		top: 70vh;
+	.intro-copy+.logoBlock {
+		top: 46vh;
 
 		.wordmark {
-			max-width: 100px;
+			max-width: 60px;
 			padding-right: 12px;
 		}
 	}
 
 	.logoBlock .logoBlurb {
 		padding-top: 0px;
-		font-size: 8pt !important;
+		font-size: 6pt !important;
+		line-height: 14px;
 	}
 
 	.logoBlock+.link-container {
-		top: 60vh;
-		left: 60vw;
+		top: 32vh;
+		left: 40vw;
 
 		a div {
 			font-size: 8pt;
 			margin: 0;
 			text-shadow: 0 4px 6px black;
 
-			div {
+			div.skipText {
 				border-top: 5px solid transparent !important;
 				border-bottom: 5px solid transparent !important;
     			border-left: 7px solid rgb(253, 125, 6) !important;
-    			line-height: 0;
+    			line-height: 1;
 			}
 		}
 	}
