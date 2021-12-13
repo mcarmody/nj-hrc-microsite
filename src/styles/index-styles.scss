@@ -90,7 +90,7 @@ html, body {
     }
 }
 
-@media only screen and (max-height: 700px) {
+@media only screen and (max-height: 750px) {
 	.intro-copy {
 		font-size: 48px;
 		line-height: 1.2;
@@ -100,7 +100,8 @@ html, body {
 
 @media only screen and (max-height: 850px) {
 	.logoBlock+.link-container {
-		bottom: 10vh;
+		top: 70vh;
+		left: 60vw;
 	}
 }
 
@@ -121,8 +122,6 @@ html, body {
 	}
 
 	.logoBlock+.link-container {
-		top: 60vh;
-		left: 70vw;
 
 		a div {
 			font-size: 16pt;

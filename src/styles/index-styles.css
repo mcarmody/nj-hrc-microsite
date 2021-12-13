@@ -84,7 +84,7 @@
   min-width: 50%;
 }
 
-@media only screen and (max-height: 700px) {
+@media only screen and (max-height: 750px) {
   .intro-copy {
     font-size: 48px;
     line-height: 1.2;
@@ -93,7 +93,8 @@
 }
 @media only screen and (max-height: 850px) {
   .logoBlock + .link-container {
-    bottom: 10vh;
+    top: 70vh;
+    left: 60vw;
   }
 }
 @media only screen and (max-height: 640px) {
@@ -110,10 +111,6 @@
     font-size: 8pt !important;
   }
 
-  .logoBlock + .link-container {
-    top: 60vh;
-    left: 70vw;
-  }
   .logoBlock + .link-container a div {
     font-size: 16pt;
     margin: 0;
