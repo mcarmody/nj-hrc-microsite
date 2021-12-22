@@ -104,26 +104,33 @@ class NavMovie extends React.Component {
 		}
 
 		function toggle(self) {
-			getNavVideos(ReactDOM.findDOMNode(self));
-			if(!ReactDOM.findDOMNode(self).classList.contains("column-highlighted")) {
-				ReactDOM.findDOMNode(self).classList.add("column-highlighted");
+			getNavVideos(document.getElementById(self));
+			console.log(document.getElementById(self));
+			if(!document.getElementById(self).classList.contains("column-highlighted")) {
+				document.getElementById(self).classList.add("column-highlighted");
 				// document.getElementById(self.props.videoName).play();
 			} else {
-				ReactDOM.findDOMNode(self).classList.remove("column-highlighted");
+				document.getElementById(self).classList.remove("column-highlighted");
 				// document.getElementById(self.props.videoName).pause();
 			}
+
+			console.log("new video highlighted: "+self)
 		}
 
-		console.log(this.state.id)
+		function mobileSwitch(self) {
+			console.log(self);
+		}
+
+		console.log(this.state.data.id)
 
 		return (
-			<div className = "video-container" onClick={() => toggle(this)} style = {imgStyle}>
+			<div id = {this.state.data.id} className = "video-container" onClick={() => toggle(this.state.data.id)} style = {imgStyle}>
 				<div id = "previous-arrow" className = "select-arrow" />
 				<div className = "background-image" />
 
 		  		<div className = "video-title"></div>
 		  		<Link className = "story-link" to="/story-page" id={"story-link-"+this.props.id} state = {{data: this.state.data}}>>></Link>
-				<div id = "next-arrow" className = "select-arrow" />
+				<div id = "next-arrow" className = "select-arrow" onClick={() => mobileSwitch(this)}/>
 	  		</div>
 		)
 	}

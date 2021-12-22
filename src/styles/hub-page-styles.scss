@@ -199,6 +199,11 @@ body {
 }
 
 @media only screen and (max-width: 500px) and (orientation: portrait) {
+
+	.video-container {
+		pointer-events: none;
+	}
+
 	.mobile-modal {
 		display: none;
 	}
@@ -218,6 +223,7 @@ body {
 		position: absolute;
 		top: 45vh;
 		margin: 18px;
+		pointer-events: auto;
 
 		&::before {
 			height: 120px;
