@@ -112,7 +112,7 @@ body {
 .mobile-modal {
 	top: 40vh;
 	position: fixed;
-	display: block;
+	display: none;
 	width: 200px;
 	height: 80px;
 	border-radius: 10px;
@@ -166,7 +166,7 @@ body {
 
 @media only screen and (max-width: 850px) and (orientation: portrait) {
 	.mobile-modal {
-		display: block;
+		display: none;
 	}
 }
 

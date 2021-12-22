@@ -573,3 +573,13 @@ h1.tagline-low {
     margin-bottom: 0px;
   }
 }
+@media only screen and (max-width: 850px), screen and (max-width: 930px) and (orientation: portrait) {
+  .story-title {
+    left: 40px;
+    top: 50px;
+    font-size: 28px;
+    line-height: 38px;
+    height: 150px;
+    padding-top: 0;
+  }
+}
