@@ -600,6 +600,17 @@ h1.tagline-low {
     height: 520px;
     min-height: 520px;
   }
+  .story-content.image-content {
+    background-position: center top;
+  }
+  .story-content.image-content .story-copy {
+    width: calc(100vw - 32px);
+    line-height: 1.2;
+    top: 240px;
+  }
+  .story-content.image-content .story-copy span {
+    margin: 4px 0;
+  }
 
   .hide-mobile {
     display: none;
@@ -614,7 +625,7 @@ h1.tagline-low {
     padding-left: 56px;
     font-size: 32px;
     line-height: 1.2;
-    top: 770px;
+    top: 800px;
     float: left;
     position: absolute;
   }
@@ -632,7 +643,7 @@ h1.tagline-low {
     position: absolute;
     margin: 32px 0 0 56px;
     width: 350px;
-    top: 880px;
+    top: 920px;
   }
   .mobile-footer .social-container {
     width: 100%;
