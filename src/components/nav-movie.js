@@ -118,10 +118,12 @@ class NavMovie extends React.Component {
 
 		return (
 			<div className = "video-container" onClick={() => toggle(this)} style = {imgStyle}>
+				<div id = "previous-arrow" className = "select-arrow" />
 				<div className = "background-image" />
 
 		  		<div className = "video-title"></div>
 		  		<Link className = "story-link" to="/story-page" id={"story-link-"+this.props.id} state = {{data: this.state.data}}>>></Link>
+				<div id = "next-arrow" className = "select-arrow" />
 	  		</div>
 		)
 	}
