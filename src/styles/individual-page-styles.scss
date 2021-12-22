@@ -7,7 +7,6 @@ body {
 	display: block;
 	height: 100vh;
 	width: 100vw;
-	//overflow: hidden;
 	background: #272727;
 }
 
@@ -235,7 +234,6 @@ h1.tagline-low {
 	background-repeat: no-repeat;
 	background-size: 1050px;
 	background-position: left;
-	overflow: hidden;
 	max-height: 55vh;
 }
 
@@ -635,6 +633,10 @@ h1.tagline-low {
 //mobile portrait mode begins here
 @media only screen and (max-width: 850px), screen and (max-width: 930px) and (orientation: portrait) {
 
+	body {
+		overflow: visible;
+	}
+
 	.selected-topic-container {
 		width: 100vw;
 	}
@@ -678,6 +680,42 @@ h1.tagline-low {
 		width: 280px;
 		margin-left: 56px;
 		position: absolute;
+	}
+
+	.mobile-footer {
+		display: block;
+		position: relative;
+		margin: 32px 0 0 56px;
+		width: 350px;
+
+		.social-container {
+
+			width: 100%;
+
+			.social-nav {
+				font-size: 14px;
+				line-height: 24px;
+				width: 100%;
+				color: white;
+			}
+
+			a img {
+				filter: none;
+			}
+		}
+
+		a {
+			text-decoration: none;
+			
+			.logoBlurb {
+				color: #acacac;
+				font-size: 12px;
+				line-height: 2;
+				padding: 0;
+				padding-bottom: 24px;
+			}
+		}
+
 	}
 
 }

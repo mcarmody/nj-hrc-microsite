@@ -503,6 +503,17 @@ class IndividualStory extends React.Component {
               </div>
             </a>
           </div>
+
+          <div className = "mobile-footer">
+            <SocialLinks />
+            <a href = "https://njharmreduction.org">
+              <div className="logoBlurb">
+                SPONSORED BY NEW JERSEY < br />
+                HARM REDUCTION COALITION < br />
+                AND VITAL STRATEGIES
+              </div>
+            </a>
+          </div>
           
           <div className="mobile-modal">
             This site works best if you hold your device in landscape

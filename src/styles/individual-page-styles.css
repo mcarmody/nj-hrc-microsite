@@ -208,7 +208,6 @@ h1.tagline-low {
   background-repeat: no-repeat;
   background-size: 1050px;
   background-position: left;
-  overflow: hidden;
   max-height: 55vh;
 }
 
@@ -574,6 +573,10 @@ h1.tagline-low {
   }
 }
 @media only screen and (max-width: 850px), screen and (max-width: 930px) and (orientation: portrait) {
+  body {
+    overflow: visible;
+  }
+
   .selected-topic-container {
     width: 100vw;
   }
@@ -617,5 +620,35 @@ h1.tagline-low {
     width: 280px;
     margin-left: 56px;
     position: absolute;
+  }
+
+  .mobile-footer {
+    display: block;
+    position: relative;
+    margin: 32px 0 0 56px;
+    width: 350px;
+  }
+  .mobile-footer .social-container {
+    width: 100%;
+  }
+  .mobile-footer .social-container .social-nav {
+    font-size: 14px;
+    line-height: 24px;
+    width: 100%;
+    color: white;
+  }
+  .mobile-footer .social-container a img {
+    -webkit-filter: none;
+            filter: none;
+  }
+  .mobile-footer a {
+    text-decoration: none;
+  }
+  .mobile-footer a .logoBlurb {
+    color: #acacac;
+    font-size: 12px;
+    line-height: 2;
+    padding: 0;
+    padding-bottom: 24px;
   }
 }
