@@ -453,6 +453,9 @@ class IndividualStory extends React.Component {
             <Tagline size="small" position="extra-low" />
             <div className="contentBlurb">{this.state.blurb}</div>
           </div>
+          <div className = "hamburger-container">
+            <div className = "hamburger" />
+          </div>
           <div className="side-nav-container hide-mobile">
             <Link to="/stories-hub" className="back-link">
               Home

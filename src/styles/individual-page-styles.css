@@ -414,6 +414,10 @@ h1.tagline-low {
   color: lightgrey;
 }
 
+.hamburger-container {
+  display: none;
+}
+
 .tagline + .logoBlock {
   bottom: 4px !important;
 }
@@ -624,9 +628,10 @@ h1.tagline-low {
 
   .mobile-footer {
     display: block;
-    position: relative;
+    position: fixed;
     margin: 32px 0 0 56px;
     width: 350px;
+    top: 880px;
   }
   .mobile-footer .social-container {
     width: 100%;
@@ -650,5 +655,25 @@ h1.tagline-low {
     line-height: 2;
     padding: 0;
     padding-bottom: 24px;
+  }
+
+  .hamburger-container {
+    height: 64px;
+    width: 64px;
+    background: #cc4400;
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+  .hamburger {
+    background: url("https://nj-hrc-project-media.s3.amazonaws.com/media/vid/burger-icon.png");
+    background-size: cover;
+    margin: 14px;
+    height: 36px;
+    width: 36px;
+    -webkit-filter: invert(100%);
+            filter: invert(100%);
   }
 }
