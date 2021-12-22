@@ -658,6 +658,7 @@ h1.tagline-low {
 		background-size: cover;
 		background-position: left -150px center;
 		height: 520px;
+		min-height: 520px;
 	}
 
 	.hide-mobile {
@@ -688,7 +689,7 @@ h1.tagline-low {
 
 	.mobile-footer {
 		display: block;
-		position: fixed;
+		position: absolute;
 		margin: 32px 0 0 56px;
 		width: 350px;
 		top: 880px;
@@ -745,7 +746,7 @@ h1.tagline-low {
 
 	.side-nav-container {
 		width: 100vw;
-		height: 645px;
+		height: 670px;
 		z-index: 1000;
 
 		.social-container {
