@@ -293,6 +293,7 @@ class IndividualStory extends React.Component {
           "linear-gradient(115.66deg, #CC4400 -2%, rgba(196, 196, 196, 0) 50%",
       },
       video: "",
+      sidebarHidden: true,
     };
   }
 
@@ -356,6 +357,20 @@ class IndividualStory extends React.Component {
     }
   }
 
+  toggleSidebar = () => {
+    var sidebar = document.getElementsByClassName("side-nav-container")[0];
+    console.log("toggle")
+    if(this.state.sidebarHidden) {
+      console.log("show")
+      sidebar.classList.remove("hide-mobile");
+    } else {
+      console.log("hide");
+      sidebar.classList.add("hide-mobile");
+    }
+
+    this.setState({sidebarHidden: !this.state.sidebarHidden})
+  }
+
   selectItem = (id) => {
     this.setState({ selectedItem: this.state.contentItems[id] });
     this.setState({ video: document.getElementById("story-clip") });
@@ -367,6 +382,10 @@ class IndividualStory extends React.Component {
       this.setState({ source: "" });
     }
     console.log("link: " + mediaLinkUrl + this.state.selectedItem.data);
+    this.setState({sidebarHidden: true})
+
+    console.log("hide");
+    document.getElementsByClassName("side-nav-container")[0].classList.add("hide-mobile");
   };
 
   render() {
@@ -454,7 +473,7 @@ class IndividualStory extends React.Component {
             <div className="contentBlurb">{this.state.blurb}</div>
           </div>
           <div className = "hamburger-container">
-            <div className = "hamburger" />
+            <div className = "hamburger" onClick={() => this.toggleSidebar()} />
           </div>
           <div className="side-nav-container hide-mobile">
             <Link to="/stories-hub" className="back-link">

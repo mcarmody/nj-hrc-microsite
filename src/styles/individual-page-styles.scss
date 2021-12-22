@@ -731,6 +731,7 @@ h1.tagline-low {
 		position: absolute;
 		top: 0;
 		right: 0;
+		z-index: 1001;
 	}
 
 	.hamburger {
@@ -740,6 +741,46 @@ h1.tagline-low {
 		height:  36px;
 		width: 36px;
 		filter: invert(100%);
+	}
+
+	.side-nav-container {
+		width: 100vw;
+		height: 645px;
+		z-index: 1000;
+
+		.social-container {
+			display: none;
+			
+			&+a {
+				display: none;
+			}
+		}
+
+
+		.back-link {
+			width: calc(100% - 80px);
+		}
+
+		.nav-item-container {
+
+
+			max-height: none;
+
+			.nav-item {
+				font-size: 16px;
+				line-height: 58px;
+				min-height: 0;
+				width: 100%;
+
+				span {
+					font-size: 20px;
+				}
+			}
+
+			.video-nav {
+				min-height: 180px;
+			}
+		}
 	}
 
 }
