@@ -2,6 +2,10 @@ body {
   height: 100vh;
 }
 
+main {
+  overflow-x: hidden;
+}
+
 .wordmark {
   max-width: 158px;
   float: left;
@@ -175,9 +179,10 @@ body {
   }
 }
 @media only screen and (max-width: 930px) and (orientation: landscape) {
-  .video-container + .tagline {
+  .hub-container + .tagline {
     font-size: 20px;
-    bottom: 12vh;
+    top: 70vh;
+    bottom: inherit;
   }
 
   .tagline + .logoBlock {
