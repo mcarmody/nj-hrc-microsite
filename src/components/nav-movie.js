@@ -104,8 +104,8 @@ class NavMovie extends React.Component {
 		}
 
 		function toggle(self) {
+			console.log("toggle");
 			getNavVideos(document.getElementById(self));
-			console.log(document.getElementById(self));
 			if(!document.getElementById(self).classList.contains("column-highlighted")) {
 				document.getElementById(self).classList.add("column-highlighted");
 				// document.getElementById(self.props.videoName).play();
@@ -117,20 +117,27 @@ class NavMovie extends React.Component {
 			console.log("new video highlighted: "+self)
 		}
 
-		function mobileSwitch(self) {
-			console.log(self);
+		function mobileSwitch(self, isFwd) {
+			var hubContainer = document.getElementsByClassName("hub-container")[0]
+			var shiftAmount;
+			isFwd ? shiftAmount = (-101*(parseInt(self)+1)) : shiftAmount = (-101*(parseInt(self)-1))
+			console.log(shiftAmount);
+			hubContainer.style.transform = 'translate('+shiftAmount+'vw, 0)';
+			var toggleVal;
+			isFwd ? toggleVal = self+1 : toggleVal = self-1;
+			//toggle(toggleVal);
 		}
 
 		console.log(this.state.data.id)
 
 		return (
 			<div id = {this.state.data.id} className = "video-container" onClick={() => toggle(this.state.data.id)} style = {imgStyle}>
-				<div id = "previous-arrow" className = "select-arrow" />
+				{this.state.data.id != 0 ? (<div id = "previous-arrow" className = "select-arrow" onClick={() => mobileSwitch(this.state.data.id, false)}/>) : ""}
 				<div className = "background-image" />
 
 		  		<div className = "video-title"></div>
 		  		<Link className = "story-link" to="/story-page" id={"story-link-"+this.props.id} state = {{data: this.state.data}}>>></Link>
-				<div id = "next-arrow" className = "select-arrow" onClick={() => mobileSwitch(this)}/>
+				{this.state.data.id != 4 ? (<div id = "next-arrow" className = "select-arrow" onClick={() => mobileSwitch(this.state.data.id, true)}/>) : ""}
 	  		</div>
 		)
 	}

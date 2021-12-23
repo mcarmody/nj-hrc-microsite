@@ -55,14 +55,16 @@ class StoriesHub extends React.Component {
     
     return (
       <main style={pageStyles}>
-      	<title>Essential. Effective. Human.</title>
-    		< NavMovie source= {imageList[0]} id = "0" videoName = "first" title = {titlesList[0]} />
-        < NavMovie source= {imageList[1]} id = "1" videoName = "second" title = {titlesList[1]}/>
-        < NavMovie source= {imageList[2]} id = "2" videoName = "third" title = {titlesList[2]}/>
-        < NavMovie source= {imageList[3]} id = "3" videoName = "fourth" title = {titlesList[3]}/>
-        < NavMovie source= {imageList[4]} id = "4" videoName = "fifth" title = {titlesList[4]}/>
-        < Tagline size = "small" />
-        <div className = "mobile-modal">This site works best if you hold your device in landscape orientation.</div>
+        <div className = "hub-container">
+        	<title>Essential. Effective. Human.</title>
+      		< NavMovie source= {imageList[0]} id = "0" videoName = "first" title = {titlesList[0]} />
+          < NavMovie source= {imageList[1]} id = "1" videoName = "second" title = {titlesList[1]}/>
+          < NavMovie source= {imageList[2]} id = "2" videoName = "third" title = {titlesList[2]}/>
+          < NavMovie source= {imageList[3]} id = "3" videoName = "fourth" title = {titlesList[3]}/>
+          < NavMovie source= {imageList[4]} id = "4" videoName = "fifth" title = {titlesList[4]}/>
+          < Tagline size = "small" />
+          <div className = "mobile-modal">This site works best if you hold your device in landscape orientation.</div>
+        </div>
       </main>
     )
   }

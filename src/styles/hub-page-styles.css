@@ -159,6 +159,16 @@ body {
   pointer-events: auto;
 }
 
+.hub-container {
+  overflow-x: hidden;
+  height: 100vh;
+  width: 505vw;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+}
+
 @media only screen and (max-width: 1550px) {
   .column-highlighted .video-title {
     font-size: 36px;
@@ -195,6 +205,9 @@ body {
 @media only screen and (max-width: 500px) and (orientation: portrait) {
   .video-container {
     pointer-events: none;
+  }
+  .video-container + .tagline {
+    top: 80vh;
   }
 
   .mobile-modal {
@@ -236,13 +249,15 @@ body {
     content: ">";
   }
 
-  .column-highlighted .video-title {
+  .background-image + .video-title {
     font-size: 28px;
     line-height: 38px;
+    left: 70px;
   }
 
   .story-link {
     padding-top: 30px;
     font-size: 30px;
+    opacity: 1;
   }
 }
