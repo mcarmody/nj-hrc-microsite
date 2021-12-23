@@ -93,7 +93,12 @@
     font-size: 40px;
   }
 }
-@media only screen and (max-width: 850px) {
+@media only screen and (max-width: 500px) and (orientation: portrait) {
+  .link-container + .mobile-modal {
+    display: block;
+  }
+}
+@media only screen and (max-width: 950px) and (orientation: landscape) {
   .video-overlay-copy {
     font-size: 24px;
   }

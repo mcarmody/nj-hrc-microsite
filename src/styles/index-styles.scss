@@ -90,6 +90,12 @@ html, body {
     }
 }
 
+@media only screen and (max-width: 500px) and (orientation: portrait) {
+	.link-container .mobile-modal {
+		display: block;
+	}
+}
+
 @media only screen and (max-height: 750px) {
 	.intro-copy {
 		font-size: 48px;
