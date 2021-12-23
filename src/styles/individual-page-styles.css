@@ -327,6 +327,9 @@ h1.tagline-low {
   position: absolute;
   content: "";
 }
+.back-link span {
+  font-size: 22px;
+}
 
 .next-page-link {
   display: block;
@@ -340,6 +343,7 @@ h1.tagline-low {
   line-height: 64px;
   text-decoration: none;
   font-weight: bold;
+  margin: 8px 0;
 }
 .next-page-link:hover::before {
   top: 0;
@@ -350,6 +354,9 @@ h1.tagline-low {
   z-index: 101;
   position: absolute;
   content: "";
+}
+.next-page-link span {
+  font-size: 22px;
 }
 
 .actions-container {
@@ -728,6 +735,15 @@ h1.tagline-low {
   }
   .side-nav-container .back-link {
     width: calc(100% - 80px);
+  }
+  .side-nav-container .back-link span {
+    font-size: 16px;
+  }
+  .side-nav-container .next-page-link {
+    width: 100%;
+  }
+  .side-nav-container .next-page-link span {
+    font-size: 16px;
   }
   .side-nav-container .nav-item-container {
     max-height: none;

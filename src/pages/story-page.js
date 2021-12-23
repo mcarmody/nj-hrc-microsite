@@ -392,6 +392,7 @@ class IndividualStory extends React.Component {
             " -2%, rgba(196, 196, 196, 0) 50%",
         },
       });
+      document.getElementsByClassName("story-title")[0].innerHTML = this.props.location.state.data.title;
     }
 
     if (this.state.selectedItem !== prevState.selectedItem) {
@@ -415,7 +416,7 @@ class IndividualStory extends React.Component {
     console.log("new page")
     setTimeout(function() {
       document.getElementsByClassName("video-nav")[0].click()
-    }, 100)
+    }, 100);
   }
 
   toggleSidebar = () => {
@@ -539,11 +540,14 @@ class IndividualStory extends React.Component {
           </div>
           <div className="side-nav-container hide-mobile">
             <Link to="/stories-hub" className="back-link">
-              Home
+              <span>&#60;&#60; </span>Home
             </Link>
-            <Link to="/story-page" onClick={() => this.newPage()} state = {{data: this.state.nextData}} className = "next-page-link">
-              Next Story
-            </Link>
+            {this.state.id !== 4 ? (
+              <Link to="/story-page" onClick={() => this.newPage()} state = {{data: this.state.nextData}} className = "next-page-link">
+                Next Story <span>>></span>
+              </Link>
+              ) : ""
+            }
             <SideNavItem
               type={rawContent[this.state.id * 5 + 1].type}
               data={mediaLinkUrl + rawContent[this.state.id * 5 + 1].data}
