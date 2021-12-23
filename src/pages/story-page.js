@@ -275,6 +275,30 @@ const rawContent = [
 
 const mediaLinkUrl = "https://nj-hrc-project-media.s3.amazonaws.com/media";
 
+const titlesList = [
+  "How We<br /> Got Here",
+  "Harm Reduction<br /> 101",
+  "Viral Hepatitis and HIV",
+  "Overdose and Prevention",
+  "Connection To Services"
+]
+
+const blurbsList = [
+  "Harm reduction works where the criminalization of drug use fails.",
+  "Harm reduction works because it helps people make realistic, incremental changes.",
+  "Syringe access prevents the spread of HIV and viral hepatitis.",
+  "People who use drugs are on the frontline of overdose prevention.",
+  "Syringe Access connects people to other stabilizing services.",
+]
+
+const colorsList = [
+  "#CC4400",
+  "#70EBCA",
+  "#B999FF",
+  "#FF925C",
+  "#FFE4D6"
+]
+
 // markup
 class IndividualStory extends React.Component {
   constructor(props) {
@@ -294,6 +318,12 @@ class IndividualStory extends React.Component {
       },
       video: "",
       sidebarHidden: true,
+      nextData : {
+        title: titlesList[this.props.id+1],
+        id: (this.props.id+1),
+        blurb: blurbsList[this.props.id+1],
+        color: colorsList[this.props.id+1]
+      }
     };
   }
 
@@ -318,6 +348,14 @@ class IndividualStory extends React.Component {
             " -2%, rgba(196, 196, 196, 0) 50%",
         },
       });
+      this.setState({
+        nextData: {
+          title: titlesList[parseInt(this.props.location.state.data.id)+1],
+          id: (parseInt(this.props.location.state.data.id)+1),
+          blurb: blurbsList[parseInt(this.props.location.state.data.id)+1],
+          color: colorsList[parseInt(this.props.location.state.data.id)+1]
+        }
+      })
     } else {
       navigate("/stories-hub");
     }
@@ -338,6 +376,22 @@ class IndividualStory extends React.Component {
       this.setState({ title: this.props.location.state.data.title });
       this.setState({ id: this.props.location.state.data.id });
       this.setState({ blurb: this.props.location.state.data.blurb });
+      this.setState({
+        nextData: {
+          title: titlesList[parseInt(this.props.location.state.data.id)+1],
+          id: (parseInt(this.props.location.state.data.id)+1),
+          blurb: blurbsList[parseInt(this.props.location.state.data.id)+1],
+          color: colorsList[parseInt(this.props.location.state.data.id)+1]
+        }
+      })
+      this.setState({
+        gradient: {
+          background:
+            "linear-gradient(115.66deg, " +
+            this.props.location.state.data.color +
+            " -2%, rgba(196, 196, 196, 0) 50%",
+        },
+      });
     }
 
     if (this.state.selectedItem !== prevState.selectedItem) {
@@ -355,6 +409,13 @@ class IndividualStory extends React.Component {
         ? this.setState({ contentClass: "story-content image-content" })
         : this.setState({ contentClass: "story-content video-content" });
     }
+  }
+
+  newPage = () => {
+    console.log("new page")
+    setTimeout(function() {
+      document.getElementsByClassName("video-nav")[0].click()
+    }, 100)
   }
 
   toggleSidebar = () => {
@@ -389,6 +450,7 @@ class IndividualStory extends React.Component {
   };
 
   render() {
+    console.log(this.state)
     if (this.props.location.state) {
       var selectedItem = this.state.selectedItem;
 
@@ -478,6 +540,9 @@ class IndividualStory extends React.Component {
           <div className="side-nav-container hide-mobile">
             <Link to="/stories-hub" className="back-link">
               Home
+            </Link>
+            <Link to="/story-page" onClick={() => this.newPage()} state = {{data: this.state.nextData}} className = "next-page-link">
+              Next Story
             </Link>
             <SideNavItem
               type={rawContent[this.state.id * 5 + 1].type}
